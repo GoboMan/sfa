@@ -1,0 +1,82 @@
+#query_form
+{
+	.query
+	{
+		width : 100%;
+		height : 100px;
+		padding : 10px;
+		line-height : 140%;
+	}
+
+	.btn_area
+	{
+		text-align : center;
+		background : #ccc;
+		padding : 10px;
+	}
+}
+
+//	select : 結果ない場合
+.norows
+{
+	border : solid 1px #ccc;
+	padding : 10px;
+	font-size : 14px;
+	text-align : center;
+}
+//	select : 結果一覧テーブル
+table.result_set
+{
+	border-collapse : collapse;
+
+	th, td
+	{
+		text-align : left;
+		font-size : 14px;
+		border : solid 1px #ccc;
+		padding : 8px;
+	}
+
+	th
+	{
+		background : #f2f2f2;
+		font-weight : bold;
+		white-space : nowrap;
+	}
+
+	.show_detail
+	{
+		display : inline-block;
+		color : #44f;
+		font-weight : bold;
+		cursor : pointer;
+	}
+	.hide_detail
+	{
+		display : block;
+		color : #44f;
+		font-weight : bold;
+		cursor : pointer;
+	}
+	.show_detail:hover,
+	.hide_detail:hover
+	{
+		color : #48f;
+	}
+}
+
+//	select以外 : 成功
+.result_ok
+{
+	font-size : 14px;
+	color : #0a0;
+	font-weight : bold;
+}
+
+//	select以外 : 失敗
+.result_ng
+{
+	font-size : 14px;
+	color : #f44;
+	font-weight : bold;
+}

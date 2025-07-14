@@ -1,0 +1,73 @@
+//	DB error
+db.err.insert					= Database operation failed
+db.err.update					= Database operation failed
+db.err.trash					= Database operation failed
+db.err.delete					= Database operation failed
+db.err.duplicate				= The specified :field_names has already been registered
+db.err.notfound					= The specified :table_name does not exist
+
+//	validation messages
+validation.err.number.format	= :name must be entered numerically
+validation.err.num.range		= :name must be in the range :min to :max
+validation.err.varchar.over		= :name can not exceed :size characters
+validation.err.password.over	= :name can not exceed :size characters
+validation.err.must				= :name is not specified
+validation.err.deleted			= :name specification is illegal
+validation.err.boolean			= :name specification is illegal
+validation.err.const			= :name specification is illegal
+validation.err.mail				= Specify your email address as the :name
+validation.err.url				= Specify URL as the :name
+validation.err.telno			= Specify telno as the :name
+validation.err.geometry.format	= Specify small numeric as the :name
+validation.err.case.format		= :name must be entered :case
+validation.err.case.a			= in lower case
+validation.err.case.A			= in upper case
+validation.err.case.0			= numerically
+validation.err.case._			= with one-byte symbols
+validation.err.case.aA			= using alphabets
+validation.err.case.a0			= in lower case alphabetical or numeric characters
+validation.err.case.a_			= in lower case alphabetical or symbols
+validation.err.case.A0			= in upper case alphabetical or numeric characters
+validation.err.case.A_			= in upper case alphabetical or symbols
+validation.err.case.0_			= in number or symbols
+validation.err.case.aA0			= in alphabetical or numeric characters
+validation.err.case.aA_			= in alphabetical or symbols
+validation.err.case.a0_			= in lower case alphabetical or numeric or symbols
+validation.err.case.A0_			= in upper case alphabetical or numeric or symbols
+validation.err.case.aA0_		= in one byte characters
+validation.err.regexp			= :name is incorrectly formatted
+
+//	authentication messages
+auth.err.message					= Failed to login.
+auth.err.none.login_name			= Login name is not specified.
+auth.err.none.login_pass			= Login password is not specified.
+auth.err.send_confirmation_code		= Failed to send verification code for email. [user::mail]
+auth.err.diff.confirmation_code		= Verification code is invalid or expired.
+auth.err.none.user					= No user. [user::user]
+auth.err.none.user_auth_provider	= No user. [user::user]
+auth.err.verify_confirmation_code	= Failed to verify email. [user::user] :last_error
+auth.err.resend_confirmation_code	= Failed to resend verification code. [user::user]
+auth.err.verified_mail				= This email has been verified already. [user::user]
+auth.err.forgot_password_start		= Failed to send a mail to reset password. [user::user]]
+auth.err.change_password			= Failed to change password. [user::user] :last_error
+auth.err.is_provider_origin			= This user is not allowed to login with mail_addr. [user::user]
+auth.err.already_connected_user		= This external service account already has been connected. :mail
+auth.err.update_user				= Failed to update user. [user::user] :last_error
+auth.err.cognito.auth				= Failed to auth user. [user::user] :last_error
+auth.err.cognito.create_user		= Failed to create user. [user:%s]
+auth.err.cognito.set_password		= Failed to set password. [user:%s]
+auth.err.cognito.update_user_attr	= Failed to update user attributes. [user::user] :more
+
+//	auth password extension message
+auth.err.pw_length_and_must			= The password must be :min~:max characters long adn must contain at lease :must.
+auth.err.pw_num						= integer
+auth.err.pw_lower					= single-byte lowercase
+auth.err.pw_upper					= single-byte uppercase
+auth.err.pw_symbol					= symbol
+
+//	storage message
+storage.err.no_input			= No input file
+storage.err.upload				= Failed to upload, :error
+storage.err.not_found			= Not found input file in disk, :filename
+storage.err.too_large			= File length too large, :length / :limit
+storage.err.not_allowed_ext		= Please specify the file extension as :exts.

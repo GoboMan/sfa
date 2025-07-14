@@ -1,0 +1,12 @@
+2025/07/14 18:04:58 select * from `admin` where `deleted` = '0' and `login_id` = 'root'
+2025/07/14 18:05:00 select count(*) as cnt from `user` where `deleted` = '0'
+2025/07/14 18:05:00 select * from `user` where `deleted` = '0' limit 0, 1
+2025/07/14 18:05:09 select count(*) as cnt from `user` where `deleted` = '0'
+2025/07/14 18:05:09 select * from `user` where `deleted` = '0' limit 0, 1
+2025/07/14 18:05:16 select count(*) as cnt from `user` where `deleted` = '0'
+2025/07/14 18:05:16 select * from `user` where `deleted` = '0' limit 0, 1
+2025/07/14 21:54:20 select * from `admin` where `deleted` = '0' and `login_id` = 'root'
+2025/07/14 21:55:41 select count(*) as cnt from `user` where `deleted` = '0'
+2025/07/14 21:55:41 select * from `user` where `deleted` = '0' limit 0, 1
+2025/07/14 21:55:48 select count(*) as cnt from `user` where `deleted` = '0'
+2025/07/14 21:55:48 select * from `user` where `deleted` = '0' limit 0, 1

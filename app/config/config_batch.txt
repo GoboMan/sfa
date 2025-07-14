@@ -1,0 +1,45 @@
+//------------------------------------------------------------------------------
+//	メール送信バッチ設定
+//	
+//	php_exec_cmd				: php実行コマンド。環境ごとのphp.exeの指定やエイリアスphp[バージョン値]などに対応する場合の設定値
+//	table_name					: 送信タスクテーブル名
+//	run_per_sec					: cronに登録している実行間隔
+//	pick_num					: 1ループ当たりの処理タスク数件数
+//	max_send_process			: 並列実行するプロセス本数。これを超えて起動できない
+//	process_check_interval		: プロセス本数チェックを行うインターバル秒数
+//	ignore_domains				: 送信無視ドメインリスト。コンマ区切りで複数指定可能。該当するドメインの場合にはログ出力のみで成功とする
+
+//	aws ses関連設定値
+//	送信レート/送信総数(APIでチェック値は動的取得)/エラーレートのチェックが存在する。
+//	
+//	is_check_send_rate			: 秒間送信上限数をチェックするかどうか
+//	max_send_rate				: 秒間送信上限数。0以外の場合に送信レートチェックありとなる(is_check_send_rate=true)
+//	send_rate_sec				: 送信レート評価秒数(sesは1秒)
+//	send_rate_interval			: 送信レート評価時間内の上限到達時のインターバル(SESスロットルエラー対策用)
+//	
+//	SES送信エラーレート(バウンス|苦情)対策のダミーメール送信用
+//	※送信先はSESで認証されているドメインとは別のメールにする必要があり、設定されていない場合にはバッチはエラー停止する
+//	error_rate_mail_from		: 送信元アドレス
+//	error_rate_mail_to			: 送信先アドレス
+//	error_rate_mail_interval	: ダミーメールの送信を何秒間隔をあけて行うか
+//	
+//	エラー検出バッチ用(SESの場合の任意稼働)
+//	error_detect_hour			: メール送信エラー検出バッチでのエラー検索範囲の時間指定
+//------------------------------------------------------------------------------
+app.batch.mail_task.php_exec_cmd					= php
+app.batch.mail_task.table_name						= mail_task
+app.batch.mail_task.run_per_sec						= 60
+app.batch.mail_task.max_send_process				= 5
+app.batch.mail_task.process_check_interval			= 0.1
+app.batch.mail_task.pick_num						= 60
+app.batch.mail_task.ignore_domains					= example.com
+app.batch.mail_task.is_check_send_rate				= true
+app.batch.mail_task.max_send_rate					= 16
+app.batch.mail_task.send_rate_sec					= 1
+app.batch.mail_task.send_rate_interval				= 0.2
+app.batch.mail_task.error_rate_mail_from			= 
+app.batch.mail_task.error_rate_mail_to				= 
+app.batch.mail_task.error_rate_mail_interval		= 1
+app.batch.mail_task.error_rate_bounce_warning		= 5
+app.batch.mail_task.error_rate_complaint_warning	= 0.1
+app.batch.mail_task.error_detect_hour				= 72

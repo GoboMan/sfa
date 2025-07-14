@@ -1,0 +1,49 @@
+@require("ui_vars.icss");
+
+//	リンクのデコレーションをオフ
+a
+{
+	text-decoration : none;
+}
+
+//	コンテンツの高さ一杯
+html, body
+{
+	height : 100%;
+}
+
+//	ページ構成
+#page
+{
+	#header
+	{
+		font-size : 14px;
+	}
+
+	#menus
+	{
+		font-size : 14px;
+
+		.item
+		{
+			cursor : pointer;
+			border-radius : 8px;
+			padding : 3px 10px;
+
+			&:hover
+			{
+				background-color : #f2f2f2;
+			}
+		}
+	}
+
+	#content
+	{
+		font-size : 14px;
+	}
+
+	#footer
+	{
+		font-size : 12px;
+	}
+}

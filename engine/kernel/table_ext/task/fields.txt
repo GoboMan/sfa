@@ -1,0 +1,16 @@
+;
+; タスク用の追加フィールドを定義する
+;
+task_status = self::stat_queued, tinyint,	# タスクステータス
+{
+	stat_queued,	1,					# 処理待ち
+	stat_running,	2,					# 処理中
+	stat_failed,	3,					# 処理失敗
+	stat_succeeded,	4,					# 処理成功
+}
+task_queued_date = time(),	datetime,	# タスク作成日
+task_schedule_date,			datetime,	# タスク実行予定日時
+task_started_date,			datetime,	# タスク開始日時
+task_ended_date,			datetime,	# タスク完了日時, 失敗時か成功時に格納される
+task_retry,					int,		# リトライ回数, 初回は0でリトライ毎にカウントアップ
+task_priority,				tinyint,	# 優先順位, 大きい数字が優先度高く、先に取得される

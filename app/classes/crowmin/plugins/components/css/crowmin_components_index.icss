@@ -1,0 +1,524 @@
+.ui_select
+{
+	padding : 8px 24px 8px 10px;
+	font-size : 12px;
+}
+
+//	上部のコンポーネント一覧
+#apply_hist
+{
+	width : 100%;
+	text-align : left;
+
+	> div
+	{
+		display : inline-block;
+		padding : 5px 10px;
+		border : dashed #ccc 1px;
+		border-radius : 4px;
+		margin-right : 4px;
+		white-space : nowrap;
+		cursor : pointer;
+		box-shadow : 0 1px 4px rgba(0,0,0,0.1);
+
+		&.label
+		{
+			border : none;
+			cursor : auto;
+			&:hover {border-style : none;}
+			box-shadow : none;
+		}
+
+		> .name
+		{
+			font-weight : 600;
+		}
+		> .logic
+		{
+			font-size : 10px;
+			text-align : right;
+			color : #888;
+		}
+
+		&:hover
+		{
+			border-style : solid;
+		}
+		&.selected
+		{
+			background-color : #fda;
+			border-style : solid;
+		}
+	}
+}
+
+//	全体を統括するパネル
+#panel_main
+{
+	position : relative;
+}
+
+//	左側のツリー表示パネル
+#panel_tree
+{
+	padding : 10px 0 10px 10px;
+	box-shadow : 0 0 10px rgba(0,0,0,0.2);
+	overflow-y : auto;
+
+	&::-webkit-scrollbar
+	{
+		background: transparent;
+		width : 12px;
+		border-radius : 10px;
+	}
+	&::-webkit-scrollbar-thumb
+	{
+		background: #eee;
+		border : 4px solid #fff;
+		border-radius : 10px;
+		min-height : 20px;
+	}
+	&::-webkit-scrollbar-thumb:hover
+	{
+		opacity : 0.8;
+	}
+
+	.line
+	{
+		user-select : none;
+		padding : 2px 2px;
+
+		white-space : nowrap;
+		overflow-x : hidden;
+		text-overflow : ellipsis;
+
+		&.dir
+		{
+			color : #888;
+			cursor : pointer;
+			padding : 4px 2px;
+
+			.icon
+			{
+				padding-right : 4px;
+			}
+
+			.expander
+			{
+			}
+
+			.create_link
+			{
+				display : none;
+			}
+
+			&:hover
+			{
+				color : #444;
+				background-color : #f2f2f2;
+
+				.create_link
+				{
+					display : block;
+					color : #aaa;
+					font-weight : 600;
+
+					&:hover
+					{
+						color : #080;
+					}
+				}
+			}
+		}
+		&.file
+		{
+			color : #444;
+			cursor : pointer;
+
+			.icon
+			{
+				padding-right : 4px;
+			}
+
+			&:hover
+			{
+				text-decoration : underline;
+			}
+
+			&.selected
+			{
+				background-color : #fda;
+			}
+		}
+
+		&.changed
+		{
+			&.mod
+			{
+				&.file
+				{
+					color : #00a;
+					font-weight : 600;
+				}
+			}
+			&.add
+			{
+				&.file
+				{
+					color : #060;
+					font-weight : 600;
+				}
+			}
+			&.del
+			{
+				&.file
+				{
+					color : #a00;
+					font-weight : 600;
+				}
+			}
+		}
+	}
+	.child
+	{
+		padding-left : 20px;
+		overflow-y : hidden;
+	}
+}
+
+//	スプリットバー
+#splitter_bar
+{
+	background-color : #ccc;
+	width : 6px;
+	cursor : ew-resize;
+}
+
+//	中央のソース表示パネル
+#panel_center
+{
+	box-shadow : 0 0 10px rgba(0,0,0,0.2);
+
+	padding : 10px;
+	height : 100%;
+	overflow-y : auto;
+	overflow-x : auto;
+
+	&::-webkit-scrollbar
+	{
+		background: transparent;
+		width : 12px;
+		height : 12px;
+		border-radius : 10px;
+	}
+	&::-webkit-scrollbar-thumb
+	{
+		background: #ccc;
+		border : 4px solid #fff;
+		border-radius : 10px;
+		min-height : 20px;
+	}
+	&::-webkit-scrollbar-thumb:hover
+	{
+		opacity : 0.8;
+	}
+
+	table
+	{
+		width : 100%;
+
+		.line
+		{
+			&.add
+			{
+				background-color : #cfc;
+			}
+			&.mod
+			{
+				background-color : #ccf;
+			}
+			&.del
+			{
+				background-color : #fcc;
+			}
+
+			td
+			{
+				padding : 0px 10px;
+
+				border-style : solid solid dotted solid;
+				border-width : 0 1px 1px 1px;
+				border-color : #ccc #ccc #ddd #ccc;
+			}
+
+			.no
+			{
+				white-space : nowrap;
+				width : 1%;
+				text-align : right;
+				font-family: Consolas, 'Courier New';
+				font-size : 12px;
+				border-width : 0 1px 1px 0;
+
+				user-select : none;
+				-moz-user-select : none;
+				-webkit-user-select : none;
+				-ms-user-select : none;
+			}
+			.type
+			{
+				white-space : nowrap;
+				width : 1%;
+				text-align : center;
+				font-size : 12px;
+
+				user-select : none;
+				-moz-user-select : none;
+				-webkit-user-select : none;
+				-ms-user-select : none;
+			}
+			.text
+			{
+				white-space : pre;
+				font-family: Consolas, 'Courier New';
+				font-size : 12px;
+				tab-size : 4;
+				border-width : 0 0 1px 1px;
+
+				.tab
+				{
+					color : #ccc;
+					font-family: Consolas, 'Courier New';
+					font-size : 12px;
+					position : relative;
+
+					&:before
+					{
+						position : absolute;
+						left : 0;
+						top : 0;
+						font-size : 8px;
+						content : ">   ";
+					}
+				}
+				.zsp
+				{
+					display : inline-block;
+					width : 14px;
+					position : relative;
+
+					&:before
+					{
+						color : #fba;
+						font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+						font-size : 12px;
+
+						position : absolute;
+						left : 4px;
+						top : 2px;
+						content : "□";
+					}
+				}
+				.cr
+				{
+					color : #4a6;
+					position : relative;
+
+					user-select : none;
+					-moz-user-select : none;
+					-webkit-user-select : none;
+					-ms-user-select : none;
+
+					&:before
+					{
+						position : absolute;
+						left : 0;
+						top : 2px;
+						font-size : 8px;
+						content : "↓";
+					}
+				}
+				.hcr
+				{
+					color : #4a6;
+					position : relative;
+					line-height : 0;
+
+					&:before
+					{
+						position : absolute;
+						left : -2px;
+						top : -2px;
+						font-size : 8px;
+						content : "↓";
+					}
+				}
+			}
+
+			&:last-child td
+			{
+				border-bottom-width : 0;
+				border-style : solid solid solid solid;
+			}
+		}
+	}
+}
+
+//	winmergeのようなスクロールバー
+#diff_scroll
+{
+	width : 32px;
+	height : 100px;
+	background-color : #fff;
+	box-shadow : 0 0 10px rgba(0,0,0,0.2);
+	margin-left : 4px;
+	position : relative;
+
+	//	ハンドル
+	#diff_scroll_handle
+	{
+		position : absolute;
+		border : solid #888;
+		border-width : 2px 0 2px 0;
+		left : 0;
+		top : 0;
+		width : 32px;
+		height : 100px;
+		z-index : 1;
+
+		background-color : rgba(200,200,200,0.4);
+		box-shadow : inset 0px -3px 8px rgba(255,255,255,0.4), inset 0px 3px 8px rgba(255,255,255,0.4);
+
+		cursor : pointer;
+
+		&:hover
+		{
+			background-color : rgba(200,200,200,0.2);
+			border-color : #666;
+		}
+	}
+
+	//	差分行
+	.diff
+	{
+		position : absolute;
+		top : 0;
+		left : 0;
+		width : 32px;
+		height : 1px;
+
+		&.add {background-color : #cfc;}
+		&.mod {background-color : #ccf;}
+		&.del {background-color : #fcc;}
+	}
+}
+
+#btn_edit
+{
+	position : absolute;
+	top : 20px;
+	right : 60px;
+	width : 48px;
+	height : 32px;
+	line-height : 32px;
+
+	background-color : #fff;
+	border : solid 1px #ccc;
+	border-radius : 4px;
+	box-shadow : none;
+	user-select : none;
+	cursor : pointer;
+
+	&:hover
+	{
+		box-shadow : 0 2px 6px rgba(0,0,0,0.1);
+	}
+}
+
+#editor
+{
+	.body
+	{
+		border-radius : 10px;
+	}
+	.src_head
+	{
+		border : solid #ccc;
+		border-width : 0 0 1px 0;
+		height : 48px;
+		padding : 0 10px;
+		line-height : 48px;
+		background-color : #f8f8f8;
+	}
+	.src_body
+	{
+		height : calc(100% - 48px);
+		padding : 10px 0;
+
+		.line_nos
+		{
+			width : 80px;
+			height : 100%;
+			text-align : right;
+			padding : 0 10px;
+
+			font-family: Consolas, 'Courier New';
+			font-size : 12px;
+			tab-size : 4;
+			resize: none;
+			line-height : 20px;
+
+			overflow-x : hidden;
+			white-space : pre-wrap;
+			border : solid #ccc;
+			border-width : 0 1px 0 0;
+
+			//	スクロールバー
+			&::-webkit-scrollbar
+			{
+				width : 2px;
+			}
+			&::-webkit-scrollbar-track
+			{
+				border-radius : 2px;
+				background : rgba(0,0,0,0);
+			}
+			&::-webkit-scrollbar-thumb
+			{
+				border-radius : 2px;
+				background : rgba(0, 0, 40, 0.3);
+			}
+		}
+		.lines
+		{
+			height : 100%;
+			padding : 0 10px;
+
+			font-family: Consolas, 'Courier New';
+			font-size : 12px;
+			tab-size : 4;
+			resize: none;
+			line-height : 20px;
+
+			overflow-x : hidden;
+			white-space : pre-wrap;
+			border : none;
+
+			//	スクロールバー
+			&::-webkit-scrollbar
+			{
+				width : 6px;
+			}
+			&::-webkit-scrollbar-track
+			{
+				border-radius : 6px;
+				background : rgba(0,0,0,0);
+			}
+			&::-webkit-scrollbar-thumb
+			{
+				border-radius : 6px;
+				background : rgba(0, 0, 40, 0.3);
+			}
+		}
+	}
+}

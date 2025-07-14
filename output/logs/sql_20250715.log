@@ -1,0 +1,41 @@
+2025/07/15 00:11:37 show tables from `sfa`
+2025/07/15 00:11:37 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/15 00:11:37 show tables from `sfa`
+2025/07/15 00:11:37 show columns from `admin`
+2025/07/15 00:11:37 show tables from `sfa`
+2025/07/15 00:11:37 show columns from `user`
+2025/07/15 00:11:37 show tables from `sfa`
+2025/07/15 00:11:37 show tables from `sfa`
+2025/07/15 00:11:37 show tables from `sfa`
+2025/07/15 00:11:37 show tables from `sfa`
+2025/07/15 00:11:37 show tables from `sfa`
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:23:13 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:23:13 show columns from `admin`
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:23:13 show columns from `user`
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:23:13 show tables from `sfa`
+2025/07/15 01:24:39 show tables from `sfa`
+2025/07/15 01:24:39 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/15 01:24:39 show tables from `sfa`
+2025/07/15 01:24:39 show columns from `admin`
+2025/07/15 01:24:39 show tables from `sfa`
+2025/07/15 01:24:39 show columns from `user`
+2025/07/15 01:24:39 show tables from `sfa`
+2025/07/15 01:24:39 show tables from `sfa`
+2025/07/15 01:24:39 show tables from `sfa`
+2025/07/15 01:24:39 show tables from `sfa`
+2025/07/15 01:24:39 show tables from `sfa`
+2025/07/15 01:24:39 show tables from `sfa`
+2025/07/15 01:24:39 show tables from `sfa`
+2025/07/15 01:24:39 show tables from `sfa`
+2025/07/15 01:24:39 show tables from `sfa`

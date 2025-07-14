@@ -1,0 +1,9 @@
+//------------------------------------------------------------------------------
+//	crowmin へのログインID/PW
+//------------------------------------------------------------------------------
+crowmin.login_id = user
+crowmin.login_pw = crow@min
+auth.privilege = logined_crowmin
+
+//	sandboxでパスワードを要求する？(true or false)
+crowmin.need_sandbox_pw = false

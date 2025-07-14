@@ -1,0 +1,7 @@
+div
+{
+	&:not(.nodata):not(:last-child)
+	{
+		border-bottom: 1px solid #DEE2E6;
+	}
+}

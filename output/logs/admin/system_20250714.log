@@ -1,0 +1,58 @@
+2025/07/14 18:05:01 [notice] [user/index] model_user gender_str() illegal gender specified : 0
+2025/07/14 18:05:10 [notice] [user/index] model_user gender_str() illegal gender specified : 0
+2025/07/14 18:05:16 [notice] [user/index] model_user gender_str() illegal gender specified : 0
+2025/07/14 21:53:09 unknown field type "email" in table "user"
+2025/07/14 21:55:41 [warning] [user/index] E_WARNING : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (34) Undefined property: model_user::$slug
+2025/07/14 21:55:41 [error] [user/index] E_ERROR : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (35) Uncaught Error: Call to undefined method model_user::gender_str() in /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php:35
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1545): include()
+#1 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1410): crow::display('../../../crow3_...')
+#2 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(133): crow->dispatch()
+#3 /Applications/XAMPP/xamppfiles/htdocs/sfa/admin/index.php(52): crow::run('admin', Array)
+#4 {main}
+  thrown
+2025/07/14 21:55:48 [warning] [user/index] E_WARNING : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (34) Undefined property: model_user::$slug
+2025/07/14 21:55:48 [error] [user/index] E_ERROR : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (35) Uncaught Error: Call to undefined method model_user::gender_str() in /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php:35
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1545): include()
+#1 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1410): crow::display('../../../crow3_...')
+#2 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(133): crow->dispatch()
+#3 /Applications/XAMPP/xamppfiles/htdocs/sfa/admin/index.php(52): crow::run('admin', Array)
+#4 {main}
+  thrown
+2025/07/14 22:00:02 [warning] [user/index] E_WARNING : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (22) Undefined variable $rows
+2025/07/14 22:00:02 [error] [user/index] E_ERROR : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (22) Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php:22
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1545): include()
+#1 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1410): crow::display('../../../crow3_...')
+#2 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(133): crow->dispatch()
+#3 /Applications/XAMPP/xamppfiles/htdocs/sfa/admin/index.php(52): crow::run('admin', Array)
+#4 {main}
+  thrown
+2025/07/14 22:00:50 [warning] [user/index] E_WARNING : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (22) Undefined variable $rows
+2025/07/14 22:00:50 [error] [user/index] E_ERROR : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (22) Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php:22
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1545): include()
+#1 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1410): crow::display('../../../crow3_...')
+#2 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(133): crow->dispatch()
+#3 /Applications/XAMPP/xamppfiles/htdocs/sfa/admin/index.php(52): crow::run('admin', Array)
+#4 {main}
+  thrown
+2025/07/14 22:00:54 [warning] [user/index] E_WARNING : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (22) Undefined variable $rows
+2025/07/14 22:00:54 [error] [user/index] E_ERROR : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (22) Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php:22
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1545): include()
+#1 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1410): crow::display('../../../crow3_...')
+#2 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(133): crow->dispatch()
+#3 /Applications/XAMPP/xamppfiles/htdocs/sfa/admin/index.php(52): crow::run('admin', Array)
+#4 {main}
+  thrown
+2025/07/14 22:01:22 [warning] [user/index] E_WARNING : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (22) Undefined variable $rows
+2025/07/14 22:01:22 [error] [user/index] E_ERROR : /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php (22) Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /Applications/XAMPP/xamppfiles/crow3_sfa/app/views/admin/user/index.php:22
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1545): include()
+#1 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1410): crow::display('../../../crow3_...')
+#2 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(133): crow->dispatch()
+#3 /Applications/XAMPP/xamppfiles/htdocs/sfa/admin/index.php(52): crow::run('admin', Array)
+#4 {main}
+  thrown

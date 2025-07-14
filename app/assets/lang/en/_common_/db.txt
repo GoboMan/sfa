@@ -1,0 +1,50 @@
+//------------------------------------------------------------------------------
+//	admin
+//------------------------------------------------------------------------------
+db.admin				= admin
+db.admin.admin_id		= admin_id
+db.admin.login_id		= login_id
+db.admin.login_pw		= login_pw
+db.admin.deleted		= deleted
+
+//------------------------------------------------------------------------------
+//	valid
+//------------------------------------------------------------------------------
+db.valid				= valid
+db.valid.valid_id		= valid_id
+db.valid.val			= val
+
+//------------------------------------------------------------------------------
+//	user
+//------------------------------------------------------------------------------
+db.user				= user
+db.user.user_id		= user_id
+db.user.login_id		= login_id
+db.user.login_pw		= login_pw
+db.user.name			= name
+db.user.slug			= slug
+db.user.gender		= gender
+db.user.create_date	= create_date
+db.user.mail_addr		= mail_addr
+db.user.deleted		= deleted
+
+db.user.const.male	= 男性
+db.user.const.female	= 女性
+db.user.const.other	= その他
+
+//------------------------------------------------------------------------------
+//	bits
+//------------------------------------------------------------------------------
+db.bits				= bits
+db.bits.bits_id		= bits_id
+db.bits.data1			= data1
+db.bits.data2			= data2
+db.bits.data4			= data4
+db.bits.data8			= data8
+
+db.bits.const.monster	= モンスター
+db.bits.const.boss	= ボス
+db.bits.const.rare	= レア
+db.bits.const.sp		= スペシャル
+db.bits.const.rare_sp	= ビットの複合を定数にしたサンプル
+

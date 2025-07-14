@@ -1,0 +1,381 @@
+//------------------------------------------------------------------------------
+//	プロトコル
+//	サーバが受けるリクエストと、ブラウザに送出するリンクが異なる場合、
+//	以下を有効にするとmake_url系のリンクが変化するようになる
+//
+//	例）ALBを挟む場合、ALBではhttpsで受けて、nginxではhttpで受ける。
+//	ブラウザにはhttpsでリンク出力する必要があるためその場合には "https" を指定する
+//------------------------------------------------------------------------------
+request.protocol = http
+//request.port = 80
+//request.host
+
+//------------------------------------------------------------------------------
+//	言語コード、auto を指定すると自動検出となる
+//	それ以外は言語コードを指定する "ja" / "en" など
+//------------------------------------------------------------------------------
+lang.code	= ja
+
+//------------------------------------------------------------------------------
+//	ログ設定
+//
+//	ログディレクトリの設定と、各種ログを出力するかどうかの指定
+//------------------------------------------------------------------------------
+log.dir		= [CROW_PATH]output/logs/
+log.sql		= true
+log.access	= true
+log.system	= true
+log.mail	= true
+
+//	システムログへのコールスタックの出力on/off
+log.trace	= false
+
+//	アクセスログにログイン者を出力する？
+//	true の場合はセッションへのアクセスが発生する
+log.auth	= false
+
+//------------------------------------------------------------------------------
+//	メールを実際に送信する？
+//	false にするとメールは送信されないが、送信したとみなしてログは出力される
+//------------------------------------------------------------------------------
+mail.send	= false
+
+//------------------------------------------------------------------------------
+//	CSRFの検証を自動で行うか
+//	true にすると post 時にCSRFコードを送出する必要がある
+//	true にするとセッションへのアクセスが発生する
+//------------------------------------------------------------------------------
+csrf.verify	= true
+
+//------------------------------------------------------------------------------
+//	icssの字句解析にバイナリ版を使用する場合、exeのファイルパスを指定する。
+//	使用しない場合は空を指定する。利用する場合はoutput/tempフォルダを用意しておくこと。
+//------------------------------------------------------------------------------
+//icss.lexer = [CROW_PATH]engine\assets\bin\icsslexer.exe
+icss.lexer =
+
+//------------------------------------------------------------------------------
+//	viewpartにテスト機能を含めるか
+//		false : 含めない
+//		auto : 含める且つ、初期化時に自動実行
+//		manual : 含める且つ、自動実行は行わない
+//------------------------------------------------------------------------------
+viewpart.test = auto
+
+//------------------------------------------------------------------------------
+//	DB設定
+//------------------------------------------------------------------------------
+db.autoconn	= true
+db.type		= mysqli
+db.cryptkey	= xxxkey
+db.design	= db_design.txt
+
+//	Mysqlではcharset=utf8,collate=utf8_binまたはutf8mb4,utf8mb4_bin
+//	PostgreSQLで指定できる照合順序が異なる場合があるため、
+//	テーブル作成に失敗する場合はC.utf8を指定する。（デフォルトはja-x-icu）
+db.charset = utf8mb4
+db.collate = utf8mb4_bin
+//db.collate	= C.utf8
+//db.collate	= ja-x-icu
+
+//	共通で使う場合は下記
+db.address	= localhost
+db.name		= sfa
+db.userid	= sfa
+db.password	= sfa
+
+//	リーダーに別の接続先を用意する場合には次のように記述
+//db.address.reader		= localhost
+//db.name.reader		= xxx
+//db.userid.reader		= xxx
+//db.password.reader	= xxx
+//
+//	同様に、ライターに別の接続先を用意する場合は次のように記載
+//db.address.writer		= localhost
+//db.name.writer		= xxx
+//db.userid.writer		= xxx
+//db.password.writer	= xxx
+//
+//	readerもwriterもそれぞれ省略可能。省略した場合には、共通の設定が使用される
+//
+
+//	ライターへの更新後、リーダーが更新されるまでの遅延があるため、
+//	crowではライター取得後、一定時間はリーダーを取得しようとしてもライターを返却するようにする
+//	この機能を有効にするかどうかと、時間を秒で指定するオプション。
+//	true にするとセッションへのアクセスが発生する
+db.writedelay.enabled	= true
+db.writedelay.sec		= 1
+
+//	暗号カラムに対する暗号アルゴリズムを指定する場合は下記を指定する。
+//	・aes128（デフォルト）/aes256を指定可能。
+//db.cipher	= aes256
+
+//------------------------------------------------------------------------------
+//	セッションの設定
+//
+//	session.typeは、php/db/memcached/redis のいずれかを選択する。
+//	memcachedやredisを指定した場合は、session.save_pathにパスを指定すること。
+//	session.db.xxx については type が"db"か"jwt"の場合に有効となる。
+//	redis利用時は、phpのパッケージが必要
+//	# yum install php74-php-pecl-redis5.x86_64
+//
+//	- php : 接続情報も保存情報もphpセッション内に保持する。webが1台の場合のみ利用できる
+//	- db : 接続情報も保存情報もDBテーブルに保持する
+//	- memcached/redis : 接続情報も保存情報もキャッシュサーバとする
+//	- jwt : 接続情報にはJWTを利用する。保存情報はDBとする
+//
+//	dbの場合には次のようなテーブルを作って、その情報を session.db.xxxx に指定すればよい
+//
+//		session
+//		{
+//			sid, bigint, pk, ai,
+//			data, text,
+//			created, datetime,
+//		}
+//
+//	以下、jwt を使用する場合
+//
+//		jwt を使う場合には、php拡張の"openssl"が必要になるのと、
+//		public_key、private_keyのセットを2セット用意して、そのファイルパスを
+//		- session.jwt.public_key
+//		- session.jwt.private_key
+//		- session.jwt.encrypt_public_key
+//		- session.jwt.decrypt_private_key
+//		にセットしておくこと。
+//		※ 作成方法は crow_session::jwt_create() の記載を参照
+//
+//		jwtの有効期間は session.jwt.expires に秒数で指定する。
+//		0を指定するとブラウザのタブを閉じるまで有効とする。
+//		session.jwt.secure はクッキーのsecure属性にあたるため、
+//		httpsでない場合には false にしないと動かない場合がある。
+//
+//------------------------------------------------------------------------------
+session.type = jwt
+session.db.table = session
+session.db.field.id = sid
+session.db.field.data = data
+session.db.field.created = created
+session.save_path = xxxx-memcached.xxx.cache.amazonaws.com:11211
+session.jwt.samesite = Strict
+session.jwt.public_key = [CROW_PATH]/app/config/jwt_public_key.pem
+session.jwt.private_key = [CROW_PATH]/app/config/jwt_private_key.pem
+session.jwt.encrypt_public_key = [CROW_PATH]/app/config/jwt_encrypt_public_key.pem
+session.jwt.decrypt_private_key = [CROW_PATH]/app/config/jwt_decrypt_private_key.pem
+session.jwt.secure = true
+session.jwt.expires = 3600
+
+//------------------------------------------------------------------------------
+//	デフォルトアクション
+//------------------------------------------------------------------------------
+default.role				= front
+default.module				= top
+default.action				= index
+default.error.role			= front
+default.error.module		= error
+default.error.action		= index
+default.error.module.ajax	= error
+default.error.action.ajax	= index
+notfound.module				= error
+notfound.action				= notfound
+noscript.module				= error
+noscript.action				= noscript
+csrf.module					= error
+csrf.action					= access
+csrf.module.ajax			= error
+csrf.action.ajax			= connect
+
+//------------------------------------------------------------------------------
+//	エラー時の誘導先、未記載の場合にはそのブロックが表示されない
+//------------------------------------------------------------------------------
+
+//	サイト名
+error.site.name				= 
+
+//	ホームページへの誘導先URL
+error.home.url				= 
+
+//	サポート問い合わせ先名称
+error.support.name			= 
+
+//	サポート問い合わせ先URL
+error.support.url			= 
+
+//------------------------------------------------------------------------------
+//	デフォルトヘッダ
+//------------------------------------------------------------------------------
+default.header.X-Frame-Options = SAMEORIGIN
+default.header.Cache-Control = no-store, no-cache, must-revalidate
+default.header.Pragma = no-cache
+default.header.Content-Type = text/html; charset=UTF-8
+default.header.X-Content-Type-Options = nosniff
+default.header.Strict-Transport-Security = max-age=86400
+default.header.Content-Security-Policy = script-src 'nonce-[NONCE]' blob:; img-src 'self' data:
+default.header.X-Content-Security-Policy =  script-src 'nonce-[NONCE]' blob:; img-src 'self' data:
+default.header.X-WebKit-CSP =  script-src 'nonce-[NONCE]' blob:; img-src 'self' data:
+default.header.X-XSS-Protection = 1
+
+//------------------------------------------------------------------------------
+//	デフォルトAWS設定
+//------------------------------------------------------------------------------
+aws.default.key = AKIAxxxxxxx
+aws.default.secret = SOtR0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+aws.default.region = ap-northeast-1
+aws.default.version = latest
+aws.default.bucket = xxxx-xxxx-dev
+aws.default.cloudfront.enabled = false
+aws.default.cloudfront.host = https://xxx.xxx.xxx
+aws.default.cloudfront.private.key = [CROW_PATH]app/assets/key/xxxxx.pem
+aws.default.cloudfront.key.pair = xxxxxxxxx
+aws.default.cloudfront.resource.key = https://xxx.xxx.xxx/*
+aws.default.cloudfront.chack.live.status.url = https://xxx.xxx.xxx/cs
+
+//------------------------------------------------------------------------------
+//	デフォルトTencentCloud設定
+//------------------------------------------------------------------------------
+tc.default.secret_id = xxxxx
+tc.default.secret_key = xxxxx
+tc.default.region = ap-tokyo
+tc.default.cos_endpoint = xxxx.cos.ap-tokyo.myqcloud.com
+tc.default.bucket = xxxx
+
+//------------------------------------------------------------------------------
+//	メール設定
+//		mail.protocolに、local/smtp/aws から指定する
+//		mail.authには、false/ssl/tls から指定する
+//------------------------------------------------------------------------------
+mail.protocol = local
+mail.mimetype = text/plain
+mail.smtp.host = xxx
+mail.smtp.port = 587
+mail.smtp.auth = tls
+mail.smtp.user = xxx
+mail.smtp.password = xxx
+
+//------------------------------------------------------------------------------
+//	認証
+//
+//	auth.typeは、db / cognito のいずれかを選択する
+//	dbを選択した場合には、認証に指定テーブルのID/PWが使用されるのに対し、
+//	cognitoを選択した場合には、awsのcognitoで認証する。
+//	どちらの場合でも認証済みレコードは取得できるため、auth.db.table の指定は必要とする
+//
+//	auth.provider.tableはユーザに外部プロバイダ認証(SNSログイン)でのログインを許可する場合の
+//	ユーザと外部プロバイダの紐づけテーブルの名前を指定する。db / cognitoのどちらでも利用可能
+//
+//	auth.cryptkeyは認証系の各種メールでユーザ情報を暗号化するために利用する鍵(32文字)
+//	※Lambdaのnode.jsの暗号化関数の挙動と合わせるために32文字とするいったん
+//
+//	auth.mail_from
+//	auth.type = db の場合に各種メール確認の際の送信元として使用される設定値
+//	auth.type = cognitoの場合はaws.cognitoに設定してあるアドレスが利用される
+//
+//	auth.provider.enabled = trueの場合には外部接続認証を利用する。
+//	これをtrueにする場合にはauth.provider.table のテーブル(table_ext/auth/fields.txtに記載)を用意する。
+//	現在対応の外部認証は→amazon,apple,facebook,google,line,twitter,yahoo
+//	auth.provider.providers は利用する外部認証のコードをコンマ区切りで並べる
+//	auth.provider.start.module/action は各外部接続認証URLへ遷移させる用のアクション名の指定
+//	auth.provider.callback.module/action は各外部接続認証からの戻りアクション名の指定
+//
+//	auth.db.auto_updateをtrueにすると
+//	auth.db.tableのmodelを通した保存時に、内部でset_logined_row()による更新が実行される
+//------------------------------------------------------------------------------
+auth.type					= db
+auth.privilege				= logined_user
+auth.error.lang.nohit		= auth.err.message
+auth.error.lang.name		= auth.err.none.login_name
+auth.error.lang.password	= auth.err.none.login_pass
+auth.db.table				= user
+auth.db.login_name			= auth_mail_addr
+auth.db.login_password		= auth_login_pw
+auth.db.auto_update			= true
+auth.db.ignore_fields		= login_pw, login_pass, password
+
+//	認証メール送信系(メール認証、認証コード再送、パスワードリセット)
+auth.mail.name						= 送信者名
+auth.mail.from						= developer@xxxx.co.jp
+auth.mail.cryptkey					= xxxxxxxxxxxxxxxxxxxxxxxxx
+auth.mail.verify.enabled			= true
+auth.mail.verify.module				= auth
+auth.mail.verify.action				= verify_mail
+auth.mail.resend_code.module		= auth
+auth.mail.resend_code.action		= resend_code
+auth.mail.reset_password.module		= auth
+auth.mail.reset_password.action		= forgot_password_exec
+
+//	外部認証系
+auth.provider.enabled				= true
+auth.provider.table					= user_auth_provider
+auth.provider.providers				= google,line,twitter,yahoo,facebook
+auth.provider.start.module			= auth
+auth.provider.start.action			= auth_provider_start
+auth.provider.callback.module		= auth
+auth.provider.callback.action		= auth_provider_callback
+
+//	Google(prompt=none/consent/select_account)
+auth.provider.google.client_id		= 11431713xxxx-vach4pxxxxxxxxxxxxxxxx.apps.googleusercontent.com
+auth.provider.google.client_secret	= GOCSxx-xxxxxxxxxx-xxxxxxxxxxxxxxxx
+auth.provider.google.prompt			= select_account
+auth.provider.google.scope			= https://www.googleapis.com/auth/userinfo.profile email
+
+//	LINE
+auth.provider.line.channel_id		= xxxxxxxxxx
+auth.provider.line.channel_secret	= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+auth.provider.line.scope			= profile openid email
+
+//	Amazon
+auth.provider.amazon.client_id		= amzn1.application-oa2-client.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+auth.provider.amazon.client_secret	= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+auth.provider.amazon.scope			= profile postal_code
+
+//	Twitter
+auth.provider.twitter.api_key		= xxxxxxxxxxxxxxxxxxxxxxxxx
+auth.provider.twitter.api_secret	= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+//	facebook
+auth.provider.facebook.app_id		= xxxxxxxxxxxxxxx
+auth.provider.facebook.app_secret	= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+//	Yahoo
+auth.provider.yahoo.client_id		= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+auth.provider.yahoo.client_secret	= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+auth.provider.yahoo.scope			= openid profile email address
+
+//	Yahoo認証で属性API（Userinfo）を利用するか
+//	審査が通っていれば利用可能、利用不可の場合はOpenID連携のみ実施
+auth.provider.yahoo.enable_userinfo = false
+
+//	Apple
+auth.provider.apple.client_id		= cognito-test
+auth.provider.apple.scope			= name email
+
+//------------------------------------------------------------------------------
+//	Aws.cognito
+//
+//	cognito.signin_redirect_uri : cognitoのサインイン後の遷移先(cognitoの認証機能をそのまま使用する場合に設定。外部連携後の遷移先)
+//	cognito.signout_redirect_uri : cognitoのサインアウト後の遷移先
+//	cognito.auth_providers 連想配列時のキー:Cognitoに登録したプロバイダ名
+//------------------------------------------------------------------------------
+aws.default.cognito.user_pool_id = ap-northeast-1_xxxxxxxxx
+aws.default.cognito.endpoint = https://xxxxxxxxxxx.auth.ap-northeast-1.amazoncognito.com
+aws.default.cognito.client_id = xxxxxxxxxxxxxxxxxxxxxxxxxx
+aws.default.cognito.client_secret = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+aws.default.cognito.signin_redirect_uri = http://localhost/xxxx/auth/callback_cognito_signin
+aws.default.cognito.signout_redirect_uri = http://localhost/xxxx/auth/callback_cognito_signout
+aws.default.cognito.auth_providers = cognito:COGNITO,apple:SignInWithApple,google:Google,twitter:Twitter,facebook:Faceboo,line:LINE,yahoo:Yahoo
+aws.default.cognito.mail_send = false
+
+//------------------------------------------------------------------------------
+//	IP制限
+//	アクセスを許可したいIPをカンマで区切って複数を指定する。
+//	全てのアクセスを許可する場合には空文字を指定する。
+//------------------------------------------------------------------------------
+allow.ip = localhost, 127.0.0.1, ::1, 39.110.213.196
+
+//------------------------------------------------------------------------------
+//	アプリ固有
+//------------------------------------------------------------------------------
+
+//	app.testkey = testvalue
+//	のように自由に設定可能。
+//	$value = crow_config::get("app.testkey")
+//	で取得できる。

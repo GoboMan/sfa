@@ -1,0 +1,50 @@
+//------------------------------------------------------------------------------
+//	管理者
+//------------------------------------------------------------------------------
+db.admin				= 管理者
+db.admin.admin_id		= 管理者
+db.admin.login_id		= ログインID
+db.admin.login_pw		= ログインPW
+db.admin.deleted		= 削除
+
+//------------------------------------------------------------------------------
+//	valid
+//------------------------------------------------------------------------------
+db.valid				= valid
+db.valid.valid_id		= bbb
+db.valid.val			= ccc
+
+//------------------------------------------------------------------------------
+//	ユーザ
+//------------------------------------------------------------------------------
+db.user				= ユーザ
+db.user.user_id		= ユーザ
+db.user.login_id		= ログインID
+db.user.login_pw		= ログインPW
+db.user.name			= 氏名
+db.user.slug			= シンボル
+db.user.gender		= 性別
+db.user.create_date	= 作成日
+db.user.mail_addr		= メアド
+db.user.deleted		= 削除
+
+db.user.const.male	= 男性
+db.user.const.female	= 女性
+db.user.const.other	= その他
+
+//------------------------------------------------------------------------------
+//	bit確認用
+//------------------------------------------------------------------------------
+db.bits				= bit確認用
+db.bits.bits_id		= bits_id
+db.bits.data1			= 1byteのデータ
+db.bits.data2			= 2byteのデータ
+db.bits.data4			= 4byteのデータ
+db.bits.data8			= 8byteのデータ
+
+db.bits.const.monster	= モンスター
+db.bits.const.boss	= ボス
+db.bits.const.rare	= レア
+db.bits.const.sp		= スペシャル
+db.bits.const.rare_sp	= ビットの複合を定数にしたサンプル
+

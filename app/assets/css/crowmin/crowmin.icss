@@ -1,0 +1,253 @@
+body
+{
+	font-size : 14px;
+	color : #444;
+	padding : 0;
+	margin : 0;
+	height : 100%;
+}
+#header
+{
+	background : #024;
+	color : white;
+	font-size : 16px;
+	font-weight : bold;
+	padding : 8px;
+}
+#menu
+{
+	background : #667;
+	color : #ddf;
+
+	.link
+	{
+		display : inline-block;
+		padding : 8px 10px;
+		cursor : pointer;
+		border : solid #024;
+		border-width : 0 1px 0 0;
+		text-decoration : none;
+		color : #ddf;
+	}
+	.link:hover
+	{
+		background : #446;
+	}
+	.link.active { background-color : #024; }
+}
+#footer
+{
+	background : #024;
+	color : white;
+	font-size : 12px;
+	padding : 10px;
+	position : fixed;
+	bottom : 0;
+	width : 100%;
+	text-align : center;
+}
+#content
+{
+	font-size : 12px;
+	margin-bottom : 40px;
+}
+
+//	ページタイトル
+.page_title
+{
+	border : solid #024;
+	border-width : 0 0 0 4px;
+	margin : 10px 0;
+	padding : 10px 20px;
+	font-size : 16px;
+	font-weight : bold;
+}
+
+
+//	ボタン
+.ui_btn
+{
+	display			: inline-block;
+	font-size		: 14px;
+	margin			: 0 auto;
+	padding			: 6px 20px 6px 20px;
+	border-style	: solid;
+	border-width	: 1px;
+	border-radius	: 2px;
+	border-color	: transparent rgba(0,0,0,0.2) rgba(0,0,0,0.5) transparent;
+	cursor			: pointer;
+	box-shadow		: 0 1px 4px rgba(0,0,0,0.2);
+}
+.ui_btn:hover {opacity : 0.6;}
+.ui_btn:focus {opacity : 0.9;}
+.ui_btn:active {border-color:rgba(0,0,0,0.5) transparent transparent rgba(0,0,0,0.2);box-shadow:0 -1px 4px rgba(0,0,0,0.2);}
+.ui_btn.small
+{
+	font-size : 12px;
+	padding : 4px 14px;
+}
+.ui_btn.blue
+{
+	background		: #44f;
+	color			: white;
+}
+.ui_btn.green
+{
+	background		: #080;
+	color			: white;
+}
+.ui_btn.red
+{
+	background		: #f76;
+	color			: white;
+}
+.ui_btn.gray
+{
+	background		: #666;
+	color			: white;
+}
+
+//	ui_button
+//
+//	todo : 最終的にui_btnをこちらに置き換える
+.ui_button
+{
+	display : inline-block;
+	font-size		: 14px;
+	padding			: 6px 20px 6px 20px;
+	border-style	: solid;
+	border-width	: 1px;
+	border-radius	: 2px;
+	border-color	: transparent rgba(0,0,0,0.2) rgba(0,0,0,0.5) transparent;
+	cursor			: pointer;
+	box-shadow		: 0 1px 4px rgba(0,0,0,0.2);
+
+	&:hover {opacity : 0.6;}
+	&:focus {opacity : 0.9;}
+	&:active
+	{
+		border-color : rgba(0,0,0,0.5) transparent transparent rgba(0,0,0,0.2);
+		box-shadow : 0 -1px 4px rgba(0,0,0,0.2);
+	}
+
+	&.done
+	{
+		background		: #080;
+		color			: white;
+	}
+	&.close
+	{
+		background		: #666;
+		color			: white;
+	}
+	&.detail
+	{
+		background		: #44f;
+		color			: white;
+	}
+	&.warn
+	{
+		background		: #f76;
+		color			: white;
+	}
+}
+
+
+
+//	プルダウン
+.ui_select
+{
+	padding : 10px;
+	font-size : 14px;
+}
+
+//	テキスト
+.ui_text
+{
+	padding : 10px;
+	font-size : 14px;
+}
+
+//	ポップアップ
+.popup_gray
+{
+	background	: #000;
+	opacity		: 0.5;
+	position	: fixed;
+	left		: 0;
+	top			: 0;
+	width		: 99999px;
+	height		: 99999px;
+	overflow	: hidden;
+	z-index		: 99;
+}
+.popup_panel
+{
+	background	: #fff;
+	position	: fixed;
+	left		: 50%;
+	top			: 50%;
+	overflow	: hidden;
+	z-index		: 100;
+	color		: #444;
+	border : solid 1px #aaa;
+}
+.popup_panel .title
+{
+	background	: #f2f2f2;
+	padding		: 12px 20px 12px 20px;
+	font-size	: 14px;
+	border : solid #ccc;
+	border-width : 0 0 1px 0;
+}
+.popup_panel .body
+{
+	padding		: 24px 20px 24px 20px;
+	font-size	: 14px;
+	max-height : 450px;
+	overflow-y : scroll;
+
+	.popup_props
+	{
+		border-collapse : collapse;
+		font-size : 12px;
+
+		th, td
+		{
+			padding : 8px;
+			color : #444;
+			font-weight : normal;
+			text-align : left;
+			vertical-align : middle;
+
+			border : dotted #ccc;
+			border-width : 0 0 1px 0;
+
+			//	テキスト寄せ
+			&.right  {text-align:right;}
+			&.center {text-align:center;}
+
+			//	テキスト改行させない
+			&.nowrap {white-space:nowrap;}
+
+			input, select, textarea
+			{
+				border : solid #ccc 1px;
+			}
+			input[type=text], input[type=password]
+			{
+				padding : 2px 4px;
+			}
+			input[type=checkbox]
+			{
+				width : 16px;
+				height : 16px;
+			}
+		}
+	}
+}
+.popup_panel .btn_area
+{
+	text-align	: center;
+	margin : 0px 32px 24px 32px;
+}

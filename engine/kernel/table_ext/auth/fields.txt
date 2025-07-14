@@ -1,0 +1,32 @@
+;
+; 認証用の追加フィールドを定義する
+;
+auth_mail_addr,					mail, i,		# メールアドレス
+auth_mail_addr_verify,			mail, i,		# メールアドレス(認証待ち)
+auth_mail_addr_verified,		boolean,		# メールアドレス認証済み
+auth_provider_last_login,		varchar, 32,	# 最終ログイン連携プロバイダ
+auth_provider_is_origin_external,boolean,		# 外部認証ユーザフラグ
+auth_provider_mail_login_enabled,boolean,		# 外部認証ユーザのメールログイン許可
+auth_cognito_access_token,		text,			# Cognitoアクセストークン
+auth_cognito_id_token,			text,			# CognitoIDトークン
+auth_cognito_refresh_token,		text,			# Cognitoリフレッシュトークン
+auth_cognito_expires_in,		int,			# Cognito有効期限
+auth_cognito_users,				text,			# Cognitoユーザ情報, 連想配列をjson文字列で保持
+auth_cognito_login_pw,			crypt,			# Cognitoログイン用パスワード
+
+; auth.provider.enabledの場合には以下のテーブルを実装する
+; xxx_subは利用する外部認証のコードと合わせる
+; 
+; user_auth_provider
+; {
+; 	user_login_provider_id,	bigint, pk, ai,				# ユーザ認証
+; 	user_id,				bigint,						# ユーザ
+; 	apple_sub,				varchar, 255,				# Apple
+; 	twitter_sub,			varchar, 255,				# Twitter
+; 	google_sub,				varchar, 255,				# Google
+; 	facebook_sub,			varchar, 255,				# Facebook
+; 	line_sub,				varchar, 255,				# LINE
+; 	yahoo_sub,				varchar, 255,				# Yahoo!JAPAN
+; }
+; .index_unq.index_user_id : user_id
+; 

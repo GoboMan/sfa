@@ -1,0 +1,267 @@
+;------------------------------------------------------------------------------
+# 管理者, 管理画面にログインするための情報
+;------------------------------------------------------------------------------
+admin
+{
+	admin_id,					bigint, pk, ai,					# 管理者
+	login_id,					varchar, 32, must,				# ログインID
+	login_pw,					password, 32,					# ログインPW
+	deleted,					boolean, del,					# 削除
+}
+
+;------------------------------------------------------------------------------
+# ユーザ, RA営業メンバー
+;------------------------------------------------------------------------------
+user
+{
+	user_id,					bigint, pk, ai,					# ユーザ
+	login_id,					varchar, 32, aA0_, must,		# ログインID
+	login_pw,					password, 32, aA0_				# ログインPW
+	name,						varchar, 32, 1:30,				# 氏名
+	email,						mail, must,						# メールアドレス
+	;last_history_id,			bigint,							# 差分履歴用ID, Gmailの差分履歴を取るためのIDだが、現時点ではないものとして考える。
+	create_date,				datetime,						# 作成日
+	deleted,					boolean, del,					# 削除
+}
+
+;------------------------------------------------------------------------------
+# 業界マスタ, 最小限のデータのみ定義( 2025/07/14 abe )
+;------------------------------------------------------------------------------
+industry
+{
+	industry_id,				bigint, pk, ai,					# 業界
+	name,						varchar, 32, must,				# 業界名, 通信業界とか金融業界とかIT業界とか
+	deleted,					boolean, del,					# 削除
+}
+
+;------------------------------------------------------------------------------
+# 取引先, 営業とのヒアリングでデータ追加の可能性あり。（ 2025/07/14 abe ）
+;------------------------------------------------------------------------------
+entity
+{
+	entity_id,					bigint, pk, ai,					# 取引先
+	industry_id,				bigint,							# 業種
+	name,						varchar, 64, must,				# 取引先名
+	name_kana,					varchar, 64,					# 取引先名カナ
+
+	upper_user_id,				bigint,							# 案件側RA営業担当
+	lower_user_id,				bigint,							# 人材側RA営業担当
+
+	;--------------------------------------------------------------------------
+	; ランク
+	;--------------------------------------------------------------------------
+	upper_rank,					tinyint,						# 案件ランク
+	{
+		upper_rank_s,			1,								# Sランク
+		upper_rank_a,			2,								# Aランク
+		upper_rank_b,			3,								# Bランク
+		upper_rank_c,			4,								# Cランク
+		upper_rank_d,			5,								# Dランク
+		
+	}
+	lower_rank,					tinyint,						# 人材ランク
+	{
+		lower_rank_s,			1,								# Sランク
+		lower_rank_a,			2,								# Aランク
+		lower_rank_b,			3,								# Bランク
+		lower_rank_c,			4,								# Cランク
+		lower_rank_d,			5,								# Dランク
+	}
+
+	;--------------------------------------------------------------------------
+	; 取引ステータス
+	;--------------------------------------------------------------------------
+	deal_status,				tinyint,						# 取引ステータス
+	{
+		deal_progress,			1,								# 取引中
+		deal_stop,				2,								# 取引停止
+		deal_other,				10,								# その他
+	}
+	deal_stop_reason,			text,							# 取引停止理由
+
+	deleted,					boolean, del,					# 削除
+}
+.refer.industry_id : industry, zero
+.refer.upper_user_id : user, zero
+.refer.lower_user_id : user, zero
+
+;------------------------------------------------------------------------------
+# 取引先担当者, 取引先の営業担当がくる（RAの営業ではない）
+;------------------------------------------------------------------------------
+entity_member
+{
+	entity_member_id,			bigint, ai, pk,					# 取引先担当者
+	entity_id,					bigint, must,					# 取引先
+	name,						varchar, 32,					# 担当者名
+	tel,						telno,							# 電話番号, 080-1111-111のような半角数値と半角ハイフンが入る
+	email,						mail,							# メールアドレス
+	deleted,					boolean, del,					# 削除
+}
+.refer.entity_id : entity, trash
+
+;------------------------------------------------------------------------------
+# 案件情報
+;------------------------------------------------------------------------------
+project
+{
+	project_id,					bigint, ai, pk,					# 案件情報
+	user_id,					bigint,							# RA営業担当者, この案件を担当しているRA営業
+	entity_id,					bigint,							# 案件元会社
+	entity_member_id,			bigint,							# 案件元会社営業担当
+	name,						varchar, 100,					# 案件名
+	contract_type,				tinyint,						# 契約形態
+	{
+		contract_zyun,			1,								# 準委任契約
+		contract_ukeoi,			2,								# 請負契約
+		contract_haken,			3,								# 派遣契約
+		contract_other,			10,								# その他
+	}
+	source,						tinyint,						# 流入経路
+	{
+		src_mail,				1,								# メール
+		src_spreadsheet,		2,								# スプレッドシート
+		src_line,				3,								# 電話
+		src_slack,				4,								# slack
+		src_other,				10,								# その他
+	}
+
+	;--------------------------------------------------------------------------
+	; 共通
+	;--------------------------------------------------------------------------
+	work_style,					tinyint,						# 出社スタイル
+	{
+		work_1_day,				1,								# 週1出社
+		work_2_day,				2,								# 週2出社
+		work_3_day,				3,								# 週3出社
+		work_4_day,				4,								# 週4出社
+		work_onsite,			5,								# 常駐
+		work_only_firstday,		6,								# 初日のみ
+		work_only_mtg,			7,								# ミーティングのみ
+		work_only_catchup,		8,								# キャッチアップのみ
+		work_both,				9,								# 出社リモート併用
+		work_full_remote,		10,								# フルリモート
+	}
+	prefecture,					tinyint,						# 都道府県
+	{
+		pref_hokkaido,			1,								# 北海道
+		pref_aomori,			2,								# 青森県
+		pref_iwate,				3,								# 岩手県
+		pref_miyagi,			4,								# 宮城県
+		pref_akita,				5,								# 秋田県
+		pref_yamagata,			6,								# 山形県
+		pref_fukushima,			7,								# 福島県
+		pref_ibaraki,			8,								# 茨城県
+		pref_tochigi,			9,								# 栃木県
+		pref_gunma,				10,								# 群馬県
+		pref_saitama,			11,								# 埼玉県
+		pref_chiba,				12,								# 千葉県
+		pref_tokyo,				13,								# 東京都
+		pref_kanagawa,			14,								# 神奈川県
+		pref_niigata,			15,								# 新潟県
+		pref_toyama,			16,								# 富山県
+		pref_ishikawa,			17,								# 石川県
+		pref_fukui,				18,								# 福井県
+		pref_yamanashi,			19,								# 山梨県
+		pref_nagano,			20,								# 長野県
+		pref_gifu,				21,								# 岐阜県
+		pref_shizuoka,			22,								# 静岡県
+		pref_aichi,				23,								# 愛知県
+		pref_mie,				24,								# 三重県
+		pref_shiga,				25,								# 滋賀県
+		pref_kyoto,				26,								# 京都府
+		pref_osaka,				27,								# 大阪府
+		pref_hyogo,				28,								# 兵庫県
+		pref_nara,				29,								# 奈良県
+		pref_wakayama,			30,								# 和歌山県
+		pref_tottori,			31,								# 鳥取県
+		pref_shimane,			32,								# 島根県
+		pref_okayama,			33,								# 岡山県
+		pref_hiroshima,			34,								# 広島県
+		pref_yamaguchi,			35,								# 山口県
+		pref_tokushima,			36,								# 徳島県
+		pref_kagawa,			37,								# 香川県
+		pref_ehime,				38,								# 愛媛県
+		pref_kochi,				39,								# 高知県
+		pref_fukuoka,			40,								# 福岡県
+		pref_saga,				41,								# 佐賀県
+		pref_nagasaki,			42,								# 長崎県
+		pref_kumamoto,			43,								# 熊本県
+		pref_oita,				44,								# 大分県
+		pref_miyazaki,			45,								# 宮崎県
+		pref_kagoshima,			46,								# 鹿児島県
+		pref_okinawa,			47,								# 沖縄県
+	}
+}
+
+;------------------------------------------------------------------------------
+# 人材情報
+;------------------------------------------------------------------------------
+workforce
+{
+
+}
+
+
+;------------------------------------------------------------------------------
+# スキルマスタ, AIのプロンプトに渡され、このデータを元に該当するskill_idが返される
+;------------------------------------------------------------------------------
+skill
+{
+	skill_id,					bigint,							# スキル
+	name,						varchar, 32,					# スキル名
+	synonyms,					text,							# スキル類義語
+	deleted,					boolean, del,					# 削除
+}
+
+;------------------------------------------------------------------------------
+# 案件スキル, 案件とそれに必要なスキルを紐づける
+;------------------------------------------------------------------------------
+project_skill
+{
+	project_skill_id,			bigint, pk, ai,					# 案件スキル
+	project_id,					bigint,							# 案件情報
+	skill_id,					bigint,							# スキル
+	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
+	must_have,					boolean,						# 必須スキル有無
+}
+.refer.project_id : project, trash
+.refer.skill_id : skill, zero
+
+;------------------------------------------------------------------------------
+# 人材スキル, 案件とそれに必要なスキルを紐づける
+;------------------------------------------------------------------------------
+workforce_skill
+{
+	workforce_skill_id,			bigint, pk, ai,					# 人材スキル
+	workforce_id,				bigint,							# 人材情報
+	skill_id,					bigint,							# スキル
+	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
+	must_have,					boolean,						# 必須スキル有無
+}
+.refer.workforce_id : workforce, trash
+.refer.skill_id : skill, zero
+
+;------------------------------------------------------------------------------
+# ポジションマスタ
+;------------------------------------------------------------------------------
+position
+{
+	position_id,				bigint, pk, ai,					# ポジション
+	name,						varchar, 32,					# ポジション名
+	synonyms,					text,							# ポジション類義語
+	deleted,					boolean, del,					# 削除
+}
+
+;------------------------------------------------------------------------------
+# 案件ポジション
+;------------------------------------------------------------------------------
+project_position
+{
+	project_position_id,		bigint, pk, ai,					# 案件スキル
+	project_id,					bigint,							# 案件情報
+	position_id,				bigint,							# スキル
+	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
+	must_have,					boolean,						# 必須スキル有無
+}
+.refer.workforce_id : workforce, trash
+.refer.position_id : position, zero

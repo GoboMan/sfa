@@ -1,0 +1,39 @@
+//	テーブル一覧
+#tables
+{
+	width : 100%;
+	border-collapse : collapse;
+
+	th, td
+	{
+		text-align : center;
+		font-size : 14px;
+		border : solid 1px #ccc;
+		padding : 8px;
+	}
+	th { background-color:#f2f2f2; font-weight:bold; }
+	th.left, td.left { text-align : left; }
+	th.center, td.center { text-align : center; }
+	th.right, td.right { text-align : right; }
+	th.ok, td.ok { font-size:14px; color:green; background-color:#efe; }
+	th.ng, td.ng { font-size:14px; color:red; background-color:#fee; }
+
+	//	有効なフィールド
+	tr.field_same td:first-child
+	{
+		border-left-color : #484;
+		border-left-width : 4px;
+	}
+
+	//	無効なフィールド
+	tr.field_differ td:first-child
+	{
+		border-left-color : #c22;
+		border-left-width : 4px;
+	}
+	tr.field_differ td
+	{
+		color : red;
+	}
+}
+

@@ -1,0 +1,70 @@
+//	行一覧
+#rows
+{
+	border-collapse : collapse;
+
+	th, td
+	{
+		text-align : left;
+		font-size : 14px;
+		border : solid 1px #ccc;
+		padding : 8px;
+	}
+	th { background-color:#f2f2f2; font-weight:bold; }
+	th.left, td.left { text-align : left; }
+	th.center, td.center { text-align : center; }
+	th.right, td.right { text-align : right; }
+
+	.show_detail
+	{
+		display : inline-block;
+		color : #44f;
+		font-weight : bold;
+		cursor : pointer;
+	}
+	.hide_detail
+	{
+		display : block;
+		color : #44f;
+		font-weight : bold;
+		cursor : pointer;
+	}
+	.show_detail:hover,
+	.hide_detail:hover
+	{
+		color : #48f;
+	}
+
+	//	ページャー
+	.pager
+	{
+		border : none;
+		text-align : left;
+
+		.info
+		{
+			padding-bottom : 10px;
+			font-size : 12px;
+		}
+
+		a
+		{
+			color : #ddf;
+			background-color : #024;
+			text-decoration : none;
+			padding : 4px 8px;
+			text-align : center;
+		}
+		a:hover { background-color:#446; }
+		a.current { background-color:#484; }
+		a.current:hover { background-color:#8a8; }
+	}
+	.pager.top
+	{
+		.padding-top : 0;
+	}
+	.pager.bottom .nos
+	{
+		padding-bottom : 10px;
+	}
+}

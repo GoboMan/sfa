@@ -1,0 +1,6 @@
+;
+; ファイルシステム用の追加フィールドを定義する
+;
+file_name,		varchar,	128,	; ファイル名
+file_ext,		varchar,	16,		; 拡張子
+file_length,	bigint,				; ファイルサイズ

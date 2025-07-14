@@ -1,0 +1,2192 @@
+/*
+--------------------------------------------------------------------------------
+各ロールごとに ui_vars.icss を用意すること
+--------------------------------------------------------------------------------
+*/
+@require("ui_vars.icss");
+
+/*
+--------------------------------------------------------------------------------
+行高さのデフォルト指定
+--------------------------------------------------------------------------------
+*/
+*
+{
+	line-height : 140%;
+	font-family: ui-sans-serif, -apple-system, 'BlinkMacSystemFont', "Meiryo UI", "Meiryo", "メイリオ", system-ui, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+
+/*
+--------------------------------------------------------------------------------
+ドキュメント
+--------------------------------------------------------------------------------
+*/
+body
+{
+	background-color : $col_document_back;
+}
+
+/*
+--------------------------------------------------------------------------------
+アニメーション定義
+--------------------------------------------------------------------------------
+*/
+@keyframes fadein
+{
+	0%		{opacity:0;}
+	100%	{opacity:1;}
+}
+@keyframes fadeout
+{
+	0%		{opacity:1;}
+	100%	{opacity:0;}
+}
+
+/*
+--------------------------------------------------------------------------------
+非表示
+--------------------------------------------------------------------------------
+*/
+.hide
+{
+	display : none !important;
+}
+
+/*
+--------------------------------------------------------------------------------
+水平寄せ
+--------------------------------------------------------------------------------
+*/
+.right	{text-align:right !important;}
+.center	{text-align:center !important;}
+.left	{text-align:left !important;}
+
+/*
+--------------------------------------------------------------------------------
+横幅、高さ一杯
+--------------------------------------------------------------------------------
+*/
+.full
+{
+	width : 100%;
+	height : 100%;
+
+	&_horizon	{width : 100%;}
+	&_vertical	{height : 100%;}
+}
+
+/*
+--------------------------------------------------------------------------------
+マージン付与
+--------------------------------------------------------------------------------
+*/
+.margin
+{
+	//	全辺にマージン
+	margin : $spacer;
+	&_small		{margin : $spacer_small !important;}
+	&_large		{margin : $spacer_large !important;}
+	&_xlarge	{margin : $spacer_xlarge !important;}
+
+	//	デフォルトのエイリアス
+	&_default
+	{
+		margin : $spacer;
+
+		&_small		{margin : $spacer_small !important;}
+		&_large		{margin : $spacer_large !important;}
+		&_xlarge	{margin : $spacer_xlarge !important;}
+	}
+
+	//	水平方向にマージン
+	&_horizon
+	{
+		margin-right : $spacer !important;
+		margin-left : $spacer !important;
+
+		&_small
+		{
+			margin-right : $spacer_small !important;
+			margin-left : $spacer_small !important;
+		}
+		&_large
+		{
+			margin-right : $spacer_large !important;
+			margin-left : $spacer_large !important;
+		}
+		&_xlarge
+		{
+			margin-right : $spacer_xlarge !important;
+			margin-left : $spacer_xlarge !important;
+		}
+	}
+
+	//	垂直方向にマージン
+	&_vertical
+	{
+		margin-top : $spacer !important;
+		margin-bottom : $spacer !important;
+
+		&_small
+		{
+			margin-top : $spacer_small !important;
+			margin-bottom : $spacer_small !important;
+		}
+		&_large
+		{
+			margin-top : $spacer_large !important;
+			margin-bottom : $spacer_large !important;
+		}
+		&_xlarge
+		{
+			margin-top : $spacer_xlarge !important;
+			margin-bottom : $spacer_xlarge !important;
+		}
+	}
+
+	//	各辺へのマージン
+	&_top
+	{
+		margin-top : $spacer !important;
+		&_small {margin-top : $spacer_small !important;}
+		&_large {margin-top : $spacer_large !important;}
+		&_xlarge {margin-top : $spacer_xlarge !important;}
+	}
+	&_right
+	{
+		margin-right : $spacer !important;
+		&_small {margin-right : $spacer_small !important;}
+		&_large {margin-right : $spacer_large !important;}
+		&_xlarge {margin-right : $spacer_xlarge !important;}
+	}
+	&_bottom
+	{
+		margin-bottom : $spacer !important;
+		&_small {margin-bottom : $spacer_small !important;}
+		&_large {margin-bottom : $spacer_large !important;}
+		&_xlarge {margin-bottom : $spacer_xlarge !important;}
+	}
+	&_left
+	{
+		margin-left : $spacer !important;
+		&_small {margin-left : $spacer_small !important;}
+		&_large {margin-left : $spacer_large !important;}
+		&_xlarge {margin-left : $spacer_xlarge !important;}
+	}
+
+	//	指定辺以外にマージン
+	&_not_top
+	{
+		margin-right : $spacer !important;
+		margin-bottom : $spacer !important;
+		margin-left : $spacer !important;
+
+		&_small
+		{
+			margin-right : $spacer_small !important;
+			margin-bottom : $spacer_small !important;
+			margin-left : $spacer_small !important;
+		}
+		&_large
+		{
+			margin-right : $spacer_large !important;
+			margin-bottom : $spacer_large !important;
+			margin-left : $spacer_large !important;
+		}
+		&_xlarge
+		{
+			margin-right : $spacer_xlarge !important;
+			margin-bottom : $spacer_xlarge !important;
+			margin-left : $spacer_xlarge !important;
+		}
+	}
+	&_not_right
+	{
+		margin-top : $spacer !important;
+		margin-bottom : $spacer !important;
+		margin-left : $spacer !important;
+
+		&_small
+		{
+			margin-top : $spacer_small !important;
+			margin-bottom : $spacer_small !important;
+			margin-left : $spacer_small !important;
+		}
+		&_large
+		{
+			margin-top : $spacer_large !important;
+			margin-bottom : $spacer_large !important;
+			margin-left : $spacer_large !important;
+		}
+		&_xlarge
+		{
+			margin-top : $spacer_xlarge !important;
+			margin-bottom : $spacer_xlarge !important;
+			margin-left : $spacer_xlarge !important;
+		}
+	}
+	&_not_bottom
+	{
+		margin-top : $spacer !important;
+		margin-right : $spacer !important;
+		margin-left : $spacer !important;
+
+		&_small
+		{
+			margin-top : $spacer_small !important;
+			margin-right : $spacer_small !important;
+			margin-left : $spacer_small !important;
+		}
+		&_large
+		{
+			margin-top : $spacer_large !important;
+			margin-right : $spacer_large !important;
+			margin-left : $spacer_large !important;
+		}
+		&_xlarge
+		{
+			margin-top : $spacer_xlarge !important;
+			margin-right : $spacer_xlarge !important;
+			margin-left : $spacer_xlarge !important;
+		}
+	}
+	&_not_left
+	{
+		margin-top : $spacer !important;
+		margin-right : $spacer !important;
+		margin-bottom : $spacer !important;
+
+		&_small
+		{
+			margin-top : $spacer_small !important;
+			margin-right : $spacer_small !important;
+			margin-bottom : $spacer_small !important;
+		}
+		&_large
+		{
+			margin-top : $spacer_large !important;
+			margin-right : $spacer_large !important;
+			margin-bottom : $spacer_large !important;
+		}
+		&_xlarge
+		{
+			margin-top : $spacer_xlarge !important;
+			margin-right : $spacer_xlarge !important;
+			margin-bottom : $spacer_xlarge !important;
+		}
+	}
+
+	//	マージンゼロ
+	&_zero
+	{
+		//	全辺ゼロ
+		margin : 0 !important;
+		&_default {margin:0 !important;}
+
+		//	水平方向のマージンゼロ
+		&_horizon
+		{
+			margin-right : 0 !important;
+			margin-left : 0 !important;
+		}
+
+		//	垂直方向のマージンゼロ
+		&_vertical
+		{
+			margin-top : 0 !important;
+			margin-bottom : 0 !important;
+		}
+
+		//	各方向へのマージンゼロ
+		&_top		{margin-top : 0 !important;}
+		&_right		{margin-right : 0 !important;}
+		&_bottom	{margin-bottom : 0 !important;}
+		&_left		{margin-left : 0 !important;}
+	}
+}
+
+/*
+--------------------------------------------------------------------------------
+パネルとレイアウト
+
+	通常のパネル、枠線なし、パディングマージンもなし
+	<div class="ui_panel"></div>
+
+	枠線付きパネル
+	<div class="ui_panel border"></div>
+
+	枠線に影を付ける
+	<div class="ui_panel border shadow"></div>
+
+	枠線付きパネル、上下にパディングを付与
+	<div class="ui_panel padding_vertical"></div>
+
+	枠線付きパネル、右辺にパディングを付与
+	<div class="ui_panel border shadow padding_right"></div>
+
+	コード表示
+	<div class="ui_panel code">
+		//	コード表示用のパネル
+		public function sum( $left_, $right_ )
+		{
+			return $left_ + $right_;
+		}
+	</div>
+
+	中身を横に整列する
+	<div class="ui_panel layout_horizon">
+	 <div></div>
+	 <div></div>
+	 <div></div>
+	</div>
+
+	中を縦に整列する
+	<div class="ui_panel layout_vertical">
+	 <div></div>
+	 <div></div>
+	 <div></div>
+	</div>
+
+	整列時に特定の要素を横幅（高さ）一杯にするためには spacer を使う
+	<div class="ui_panel layout_horizon">
+	 <div></div>
+	 <div class="spacer"></div>
+	 <div></div>
+	</div>
+
+	整列時に幅や高さが足りなくなった場合に、基本は自動で縮小するが、
+	縮小させたくないパネルがある場合は noshrink で指定できる
+	<div class="ui_panel layout_horizon">
+	 <div class="noshrink">ここは縮小しなくなる</div>
+	 <div class="spacer">このパネルはspacerなので自動伸縮</div>
+	 <div></div>
+	</div>
+
+
+--------------------------------------------------------------------------------
+*/
+.ui_panel
+{
+	background-color : $col_base_back;
+	color : $col_base_fore;
+
+	//	背景色なし
+	&.transparent
+	{
+		background-color : transparent;
+	}
+
+	//	インライン配置
+	&.inline
+	{
+		display : inline-block;
+	}
+
+	//	ダーク配色
+	&.dark
+	{
+		background-color : $col_dark_back;
+		color : $col_dark_fore;
+	}
+
+	//	ライト配色
+	&.light
+	{
+		background-color : $col_light_back;
+		color : $col_light_fore;
+	}
+
+	//	枠線付き
+	&.border
+	{
+		//	全辺への枠線
+		border : solid 1px $col_border;
+
+		//	垂直方向（上下）への枠線
+		&_vertical
+		{
+			border : solid $col_border 0;
+			border-top-width : 1px;
+			border-bottom-width : 1px;
+		}
+
+		//	水平方向（左右）への枠線
+		&_horizon
+		{
+			border : solid $col_border 0;
+			border-right-width : 1px;
+			border-left-width : 1px;
+		}
+
+		//	各辺への枠線
+		&_top		{ border : solid $col_border 0; border-top-width : 1px; }
+		&_bottom	{ border : solid $col_border 0; border-bottom-width : 1px; }
+		&_right		{ border : solid $col_border 0; border-right-width : 1px; }
+		&_left		{ border : solid $col_border 0; border-left-width : 1px; }
+
+		//	指定辺以外の辺を描画
+		&_not_top		{ border : solid $col_border 1px; border-top-width : 0px; }
+		&_not_bottom	{ border : solid $col_border 1px; border-bottom-width : 0px; }
+		&_not_right		{ border : solid $col_border 1px; border-right-width : 0px; }
+		&_not_left		{ border : solid $col_border 1px; border-left-width : 0px; }
+	}
+
+	//	ボーダースタイル（デフォルトはsolid）
+	&.solid		{border-style : solid;}
+	&.dotted	{border-style : dotted;}
+	&.dashed	{border-style : dashed;}
+
+	//	影付与
+	&.shadow
+	{
+		box-shadow : 0 1px 6px rgba(0,0,0,0.1);
+	}
+
+	//	コード表示
+	&.code
+	{
+		font-family : Consolas, "Courier New";
+		tab-size : 4;
+		white-space : pre-wrap;
+	}
+
+	//	角丸
+	&.radius
+	{
+		border-radius : $radius_panel;
+
+		//	上方向への角丸
+		&_top
+		{
+			border-top-left-radius : $radius_panel;
+			border-top-right-radius : $radius_panel;
+		}
+
+		//	下方向への角丸
+		&_bottom
+		{
+			border-bottom-left-radius : $radius_panel;
+			border-bottom-right-radius : $radius_panel;
+		}
+
+		//	左方向への角丸
+		&_left
+		{
+			border-top-left-radius : $radius_panel;
+			border-bottom-left-radius : $radius_panel;
+		}
+
+		//	右方向への角丸
+		&_right
+		{
+			border-top-right-radius : $radius_panel;
+			border-bottom-right-radius : $radius_panel;
+		}
+	}
+
+	//	パディング
+	&.padding
+	{
+		//	全辺パディング
+		padding : $spacer;
+		&_small		{padding : $spacer_small;}
+		&_large		{padding : $spacer_large;}
+		&_xlarge	{padding : $spacer_xlarge;}
+
+		//	全辺パディングのエイリアス
+		&_default
+		{
+			padding : $spacer;
+			&_small		{padding : $spacer_small;}
+			&_large		{padding : $spacer_large;}
+			&_xlarge	{padding : $spacer_xlarge;}
+		}
+
+		//	水平方向のパディング
+		&_horizon
+		{
+			padding-right : $spacer; padding-left : $spacer;
+			&_small		{padding-right : $spacer_small; padding-left : $spacer_small;}
+			&_large		{padding-right : $spacer_large; padding-left : $spacer_large;}
+			&_xlarge	{padding-right : $spacer_xlarge; padding-left : $spacer_xlarge;}
+		}
+
+		//	垂直方向のパディング
+		&_vertical
+		{
+			padding-top : $spacer; padding-bottom : $spacer;
+			&_small		{padding-top : $spacer_small; padding-bottom : $spacer_small;}
+			&_large		{padding-top : $spacer_large; padding-bottom : $spacer_large;}
+			&_xlarge	{padding-top : $spacer_xlarge; padding-bottom : $spacer_xlarge;}
+		}
+
+		//	各方向のパディング
+		&_top
+		{
+			padding-top : $spacer;
+			&_small		{padding-top : $spacer_small;}
+			&_large		{padding-top : $spacer_large;}
+			&_xlarge	{padding-top : $spacer_xlarge;}
+		}
+		&_right
+		{
+			padding-right : $spacer;
+			&_small		{padding-right : $spacer_small;}
+			&_large		{padding-right : $spacer_large;}
+			&_xlarge	{padding-right : $spacer_xlarge;}
+		}
+		&_bottom
+		{
+			padding-bottom : $spacer;
+			&_small		{padding-bottom : $spacer_small;}
+			&_large		{padding-bottom : $spacer_large;}
+			&_xlarge	{padding-bottom : $spacer_xlarge;}
+		}
+		&_left
+		{
+			padding-left : $spacer;
+			&_small		{padding-left : $spacer_small;}
+			&_large		{padding-left : $spacer_large;}
+			&_xlarge	{padding-left : $spacer_xlarge;}
+		}
+
+		//	指定方向以外へのパディング
+		&_not_top
+		{
+			padding-right : $spacer;
+			padding-bottom : $spacer;
+			padding-left : $spacer;
+
+			&_small		{padding-right : $spacer_small; padding-bottom : $spacer_small; padding-left : $spacer_small;}
+			&_large		{padding-right : $spacer_large; padding-bottom : $spacer_large; padding-left : $spacer_large;}
+			&_xlarge	{padding-right : $spacer_xlarge; padding-bottom : $spacer_xlarge; padding-left : $spacer_xlarge;}
+		}
+		&_not_right
+		{
+			padding-top : $spacer;
+			padding-bottom : $spacer;
+			padding-left : $spacer;
+
+			&_small		{padding-top : $spacer_small; padding-bottom : $spacer_small; padding-left : $spacer_small;}
+			&_large		{padding-top : $spacer_large; padding-bottom : $spacer_large; padding-left : $spacer_large;}
+			&_xlarge	{padding-top : $spacer_xlarge; padding-bottom : $spacer_xlarge; padding-left : $spacer_xlarge;}
+		}
+		&_not_bottom
+		{
+			padding-top : $spacer;
+			padding-right : $spacer;
+			padding-left : $spacer;
+
+			&_small		{padding-top : $spacer_small; padding-right : $spacer_small; padding-left : $spacer_small;}
+			&_large		{padding-top : $spacer_large; padding-right : $spacer_large; padding-left : $spacer_large;}
+			&_xlarge	{padding-top : $spacer_xlarge; padding-right : $spacer_xlarge; padding-left : $spacer_xlarge;}
+		}
+		&_not_left
+		{
+			padding-top : $spacer;
+			padding-right : $spacer;
+			padding-bottom : $spacer;
+
+			&_small		{padding-top : $spacer_small; padding-right : $spacer_small; padding-bottom : $spacer_small;}
+			&_large		{padding-top : $spacer_large; padding-right : $spacer_large; padding-bottom : $spacer_large;}
+			&_xlarge	{padding-top : $spacer_xlarge; padding-right : $spacer_xlarge; padding-bottom : $spacer_xlarge;}
+		}
+	}
+
+	//	縦配置、要素は中央に寄せる
+	&.layout_vertical
+	{
+		display : flex;
+		flex-direction : column;
+		align-items : center;
+	}
+
+	//	縦配置、要素は左に寄せる
+	&.layout_vertical_left
+	{
+		display : flex;
+		flex-direction : column;
+		align-items : flex-start;
+	}
+
+	//	縦配置、要素は右に寄せる
+	&.layout_vertical_right
+	{
+		display : flex;
+		flex-direction : column;
+		align-items : flex-end;
+	}
+
+	//	縦配置、要素はベースラインに寄せる
+	//	子要素同士の下辺が揃うようになる
+	&.layout_vertical_baseline
+	{
+		display : flex;
+		flex-direction : column;
+		align-items : baseline;
+	}
+
+	//	縦配置、子要素が右辺左辺にフィットするようになる
+	&.layout_vertical_stretch
+	{
+		display : flex;
+		flex-direction : column;
+		align-items : stretch;
+	}
+
+	//	横配置、要素は中央に寄せる
+	&.layout_horizon
+	{
+		display : flex;
+		flex-direction : row;
+		align-items : center;
+	}
+
+	//	横配置、要素は上に寄せる
+	&.layout_horizon_top
+	{
+		display : flex;
+		flex-direction : row;
+		align-items : flex-start;
+	}
+
+	//	横配置、要素は下に寄せる
+	&.layout_horizon_bottom
+	{
+		display : flex;
+		flex-direction : row;
+		align-items : flex-end;
+	}
+
+	//	横配置、要素はベースラインに寄せる
+	//	子要素同士の右辺が揃うようになる
+	&.layout_horizon_baseline
+	{
+		display : flex;
+		flex-direction : row;
+		align-items : baseline;
+	}
+
+	//	横配置、子要素が上辺下辺にフィットするようになる
+	&.layout_horizon_stretch
+	{
+		display : flex;
+		flex-direction : row;
+		align-items : stretch;
+	}
+
+	//	配置した要素間へのスペーサー
+	//	スペーサーを配置した部分は要素の間を埋めるように伸びる
+	&.layout_vertical,
+	&.layout_vertical_left,
+	&.layout_vertical_right,
+	&.layout_vertical_baseline,
+	&.layout_vertical_stretch
+	{
+		> .spacer
+		{
+			flex-grow : 1;
+			width : 100%;
+		}
+		> .noshrink
+		{
+			flex-shrink : 0;
+		}
+	}
+	&.layout_horizon,
+	&.layout_horizon_top,
+	&.layout_horizon_bottom,
+	&.layout_horizon_baseline,
+	&.layout_horizon_stretch
+	{
+		> .spacer
+		{
+			flex-grow : 1;
+			height : 100%;
+		}
+		> .noshrink
+		{
+			flex-shrink : 0;
+		}
+	}
+}
+
+/*
+--------------------------------------------------------------------------------
+タイトル
+
+	<h1 class="ui_heading"></h1>
+	<h2 class="ui_heading"></h2>
+	<h3 class="ui_heading"></h3>
+
+	見出しを表現する、h1が大見出し、h2は中見出し、h3は小見出しとする
+
+--------------------------------------------------------------------------------
+*/
+.ui_heading
+{
+	background-color : $col_base_back;
+	color : $col_base_fore;
+	font-weight : normal;
+
+	border : solid $col_dark_back;
+	border-width : 0 0 0 6px;
+	padding : 10px 12px;
+	margin-bottom : 20px;
+}
+h1.ui_heading
+{
+	font-size : 16px;
+}
+h2.ui_heading
+{
+	font-size : 14px;
+	padding : 6px 10px;
+}
+h3.ui_heading
+{
+	font-size : 12px;
+	padding : 4px 8px;
+}
+
+/*
+--------------------------------------------------------------------------------
+テキスト、テキストエリア
+
+	<input type="text" class="ui_text">
+	<input type="password" class="ui_text">
+	<textarea class="ui_text"></textarea>
+
+--------------------------------------------------------------------------------
+*/
+.ui_text
+{
+	padding : 10px;
+	font-size : 14px;
+	border : solid 1px $col_border;
+	border-radius : $radius_text;
+
+	&:not([readonly])
+	{
+		&:focus
+		{
+			border-color: $col_focus_back;
+		}
+	}
+	&[readonly]{ box-shadow: none; }
+
+	&:disabled
+	{
+		background-color : $col_disabled_back;
+		color : $col_disabled_fore;
+		cursor: not-allowed;
+	}
+
+	&.full
+	{
+		height : auto;
+	}
+}
+textarea.ui_text
+{
+	width : 100%;
+	height : 80px;
+	line-height : 140%;
+	resize : none;
+
+	&.resize_vertical
+	{
+		resize: vertical;
+	}
+	&.resize_horizon
+	{
+		resize: horizontal;
+	}
+	&.resize_full
+	{
+		resize: auto;
+	}
+}
+
+/*
+--------------------------------------------------------------------------------
+検索ボックス
+
+	<div class="ui_search">
+	 <input type="text" class="ui_text" placeholder="キーワードで検索">
+	 <button></button>
+	</div>
+
+--------------------------------------------------------------------------------
+*/
+.ui_search
+{
+	position : relative;
+	display : inline-block;
+
+	input[type=text]
+	{
+		width : 100%;
+		padding-right : 40px;
+		border-radius : $radius_text $radius_button $radius_button $radius_text;
+	}
+
+	button
+	{
+		-webkit-appearance: none;
+		appearance: none;
+		position : absolute;
+		right : 1px;
+		top : 1px;
+		bottom : 1px;
+		width : 40px;
+		-webkit-user-select : none;
+		user-select : none;
+		background-color: transparent;
+		background-image : url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iYmxhY2siIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMTUuNSAxNGgtLjc5bC0uMjgtLjI3QzE1LjQxIDEyLjU5IDE2IDExLjExIDE2IDkuNSAxNiA1LjkxIDEzLjA5IDMgOS41IDNTMyA1LjkxIDMgOS41IDUuOTEgMTYgOS41IDE2YzEuNjEgMCAzLjA5LS41OSA0LjIzLTEuNTdsLjI3LjI4di43OWw1IDQuOTlMMjAuNDkgMTlsLTQuOTktNXptLTYgMEM3LjAxIDE0IDUgMTEuOTkgNSA5LjVTNy4wMSA1IDkuNSA1IDE0IDcuMDEgMTQgOS41IDExLjk5IDE0IDkuNSAxNHoiLz48L3N2Zz4=');
+		background-size : 18px auto;
+		background-repeat : no-repeat;
+		background-position : 50% 50%;
+		cursor : pointer;
+		border: 0;
+		border-radius : 0 $radius_button $radius_button 0;
+
+		&:hover
+		{
+			background-color : $col_hover_back;
+			color : $col_hover_fore;
+		}
+		line-height : 100%;
+	}
+}
+
+/*
+--------------------------------------------------------------------------------
+ボタン
+
+	<button class="ui_button done">決定ボタン</button>
+	<button class="ui_button done" disabled>決定ボタンの無効状態</button>
+
+	<button class="ui_button done icon icon_star">アイコン付きボタン</button>
+	→ "icon_star" などは別途用意する
+
+	ボタン種類
+	・done				: 決定ボタン
+	・cancel / close	: キャンセルボタン、閉じるボタン
+	・info / detail		: 情報ボタン、詳細ボタン
+	・warn				: 警告ボタン
+	・danger			: 危険ボタン
+
+--------------------------------------------------------------------------------
+*/
+.ui_button
+{
+	display : inline-block;
+	padding : 12.5px 20px;
+	box-shadow : 0 1px 4px rgba(0,0,0,0.2);
+	text-align : center;
+	text-decoration : none;
+	font-size : 14px;
+	font-weight : normal;
+	-webkit-user-select : none;
+	user-select : none;
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+	background-color : transparent;
+	border : solid 1px transparent;
+	border-radius : $radius_button;
+	line-height : 100%;
+
+	-webkit-appearance : none;
+	appearance : none;
+
+	//	基本は折り返しなし、許可する場合はクラス付与
+	white-space : nowrap;
+	&.wrap_allow
+	{
+		white-space : normal;
+	}
+
+	//	アイコン付き
+	&.icon
+	{
+		background-repeat : no-repeat;
+		background-position : 10px 50%;
+		background-size : 24px 24px;
+		padding-left : 40px;
+
+		&.icon_star
+		{
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyIDE3LjI3TDE4LjE4IDIxbC0xLjY0LTcuMDNMMjIgOS4yNGwtNy4xOS0uNjFMMTIgMiA5LjE5IDguNjMgMiA5LjI0bDUuNDYgNC43M0w1LjgyIDIxeiIvPjwvc3ZnPg==');
+		}
+	}
+
+	//	フォーカス時
+	&:focus
+	{
+		outline-color: $col_focus_back;
+		outline-style: auto;
+		outline-width: 5px;
+		z-index: 1;
+	}
+
+	//	小さいボタン、リストの行などに挿入する想定
+	&.small
+	{
+		padding : 6px 12px;
+
+		&.icon
+		{
+			padding-left : 28px;
+			background-position : 8px 50%;
+			background-size : 18px 18px;
+		}
+	}
+
+	//	disableでない場合のエフェクト
+	&:not(:disabled)
+	{
+		&:hover
+		{
+			opacity : 0.8;
+		}
+	}
+
+	//	ボタン同士が隣り合う場合スペースを一定にする
+	& + .ui_button
+	{
+		margin-left: $spacer_small;
+	}
+
+	//	ボタン種別ごとの差分
+	&.done
+	{
+		background-color : $col_done_back;
+		color : $col_done_fore;
+	}
+	&.cancel, &.close
+	{
+		background-color : $col_cancel_back;
+		color : $col_cancel_fore;
+	}
+	&.info
+	{
+		background-color : $col_info_back;
+		color : $col_info_fore;
+	}
+	&.warn
+	{
+		background-color : $col_warn_back;
+		color : $col_warn_fore;
+	}
+	&.danger
+	{
+		background-color : $col_danger_back;
+		color : $col_danger_fore;
+	}
+	&:disabled
+	{
+		background-color : $col_disabled_back;
+		color : $col_disabled_fore;
+		cursor: not-allowed;
+
+		//	非活性時は影をなくす
+		box-shadow : none;
+	}
+}
+
+/*
+--------------------------------------------------------------------------------
+スイッチ、チェックボックス、ラジオボタンの共通スタイル
+
+	※個別のスタイルは別途定義されているので注意
+
+--------------------------------------------------------------------------------
+*/
+.ui_switch,
+.ui_checkbox,
+.ui_radio
+{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0;
+	background-color: $col_base_back;
+
+	&:focus
+	{
+		outline-color: $col_focus_back;
+		outline-style: auto;
+		outline-width: 5px;
+	}
+	& + label
+	{
+		cursor: pointer;
+	}
+	&:disabled
+	{
+		& + label
+		{
+			cursor: not-allowed;
+		}
+	}
+}
+.ui_checkbox,
+.ui_radio
+{
+	overflow: hidden;
+	width: 21px;
+	height: 21px;
+	margin: 2px 1px 3px;
+	cursor: pointer;
+	background-color: $col_base_back;
+	box-shadow: inset 0 0 0 1px rgba(14,16,20,0.16), inset 0 1px 2px 1px rgba(0,0,0,0.16), inset 0 0 4px 1px rgba(0,0,0,0.04);
+
+	&:checked
+	{
+		border-color: transparent;
+		background-color: $col_done_back;
+		box-shadow: inset 0 0 0 1px rgba(0,0,0,0.16), inset 0 0 0 2px rgba(255,255,255,0.04);
+	}
+
+	&:disabled
+	{
+		background-color: $col_disabled_back;
+		box-shadow: inset 0 0 0 1px rgba(14,16,20,0.2);
+		cursor: not-allowed;
+
+		&:checked
+		{
+			background-color: $col_done_back;
+		}
+	}
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+スイッチ
+
+	<input type="checkbox" class="ui_switch" checked>
+	<input type="checkbox" class="ui_switch">
+
+--------------------------------------------------------------------------------
+*/
+.ui_switch
+{
+	overflow: hidden;
+	width: 36px;
+	height: 20px;
+	margin: 1px;
+	cursor: pointer;
+	border-radius: 999px;
+	background-color: $col_disabled_back;
+	box-shadow: inset 0 0 0 1px rgba(14,16,20,0.16), inset 0 0 1px 1px rgba(0,0,0,0.02);
+	transition: all 0.2s ease;
+
+	&:checked
+	{
+		background-color: $col_done_back;
+
+		&::before
+		{
+			transform: translateX(100%);
+		}
+	}
+	&:disabled
+	{
+		cursor: not-allowed;
+		background-color: $col_disabled_back;
+
+		&:checked
+		{
+			background-color: $col_disabled_fore;
+		}
+	}
+	&::before
+	{
+		position: absolute;
+		display: block;
+		top: 2px;
+		left: 2px;
+		height: calc(100% - 4px);
+		padding-left: calc(50% - 2px);
+		border-radius: 999px;
+		background-color: $col_base_back;
+		box-shadow: 0 1px 1px 0 rgba(0,0,0,0.32), 0 0 2px 0 rgba(0,0,0,0.16), 0 0 4px 0 rgba(0,0,0,0.08);
+		transition: all 0.2s ease;
+		content: "";
+	}
+}
+//	IEのみ
+@media all and (-ms-high-contrast:none)
+{
+	.ui_switch
+	{
+		width: 21px;
+		background-color: transparent !important;
+		box-shadow: none;
+
+		&::before
+		{
+			display: none;
+		}
+	}
+}
+
+/*
+--------------------------------------------------------------------------------
+チェックボックス
+
+	<input type="checkbox" class="ui_checkbox" checked>
+	<input type="checkbox" class="ui_checkbox">
+
+--------------------------------------------------------------------------------
+*/
+.ui_checkbox
+{
+	border-radius: 0.48em;
+
+	&:checked
+	{
+		&::before
+		{
+			position: absolute;
+			display: block;
+			top: -3px;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-repeat: no-repeat;
+			background-position: center 0.16em;
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0id2hpdGUiIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTEwLjk3IDQuOTdhLjc1Ljc1IDAgMCAxIDEuMDcgMS4wNWwtMy45OSA0Ljk5YS43NS43NSAwIDAgMS0xLjA4LjAyTDQuMzI0IDguMzg0YS43NS43NSAwIDEgMSAxLjA2LTEuMDZsMi4wOTQgMi4wOTMgMy40NzMtNC40MjVhLjI2Ny4yNjcgMCAwIDEgLjAyLS4wMjJ6Ii8+PC9zdmc+');
+			background-size: 23px;
+			content: "";
+		}
+	}
+
+}
+
+/*
+--------------------------------------------------------------------------------
+ラジオボタン
+
+	<input type="radio" class="ui_radio" checked>
+	<input type="radio" class="ui_radio">
+
+--------------------------------------------------------------------------------
+*/
+.ui_radio
+{
+	border-radius: 50%;
+
+	&:checked
+	{
+		&::before
+		{
+			position: absolute;
+			display: block;
+			top: calc(50% - 5.5px);
+			left: calc(50% - 5.5px);
+			width: 11px;
+			height: 11px;
+			border-radius: 6px;
+			background-color: $col_base_back;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.24);
+			content: "";
+		}
+	}
+}
+
+/*
+--------------------------------------------------------------------------------
+セレクタ
+
+	<select class="ui_select">
+	 <option value="1">選択肢A</option>
+	 <option value="2">選択肢B</option>
+	</select>
+
+--------------------------------------------------------------------------------
+*/
+.ui_select
+{
+	-webkit-user-select: none;
+	user-select: none;
+	appearance: none;
+	-webkit-appearance: none;
+	padding: 11.5px;
+	padding-right: 32px;
+	border: 0;
+	border-radius: $radius_text;
+	background-color: $col_base_back;
+	background-repeat: no-repeat;
+	background-position: calc(100% - 8px) center;
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjYiIHZpZXdCb3g9IjAgMCA4IDYiPjxwYXRoIGZpbGw9IiM5YTllYTciIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTQuNDEgNS43OUw3LjkxNi43MzVBLjQ2MS40NjEgMCAwIDAgNy43OC4wNzkuNTA2LjUwNiAwIDAgMCA3LjUwOCAwSC40OTJBLjQ4My40ODMgMCAwIDAgMCAuNDczYS40Ni40NiAwIDAgMCAuMDgzLjI2MkwzLjU5IDUuNzlhLjUwNC41MDQgMCAwIDAgLjgxOCAweiIvPjwvc3ZnPg==');
+	background-size: auto 24%;
+	color : $col_base_fore;
+	outline: none;
+	box-shadow: inset 0 0 0 1px #d1d4da;
+	font-size: 14px;
+	cursor: pointer;
+
+	&:focus
+	{
+		border-color: $col_focus_back;
+		box-shadow: inset 0 0 0 2px rgba(255,255,255,0.5), inset 0 0 0 2px $col_focus_back;
+		background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjYiIHZpZXdCb3g9IjAgMCA4IDYiPjxwYXRoIGZpbGw9IiMwMDkxZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTQuNDEgNS43OUw3LjkxNi43MzVBLjQ2MS40NjEgMCAwIDAgNy43OC4wNzkuNTA2LjUwNiAwIDAgMCA3LjUwOCAwSC40OTJBLjQ4My40ODMgMCAwIDAgMCAuNDczYS40Ni40NiAwIDAgMCAuMDgzLjI2MkwzLjU5IDUuNzlhLjUwNC41MDQgMCAwIDAgLjgxOCAweiIvPjwvc3ZnPg==');
+	}
+
+	&:disabled
+	{
+		color : $col_disabled_fore;
+		background-color: $col_disabled_back;
+		background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjYiIHZpZXdCb3g9IjAgMCA4IDYiPjxwYXRoIGZpbGw9IiNkMWQ0ZGEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTQuNDEgNS43OUw3LjkxNi43MzVBLjQ2MS40NjEgMCAwIDAgNy43OC4wNzkuNTA2LjUwNiAwIDAgMCA3LjUwOCAwSC40OTJBLjQ4My40ODMgMCAwIDAgMCAuNDczYS40Ni40NiAwIDAgMCAuMDgzLjI2MkwzLjU5IDUuNzlhLjUwNC41MDQgMCAwIDAgLjgxOCAweiIvPjwvc3ZnPg==');
+		box-shadow: none;
+		cursor: not-allowed;
+	}
+}
+//	IEのみ
+@media all and (-ms-high-contrast:none)
+{
+	.ui_select
+	{
+		padding-right: 12px;
+		background-image: none;
+
+		&:focus
+		{
+			background-image: none;
+		}
+		&:disabled
+		{
+			background-image: none;
+		}
+	}
+}
+
+/*
+--------------------------------------------------------------------------------
+データリスト
+
+	<table class="ui_list full_horizon">
+	 <tr>
+	  <th class="sortable asc">ID</th>
+	  <th class="sortable">名前</th>
+	  <th class="sortable">登録日</th>
+	 </tr>
+	 <tr>
+	  <td class="nodata" colspan=3>データがありません</td>
+	 </tr>
+	</table>
+
+--------------------------------------------------------------------------------
+*/
+.ui_list
+{
+	tr
+	{
+		//	行の全カラムに対してクリック可能指定
+		&.clickable
+		{
+			cursor : pointer;
+
+			&:hover
+			{
+				background-color : $col_hover_back;
+				color : $col_hover_fore;
+			}
+			> td
+			{
+				background-color : transparent;
+			}
+		}
+
+		//	行全体をデータなしとする、基本的にcolspanで全セル結合する想定
+		&.nodata
+		{
+			> th, > td
+			{
+				padding-top : 40px;
+				padding-bottom : 40px;
+				text-align : center;
+			}
+		}
+
+		//	行の全カラムに対して枠線指定
+		&.border
+		{
+			//	全辺への枠線
+			> th, > td
+			{
+				border-width : 1px;
+			}
+
+			//	垂直方向 (上下) への枠線
+			&_vertical
+			{
+				> th, > td
+				{
+					border-top-width : 1px;
+					border-bottom-width : 1px;
+				}
+			}
+
+			//	水平方向 (左右) への枠線
+			&_horizon
+			{
+				> th, > td
+				{
+					border-right-width : 1px;
+					border-left-width : 1px;
+				}
+			}
+
+			//	各辺への枠線
+			&_top		{ > th, > td {border-top-width : 1px;} }
+			&_right		{ > th, > td {border-right-width : 1px;} }
+			&_bottom	{ > th, > td {border-bottom-width : 1px;} }
+			&_left		{ > th, > td {border-left-width : 1px;} }
+
+			//	指定辺以外の辺を描画
+			&_not_top		{ > th, > td {border-width : 1px; border-top-width : 0px;} }
+			&_not_right		{ > th, > td {border-width : 1px; border-right-width : 0px;} }
+			&_not_bottom	{ > th, > td {border-width : 1px; border-bottom-width : 0px;} }
+			&_not_left		{ > th, > td {border-width : 1px; border-left-width : 0px;} }
+		}
+
+		//	ボーダースタイル（デフォルトはsolid）
+		&.solid		{border-style : solid;}
+		&.dotted	{border-style : dotted;}
+		&.dashed	{border-style : dashed;}
+
+		//	行の全カラムに対して折り返し禁止
+		&.nowrap
+		{
+			> th, > td
+			{
+				white-space : nowrap;
+			}
+		}
+
+		//	行の全カラムに対して最小表示且つ、改行禁止指定
+		&.min
+		{
+			//	横幅をコンテンツに合わせて最小で表示する且つ、改行を禁止する
+			> th, > td
+			{
+				width : 1%;
+				white-space : nowrap;
+			}
+		}
+
+		//	th/td カラムの基本スタイル
+		th
+		{
+			padding : 6px 10px;
+			background-color : $col_dark_back;
+			color : $col_dark_fore;
+			border-style : solid;
+			border-color : $col_border_th;
+			font-weight : normal;
+			text-align : left;
+
+			&.transparent {background-color : transparent;}
+		}
+		td
+		{
+			padding : 10px;
+			background-color : $col_base_back;
+			color : $col_base_fore;
+			border-style : solid;
+			border-color : $col_border;
+			font-weight : normal;
+
+			&.transparent {background-color : transparent;}
+		}
+
+		//	th/td 共通のスタイル
+		th, td
+		{
+			vertical-align : middle;
+
+			//	並び替えキーを表すセル、クリックできる表現
+			&.sortable
+			{
+				background-repeat : no-repeat;
+				background-position : calc(100% - 24px) center;
+				padding-right: 64px !important;
+				cursor : pointer;
+				&:hover {opacity : 0.8;}
+
+				//	昇順
+				&.asc
+				{
+					background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNy40MSAxNS40MUwxMiAxMC44M2w0LjU5IDQuNThMMTggMTRsLTYtNi02IDZ6Ii8+PC9zdmc+');
+				}
+
+				//	降順
+				&.desc
+				{
+					background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik03LjQxIDguNTlMMTIgMTMuMTdsNC41OS00LjU4TDE4IDEwbC02IDYtNi02IDEuNDEtMS40MXoiLz48L3N2Zz4=');
+				}
+			}
+
+			//	クリック可能なセル
+			&.clickable
+			{
+				cursor : pointer;
+				&:hover
+				{
+					background-color : $col_hover_back;
+					color : $col_hover_fore;
+				}
+			}
+
+			//	データなしを表すセル、基本的にcolspanで全セル結合する想定
+			&.nodata
+			{
+				padding-top : 40px;
+				padding-bottom : 40px;
+				text-align : center;
+			}
+
+			//	枠線指定
+			&.border
+			{
+				//	全辺への枠線
+				border-width : 1px;
+				&_all {border-width : 1px;}
+
+				//	垂直方向の辺 (上下) への枠線
+				&_horizon {border-right-width : 1px; border-left-width : 1px;}
+
+				//	水平方向の辺 (左右) への枠線
+				&_vertical {border-top-width : 1px; border-bottom-width : 1px;}
+
+				//	各辺への枠線
+				&_top		{border-top-width : 1px;}
+				&_right		{border-right-width : 1px;}
+				&_bottom	{border-bottom-width : 1px;}
+				&_left		{border-left-width : 1px;}
+
+				//	指定辺以外の辺を描画
+				&_not_top		{border-width : 1px; border-top-width : 0;}
+				&_not_right		{border-width : 1px; border-right-width : 0;}
+				&_not_bottom	{border-width : 1px; border-bottom-width : 0;}
+				&_not_left		{border-width : 1px; border-left-width : 0;}
+			}
+
+			//	ボーダースタイル（デフォルトはsolid）
+			&.solid		{border-style : solid;}
+			&.dotted	{border-style : dotted;}
+			&.dashed	{border-style : dashed;}
+
+			//	折り返し禁止
+			&.nowrap
+			{
+				white-space : nowrap;
+			}
+
+			//	横幅をコンテンツに合わせて最小で表示する且つ、改行を禁止する
+			&.min
+			{
+				width : 1%;
+				white-space : nowrap;
+			}
+		}
+	}
+}
+
+/*
+--------------------------------------------------------------------------------
+プロパティリスト
+
+	<div class="ui_props">
+	 <div class="prop">
+	  <div>キー</div>
+	  <div>値</div>
+	 </div>
+	 <div class="prop">
+	  <div>キー</div>
+	  <div>値</div>
+	 </div>
+
+	 グループでリストを括る
+	 <div class="group">
+	  <div class="prop">
+	   <div>キー</div>
+	   <div>値</div>
+	  </div>
+	  <div class="prop">
+	   <div>キー</div>
+	   <div>値</div>
+	  </div>
+	 </div>
+	</div>
+
+--------------------------------------------------------------------------------
+*/
+.ui_props
+{
+	width : 100%;
+
+	//	パネルの中に埋め込む場合 (上下のボーダーが不要の場合)
+	&.inner
+	{
+		> .group:first-child
+		{
+			> .title
+			{
+				border-top-width : 0;
+			}
+		}
+		> .group:last-child
+		{
+			> .prop:last-child
+			{
+				border-bottom-width : 0;
+			}
+		}
+
+		> .prop:first-child
+		{
+			border-top-width : 0;
+		}
+		> .prop:last-child
+		{
+			border-bottom-width : 0;
+		}
+	}
+
+
+	//	プロパティグループ
+	.group
+	{
+		> .title
+		{
+			background-color : $col_light_back;
+			color : $col_light_fore;
+
+			border : solid $col_border;
+			border-width : 1px 0 0 0;
+
+			padding : $spacer_small $spacer;
+
+			//	ダーク配色
+			&.dark
+			{
+				background-color : $col_dark_back;
+				color : $col_dark_fore;
+			}
+
+			//	ライト配色
+			&.light
+			{
+				background-color : $col_light_back;
+				color : $col_light_fore;
+			}
+		}
+	}
+
+	//	プロパティ
+	.prop
+	{
+		display : flex;
+		flex-direction : row;
+		align-items : center;
+		width : 100%;
+
+		background-color : $col_base_back;
+		color : $col_base_fore;
+
+		border : solid $col_border;
+		border-width : 1px 0 0 0;
+
+		&:last-child
+		{
+			border-width : 1px 0 1px 0;
+		}
+
+		//	枠線の個別指定
+		&.border
+		{
+			//	枠線無し
+			&_none
+			{
+				border-width : 0;
+			}
+
+			//	各辺への枠線
+			&_top		{border-top-width : 1px;}
+			&_right		{border-right-width : 1px;}
+			&_bottom	{border-bottom-width : 1px;}
+			&_left		{border-left-width : 1px;}
+
+			//	指定辺以外の辺を描画
+			&_not_top		{border-width : 1px; border-top-width : 0px;}
+			&_not_right		{border-width : 1px; border-right-width : 0px;}
+			&_not_bottom	{border-width : 1px; border-bottom-width : 0px;}
+			&_not_left		{border-width : 1px; border-left-width : 0px;}
+		}
+
+		//	直下の div 要素がカラムとなる
+		> div
+		{
+			padding : $spacer;
+
+			//	ダーク配色
+			&.dark
+			{
+				background-color : $col_dark_back;
+				color : $col_dark_fore;
+			}
+
+			//	ライト配色
+			&.light
+			{
+				background-color : $col_light_back;
+				color : $col_light_fore;
+			}
+
+			//	最初のカラムはキー
+			&:first-child
+			{
+				width : $property_key_width;
+				padding : $spacer;
+				white-space : nowrap;
+			}
+
+			//	行を横幅一杯にする時、いずれかのカラムにfill指定
+			&.fill
+			{
+				flex-grow : 1;
+			}
+		}
+
+		//	クリック可能
+		&.clickable
+		{
+			cursor : pointer;
+			&:hover
+			{
+				background-color : $col_hover_back;
+				color : $col_hover_fore;
+			}
+		}
+	}
+
+	//	連続するグループがある場合、最下段のプロパティのボーダーが、
+	//	グループのボーダーと重ならないようにする
+	.group:not(:last-child)
+	{
+		.prop:last-child
+		{
+			border-bottom-width : 0;
+		}
+	}
+}
+
+/*
+--------------------------------------------------------------------------------
+タブ
+
+	<div class="ui_tab" id="tab_main">
+	 <div class="selected" for="tab_1">タブ1</div>
+	 <div for="tab_2">タブ2</div>
+	</div>
+	<div class="ui_tab_body selected" id="tab_1">
+	 タブ内容
+	</div>
+	<div class="ui_tab_body" id="tab_2">
+	 タブ内容
+	</div>
+
+	タブの右側にボタンなどを配置する場合、
+
+		<div class="ui_tab" id="tab_main">
+		 <div class="selected" for="tab_1">タブ1</div>
+		 <div for="tab_2">タブ2</div>
+		 <div class="spacer"></div>
+		 <div class="controls">
+		  右側エリア
+		 </div>
+		</div>
+
+	のように、spacerを挟んでcontrolsを配置する
+
+	ui_tab_bodyは標準で上方向以外にマージンが付与される。
+	マージンが不要の場合は、margin_zero 関連のクラスで除去する
+
+--------------------------------------------------------------------------------
+*/
+.ui_tab
+{
+	display : flex;
+	flex-direction : row;
+	align-items : flex-end;
+	width : 100%;
+
+	padding : 10px 20px 0 20px;
+	white-space : nowrap;
+
+	> div
+	{
+		cursor : pointer;
+		&:hover {opacity : 0.8;}
+
+		padding : 10px 20px;
+		border : solid $col_border;
+		border-width : 1px 1px 0 1px;
+
+		-webkit-user-select : none;
+		user-select : none;
+
+		//	選択中タブ
+		&.selected
+		{
+			background-color : $col_base_back;
+			color : $col_base_fore;
+		}
+
+		//	非選択タブの表示
+		&:not(.selected)
+		{
+			background-color : $col_light_back;
+			color : $col_light_fore;
+		}
+
+		//	スペーサーとコントロールエリア
+		&.spacer, &.controls
+		{
+			border : none;
+			background-color : transparent;
+			&:hover {opacity : 1;}
+			cursor : auto;
+			padding-left : 0;
+			padding-right : 0;
+
+			&.spacer
+			{
+				flex-grow : 1;
+			}
+		}
+
+		//	タブが隣り合う場合スペースを一定にする
+		& + div
+		{
+			margin-left: 10px;
+		}
+	}
+}
+.ui_tab_body
+{
+	border : solid 1px $col_border;
+	padding : $spacer;
+	margin : 0 $spacer $spacer $spacer;
+
+	background-color : $col_base_back;
+	color : $col_base_fore;
+
+	//	影付与
+	&.shadow
+	{
+		box-shadow : 0 1px 6px rgba(0,0,0,0.1);
+	}
+
+	//	未選択時は非表示
+	&:not(.selected)
+	{
+		display : none;
+	}
+}
+
+/*
+--------------------------------------------------------------------------------
+ダイアログ
+
+	<div class="ui_dialog">
+	 <div>
+	  <div class="header">ヘッダ</div>
+	  <div class="body">内容</div>
+	  <div class="footer">フッタ</div>
+	 </div>
+	</div>
+
+	※最初から表示する場合、"show"を付与
+	<div class="ui_dialog show">
+	....
+	</div>
+
+--------------------------------------------------------------------------------
+*/
+.ui_dialog
+{
+	//	背景のグレーパネル
+	pointer-events: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position : fixed;
+	top : 0;
+	left : 0;
+	right : 0;
+	bottom : 0;
+	width : 100%;
+	height : 100%;
+	overflow : hidden;
+	background-color : rgba(0,0,0,0.2);
+	opacity: 0;
+	z-index : 1000;
+	transition: opacity 0.3s ease;
+
+	//	非表示
+	&.show
+	{
+		pointer-events: auto;
+		opacity: 1;
+
+		> div
+		{
+			transform: translateY(0);
+		}
+	}
+
+	//	水平一杯に広げる (標準 full_horizon の拡張)
+	&.full_horizon
+	{
+		> div
+		{
+			max-width: 93.75%;
+		}
+	}
+
+	//	垂直一杯に広げる (標準 full_vertical の拡張)
+	&.full_vertical
+	{
+		> div
+		{
+			height : calc(100% - 80px);
+		}
+	}
+
+	//	ダイアログボックス
+	> div
+	{
+		background-color : $col_light_back;
+		box-shadow : 0 2px 100px 0 rgba(0,0,0,0.24), 0 1px 16px 0 rgba(0,0,0,0.72);
+		border-radius : $radius_dialog;
+		line-height : 140%;
+		width : 93.75%;
+		max-width : 500px;
+		max-height : calc(100% - 80px);
+
+		display : flex;
+		flex-direction : column;
+
+		transform: translateY(8px);
+		transition: transform 0.3s ease;
+
+		//	ヘッダ部
+		.header
+		{
+			padding : 10px;
+			background-color : $col_dark_back;
+			color : $col_dark_fore;
+			border-radius : $radius_dialog $radius_dialog 0 0;
+			font-size : 14px;
+		}
+
+		//	ボディ部
+		.body
+		{
+			background-color : $col_base_back;
+			color : $col_base_fore;
+			min-height : 120px;
+			overflow : auto;
+			font-size : 14px;
+			flex-grow : 1;
+		}
+
+		//	フッタ部
+		.footer
+		{
+			padding : 10px;
+			background-color : $col_light_back;
+			color : $col_light_fore;
+			text-align : center;
+			border-radius : 0 0 $radius_dialog $radius_dialog;
+
+			//	フッタのボタンは横幅を統一する
+			.ui_button
+			{
+				margin-top : 3px;
+				width : 120px;
+			}
+		}
+	}
+}
+
+
+/*
+--------------------------------------------------------------------------------
+トースト
+
+	<div class="ui_toast">
+	</div>
+
+	※最初から表示する場合、"show"を付与
+	<div class="ui_toast show">
+	....
+	</div>
+
+--------------------------------------------------------------------------------
+*/
+#ui_toast_container
+{
+	pointer-events: none;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100vw;
+	z-index: 9999;
+}
+.ui_toast
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	width: 100%;
+	height: 50px;
+	transform: translateY(4px);
+	transition: all 0.3s ease;
+
+	//	表示
+	&.show
+	{
+		transform: translateY(0);
+
+		> div
+		{
+			pointer-events: auto;
+			opacity: 1;
+		}
+	}
+
+	//	潰す
+	&.squash
+	{
+		height: 0;
+	}
+
+	> div
+	{
+		overflow: hidden;
+		max-width: calc(100% - 32px);
+		padding: 8px 16px;
+		border-radius: 999px;
+		background-color: #F8F9FA;
+		font-size: 12px;
+		color: #495057;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		box-shadow: 0 4px 4px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.12), 0 0 12px rgba(0,0,0,0.08);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		&.notice {}
+		&.warning
+		{
+			background-color : #fe0;
+			color : #440;
+		}
+		&.error
+		{
+			background-color : #b20;
+			color : white;
+		}
+	}
+}
+
+
+/*
+--------------------------------------------------------------------------------
+ページャー
+
+	中にNoリストがないパターン
+
+		<div class="ui_pager">
+		 <div class="label">
+		  <span>xx</span>件中、<span>xx</span>件目～<span>xx</span>件を表示
+		 </div>
+		 <div class="links">
+		  <a href="" class="prev disabled" title="前のxx件"></a>
+		  <a href="" class="next" title="次のxx件"></a>
+		 </div>
+		</div>
+
+	中にNoリストがあるパターン
+
+		<div class="ui_pager">
+		 <div class="label">
+		  <span>xx</span>件中、<span>xx</span>件目～<span>xx</span>件を表示
+		 </div>
+		 <div class="links">
+		  <a href="" class="prev disabled" title="前のxx件"></a>
+		  <div class="pages">
+		   <a href="">1</a>
+		   <a href="">2</a>
+		   <a href="" class="active">3</a>
+		   <a href="">4</a>
+		   <a href="">5</a>
+		  </div>
+		  <a href="" class="next" title="次のxx件"></a>
+		 </div>
+		</div>
+
+--------------------------------------------------------------------------------
+*/
+.ui_pager
+{
+	display : flex;
+	align-items : center;
+	justify-content : space-between;
+	color : $col_base_fore;
+
+	//	リンクリスト
+	.links
+	{
+		display : flex;
+		-webkit-user-select : none;
+		user-select : none;
+
+		//	無効時
+		.disabled
+		{
+			pointer-events : none;
+			opacity : 0.4;
+		}
+
+		//	次へ/前へ
+		> a
+		{
+			border-radius : $radius_button;
+			width : 32px;
+			height : 32px;
+
+			&.prev
+			{
+				background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDE1IDEyIj48cGF0aCBmaWxsPSIjNjE2NzczIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjEyIDcuMjIzbDIuNjY0IDIuNjk1Yy40NzIuNDczLjQ3NSAxLjI0Mi4wMDggMS43Mi0uNDcuNDgtMS4yMzUuNDgzLTEuNzEuMDA2TC4zNTEgNi44NkExLjIyNiAxLjIyNiAwIDAgMSAuMzUgNS4xNDJMNS4wNzUuMzYyQTEuMTk4IDEuMTk4IDAgMCAxIDYuNzgzLjM1NWwuMDgzLjA5MmMuMzg4LjQ3Ni4zNjQgMS4xOC0uMDc2IDEuNjNMNC4xMSA0Ljc4OGg5LjY4NGMuNjY3IDAgMS4yMDYuNTQ2IDEuMjA2IDEuMjE3IDAgLjY3Mi0uNTQgMS4yMTgtMS4yMDYgMS4yMTh6Ii8+PC9zdmc+');
+			}
+			&.next
+			{
+				background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDE1IDEyIj48cGF0aCBmaWxsPSIjNjE2NzczIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC44OCA3LjIyM0w4LjIxNiA5LjkxOGExLjIyNyAxLjIyNyAwIDAgMC0uMDA4IDEuNzJjLjQ3LjQ4IDEuMjM1LjQ4MyAxLjcxLjAwNmw0LjczLTQuNzg0Yy40NjktLjQ3NC40Ny0xLjI0My4wMDEtMS43MThMOS45MjUuMzYyQTEuMTk4IDEuMTk4IDAgMCAwIDguMjE3LjM1NWwtLjA4My4wOTJhMS4yMjggMS4yMjggMCAwIDAgLjA3NiAxLjYzbDIuNjggMi43MTJIMS4yMDZBMS4yMSAxLjIxIDAgMCAwIDAgNi4wMDVjMCAuNjcyLjU0IDEuMjE4IDEuMjA2IDEuMjE4eiIvPjwvc3ZnPg==');
+			}
+		}
+		.prev + .next
+		{
+			margin-left : $spacer;
+		}
+
+		//	リンク
+		a
+		{
+			position : relative;
+			display : inline-flex;
+			align-items : center;
+			justify-content : center;
+			width : 32px;
+			height : 32px;
+			border : 1px solid $col_base_back;
+			background-color : $col_light_back;
+			background-repeat : no-repeat;
+			background-position : center;
+			text-decoration : none;
+			color : $col_light_fore;
+			overflow : hidden;
+
+			//	hoverエフェクト用に上にブロックをかぶせる
+			&:before
+			{
+				position : absolute;
+				display : block;
+				top : 0;
+				left : 0;
+				right : 0;
+				bottom : 0;
+				background-color : #000;
+				opacity : 0;
+				content : "";
+			}
+			&:hover::before
+			{
+				opacity : 0.08;
+			}
+			&:active:before
+			{
+				background-color : #fff;
+				opacity : 0.32;
+			}
+
+			//	選択中表示
+			&.active
+			{
+				pointer-events : none;
+				background-color : $col_focus_back;
+				color : $col_focus_fore;
+			}
+		}
+
+
+		//	ページリスト部分
+		.pages
+		{
+			display : flex;
+			margin : 0 $spacer;
+
+			a
+			{
+				//	最初と最後のページNoは角丸にする
+				&:first-child
+				{
+					border-top-left-radius : $radius_button;
+					border-bottom-left-radius : $radius_button;
+				}
+				&:last-child
+				{
+					border-top-right-radius : $radius_button;
+					border-bottom-right-radius : $radius_button;
+				}
+
+			}
+		}
+	}
+
+}
+
+/*
+--------------------------------------------------------------------------------
+セパレータ
+
+	<hr class="ui_separator">
+
+--------------------------------------------------------------------------------
+*/
+.ui_separator
+{
+	width: 100%;
+	height: 1px;
+	background-color: $col_base_back;
+	opacity: 0.1;
+}

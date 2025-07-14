@@ -1,0 +1,28 @@
+2025/07/14 08:22:09 [error] [database/index] E_ERROR : /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_db_mysqli.php (71) Uncaught mysqli_sql_exception: Access denied for user 'xxx'@'localhost' (using password: YES) in /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_db_mysqli.php:71
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_db_mysqli.php(71): mysqli_connect('localhost', 'xxx', Object(SensitiveParameterValue))
+#1 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_db_mysqli.php(17): crow_db_mysqli->connect('writer')
+#2 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(242): crow_db_mysqli->__construct('writer')
+#3 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(217): crow::create_hdb('writer')
+#4 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(196): crow::get_hdb_writer()
+#5 /Applications/XAMPP/xamppfiles/crow3_sfa/app/classes/crowmin/module_crowmin_database.php(1191): crow::get_hdb()
+#6 /Applications/XAMPP/xamppfiles/crow3_sfa/app/classes/crowmin/module_crowmin_database.php(27): module_crowmin_database->reload_design_file()
+#7 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1325): module_crowmin_database->action_index()
+#8 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(133): crow->dispatch()
+#9 /Applications/XAMPP/xamppfiles/htdocs/sfa/crowmin/index.php(60): crow::run('crowmin', Array)
+#10 {main}
+  thrown
+2025/07/14 08:22:09 [error] [database/index] E_ERROR : /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_db_mysqli.php (71) Uncaught mysqli_sql_exception: Access denied for user 'xxx'@'localhost' (using password: YES) in /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_db_mysqli.php:71
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_db_mysqli.php(71): mysqli_connect('localhost', 'xxx', Object(SensitiveParameterValue))
+#1 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_db_mysqli.php(17): crow_db_mysqli->connect('writer')
+#2 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(242): crow_db_mysqli->__construct('writer')
+#3 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(217): crow::create_hdb('writer')
+#4 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(196): crow::get_hdb_writer()
+#5 /Applications/XAMPP/xamppfiles/crow3_sfa/app/classes/crowmin/module_crowmin_database.php(1191): crow::get_hdb()
+#6 /Applications/XAMPP/xamppfiles/crow3_sfa/app/classes/crowmin/module_crowmin_database.php(27): module_crowmin_database->reload_design_file()
+#7 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(1325): module_crowmin_database->action_index()
+#8 /Applications/XAMPP/xamppfiles/crow3_sfa/engine/kernel/crow_core.php(133): crow->dispatch()
+#9 /Applications/XAMPP/xamppfiles/htdocs/sfa/crowmin/index.php(60): crow::run('crowmin', Array)
+#10 {main}
+  thrown

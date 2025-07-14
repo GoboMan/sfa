@@ -1,0 +1,56 @@
+{
+	"property"	: {
+		"file_name"		: "サンプルテーブル定義書",
+		"subtitle"		: "サンプル",
+		"keywords"		: "キーワード",
+		"creator"		: "作成者",
+		"manager"		: "管理者",
+		"company"		: "Asian Bridge",
+		"category"		: "DB設計資料",
+		"comment"		: "テーブル定義書"
+	},
+	"header"	: {
+		"document_name"	: "テーブル定義書ヘッダー",
+		"project_name"	: "プロジェクト名"
+	},
+	"basic_sheet"	: {
+		"cover_page"		: "表紙",
+		"revize_history"	: "改版履歴",
+		"tables"			: "テーブル一覧"
+	},
+	"style" : {
+		"font"			: "游ゴシック",
+		"font_size"		: "11",
+		"font_bold"		: "1",
+		"column_width"	: "2.5",
+		"column_height"	: "20",
+		"border_type"	: "allBorders",
+		"border_style"	: "thin",
+		"border_color"	: {
+			"rgb" : "000000"
+		},
+		"cell"	: {
+			"width"		: "2.5",
+			"height"	: "20"
+		},
+		"fill_type"		: "solid",
+		"fill_color"	: {
+			"rgb"	: "d0cece"
+		},
+		"border"	: {
+			"type"	: "allBorders",
+			"style"	: "thin",
+			"color"	: "#000000"
+		},
+		"fill"	: {
+			"type"	: "solid",
+			"color"	: "#d0cece"
+		}
+	},
+	"column_option" : {
+		"not_null" : {
+			"only_must" : "0"
+		}
+	}
+}
+

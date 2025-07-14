@@ -1,0 +1,192 @@
+{
+	"system_info"	: {
+		"modules"	: "モジュール一覧",
+		"actions"	: "アクション一覧",
+		"routings"	: "URL一覧"
+	},
+	"page_header"	: {
+		"client"	: {
+			"name"	: "クライアント名",
+			"val"	: "株式会社xxx様"
+		},
+		"project"	: {
+			"name"	: "プロジェクト名",
+			"val"	: "プロジェクト名"
+		},
+		"document"	: {
+			"name"	: "ドキュメント名",
+			"val"	: "DB定義書"
+		},
+		"entrustment": {
+			"name"	: "受託者",
+			"val"	: "株式会社Asian Bridge"
+		}
+	},
+	"property" : {
+		"title"	: {
+			"name"	: "タイトル",
+			"val"	: "DB仕様書"
+		},
+		"subject"	: {
+			"name"	: "件名",
+			"val"	: ""
+		},
+		"keywords"	: {
+			"name"	: "タグ",
+			"val"	: ""
+		},
+		"category"	: {
+			"name"	: "分類項目",
+			"val"	: "DB仕様書"
+		},
+		"description" : {
+			"name"	: "コメント",
+			"val"	: ""
+		},
+		"creator"	: {
+			"name"	: "作成者",
+			"val"	: "undefined"
+		},
+		"last_modified_by" : {
+			"name"	: "更新者",
+			"val"	: ""
+		},
+		"company"	: {
+			"name"	: "会社",
+			"val"	: "Asian Bridge"
+		},
+		"revize"	: {
+			"name"	: "改訂番号",
+			"val"	: "0"
+		},
+		"version"	: {
+			"name"	: "バージョン番号",
+			"val"	: "0"
+		},
+		"manager"	: {
+			"name"	: "マネージャー",
+			"val"	: "undefined"
+		}
+	},
+	"#comment" : {
+		"#comment" : "未使用設定値"
+	},
+	"history" : ["no","date","editer","message"],
+	"#comment"	: "固定の出力シート",
+	"basics" : {
+		"cover_page"		: "表紙",
+		"history_page"		: "改版履歴",
+		"table_list_page"	: "テーブル一覧"
+	},
+	"#comment"	: "",
+	"page_table" : {
+		"overview"		: "概要",
+		"fields_title"	: "フィールド定義",
+		"fields"		: ["No.","論理名","物理名","型","サイズ","PK","AI","NULL","デフォルト","備考"],
+		"index_title"	: "インデックス",
+		"indexes"		: ["No.","インデックス名","種別","キー1","キー2","キー3","キー4"]
+	},
+	"#comment"	: "スタイル",
+	"style"		: {
+		"font"		: {
+			"type"	: "游ゴシック",
+			"size"	: "11",
+			"bold"	: "1"
+		},
+		"cell"	: {
+			"width"		: "2.5",
+			"height"	: "20"
+		},
+		"border"	: {
+			"type"	: "allBorders",
+			"style"	: "thin",
+			"color"	: "#000000"
+		},
+		"fill"	: {
+			"type"	: "solid",
+			"color"	: "#d0cece"
+		}
+	},
+	"sheet_property" : {
+		"header" : {
+			"1":"2"
+		},
+		"cover_page" : {
+			"1":"2"
+		},
+		"history_page" : {
+			"1":"2"
+		},
+		"table_list_page" : {
+			"1":"2"
+		}
+	},
+	"#comment"	: "セルの結合位置などのレイアウト指定",
+	"layout"	: {
+		"focus" : "A1",
+		"common" : {
+			"header" : {
+				"rows" : ["1","2"],
+				"cols" : ["A,H","I,P","Q,AB","AC,AN","AO,BG"],
+				"vals" : ["テーブル論理名","テーブル物理名"]
+			}
+		},
+		"cover_page" : {
+			"title" : {
+				"col" : "D,AJ",
+				"row" : ["10,12", "13,15", "16,18", "35,37"]
+			},
+			"printarea" : "A1:AN40"
+		},
+		"history_page" : {
+			"title"	: "A4",
+			"content" : {
+				"begin"	: "6",
+				"cols"	: ["A,D","E,BG"],
+				"header": ["更新日時","内容"]
+			},
+			"printarea" : "A1:BG%end_row%"
+		},
+		"table_list_page" : {
+			"title" : {
+				"begin"	: "4",
+				"col"	: "A,BG"
+			},
+			"definition" : {
+				"cols"	: ["B,C","D,M","N,W"],
+				"header" : ["No.","論理名","物理名"]
+			},
+			"printarea" : "A1:BG%end_row%"
+		},
+		"table_page" : {
+			"overview" : {
+				"title" : {
+					"cell" : "A4:BG4"
+				},
+				"content" : {
+					"cell" : "A5:BG5"
+				},
+				"row_height" : "60",
+				"line" : "5"
+			},
+			"fields" : {
+				"title" : {
+					"col"	: "A,BG"
+				},
+				"content" : {
+					"cols" : ["B,C","D,M","N,W","X,AB","AC,AE","AF,AG","AH,AI","AJ,AK","AL,AO","AP,BF"]
+				},
+				"row_height" : "18.75"
+			},
+			"index" : {
+				"title" : {
+					"col"	: "A,BG"
+				},
+				"content" : {
+					"cols" : ["B,C","D,M","N,R","S,AB","AC,AL","AM,AV","AW,BF"]
+				}
+			},
+			"printarea" : "A1:BG%end_row%"
+		}
+	}
+}

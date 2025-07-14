@@ -1,0 +1,12 @@
+//
+//	output/logs/配下のクリア設定
+//
+
+//	ログの保持日数を設定
+sweep.period = 30
+
+//	クリアするログの名称
+//	xxxx_yyyymmdd.log
+//	の、xxxxの部分をカンマ区切りで指定する
+sweep.name = access,sql,system
+

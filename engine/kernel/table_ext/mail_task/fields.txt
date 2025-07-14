@@ -1,0 +1,34 @@
+;
+; メールタスク用の追加フィールドを定義する
+;
+name,					varcrypt, 255,				# 送信元表示名
+from,					mailcrypt,					# 送信元メールアドレス
+to,						crypt,						# 送信先Toメールアドレス,配列あり
+cc,						crypt,						# 送信先Ccメールアドレス,配列あり
+bcc,					crypt,						# 送信先Bccメールアドレス,配列あり
+mimetype,				tinyint,					# 送信形式
+{
+	type_text,	1,									# テキスト
+	type_html, 2,									# HTML
+}
+reply_to,				crypt,						# Reply-To
+return_path,			crypt,						# Return-Path
+subject,				varcrypt, 255,				# 送信タイトル
+body,					bigcrypt,					# 送信内容,テンプレートあり
+storage_ids,			varchar, 255,				# 添付ファイルID,コンマ区切り複数指定可
+error_code,				varchar, 16,				# エラーコード
+error_reason,			text,						# エラー内容,返却エラーを可能な限りそのまま格納して後で原因がわかるようにする
+error_detected,			boolean,					# エラー検出,エラー検出バッチによって送信後に非同期で更新される可能性がある
+task_status = self::stat_queued, tinyint,	# タスクステータス
+{
+	stat_queued,	1,					# 処理待ち
+	stat_running,	2,					# 処理中
+	stat_failed,	3,					# 処理失敗
+	stat_succeeded,	4,					# 処理成功
+}
+task_queued_date = time(),	datetime,	# タスク作成日
+task_schedule_date,			datetime,	# タスク実行予定日時
+task_started_date,			datetime,	# タスク開始日時
+task_ended_date,			datetime,	# タスク完了日時, 失敗時か成功時に格納される
+task_retry,					int,		# リトライ回数, 初回は0でリトライ毎にカウントアップ
+task_priority,				tinyint,	# 優先順位, 大きい数字が優先度高く、先に取得される

@@ -1,0 +1,56 @@
+//	ドキュメント背景色
+$col_document_back	: #ebeef0;
+
+//	基本色
+$col_base_back		: #fff;
+$col_base_fore		: #444;
+
+//	濃い色
+$col_dark_back		: #024;
+$col_dark_fore		: #fff;
+
+//	薄い色
+$col_light_back		: #f2f2f2;
+$col_light_fore		: #444;
+
+//	データセルのhover色
+$col_hover_back		: #fcfcfc;
+$col_hover_fore		: #888;
+
+//	確定 / キャンセル / 情報 / 警告 / 危険 / 無効
+$col_done_back		: #080;
+$col_done_fore		: #fff;
+$col_cancel_back	: #888;
+$col_cancel_fore	: #fff;
+$col_info_back		: #44a;
+$col_info_fore		: #fff;
+$col_warn_back		: #c42;
+$col_warn_fore		: #fff;
+$col_danger_back	: #f20;
+$col_danger_fore	: #fff;
+$col_disabled_back	: #eee;
+$col_disabled_fore	: #888;
+
+//	ボーダー色
+$col_border			: #ccc;
+$col_border_th		: $col_dark_back;
+
+//	フォーカス色
+$col_focus_back		: rgba(0, 145, 255, 0.8);
+$col_focus_fore		: #fff;
+
+//	角の丸み
+$radius_text		: 4px;
+$radius_button		: 4px;
+$radius_panel		: 10px;
+$radius_dialog		: 10px;
+
+//	マージン、パディングのサイズ
+$spacer				: 10px;
+$spacer_small		: 6px;
+$spacer_large		: 20px;
+$spacer_xlarge		: 40px;
+
+//	プロパティテーブルのキーの横幅
+$property_key_width	: 200px;
+

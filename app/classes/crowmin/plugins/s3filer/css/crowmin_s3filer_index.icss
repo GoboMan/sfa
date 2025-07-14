@@ -1,0 +1,165 @@
+#env
+{
+	background : #f2f2ff;
+	padding : 20px 0;
+	display : flex;
+	flex-direction : row;
+	align-items : center;
+	border : solid #ccc;
+	border-width : 0 0 1px 0;
+
+	span
+	{
+		padding-left:10px;
+	}
+}
+
+#path
+{
+	position : relative;
+
+	[name=path]
+	{
+		border : none;
+		width : 100%;
+		padding-left : 80px;
+
+		&:focus
+		{
+			background-color : #ffe;
+		}
+	}
+
+	.prompt
+	{
+		position : absolute;
+		left : 10px;
+		top : 6px;
+		width : 60px;
+		height : 24px;
+		line-height : 24px;
+		border-radius : 12px;
+		text-align : center;
+		background : #024;
+		color : white;
+	}
+}
+
+#uploader
+{
+	text-align : right;
+	padding : 10px;
+}
+
+#data
+{
+	width : 100%;
+	border-collapse : collapse;
+
+	th, td
+	{
+		text-align : left;
+		font-size : 14px;
+		border : solid 1px #ccc;
+		padding : 8px;
+		vertical-align : middle;
+
+		&.min
+		{
+			width : 1%;
+			white-space : nowrap;
+		}
+
+		&.left {text-align : left;}
+		&.center {text-align : center;}
+		&.right {text-align : right;}
+
+		&.noborder-left
+		{
+			border-left-width : 0;
+		}
+		&.noborder-right
+		{
+			border-right-width : 0;
+		}
+	}
+	th { background-color:#f2f2f2; font-weight:bold; }
+
+	tr
+	{
+		&.dir
+		{
+			cursor : pointer;
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iYmxhY2siIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMTAgNEg0Yy0xLjEgMC0xLjk5LjktMS45OSAyTDIgMThjMCAxLjEuOSAyIDIgMmgxNmMxLjEgMCAyLS45IDItMlY4YzAtMS4xLS45LTItMi0yaC04bC0yLTJ6Ii8+PC9zdmc+');
+			background-repeat : no-repeat;
+			background-position : 10px 8px;
+			background-size : 24px;
+
+			td:first-child
+			{
+				padding-left : 48px;
+			}
+			&:hover
+			{
+				background-color : #ddf2dd;
+			}
+		}
+		&.file
+		{
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9ImJsYWNrIiB3aWR0aD0iNDhweCIgaGVpZ2h0PSI0OHB4Ij48Zz48cmVjdCBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiB3aWR0aD0iMjQiLz48Zz48cGF0aCBkPSJNMTksNXYxNEg1VjVIMTkgTTE5LDNINUMzLjksMywzLDMuOSwzLDV2MTRjMCwxLjEsMC45LDIsMiwyaDE0YzEuMSwwLDItMC45LDItMlY1QzIxLDMuOSwyMC4xLDMsMTksM0wxOSwzeiIvPjwvZz48cGF0aCBkPSJNMTQsMTdIN3YtMmg3VjE3eiBNMTcsMTNIN3YtMmgxMFYxM3ogTTE3LDlIN1Y3aDEwVjl6Ii8+PC9nPjwvc3ZnPg==');
+			background-repeat : no-repeat;
+			background-position : 10px 10px;
+			background-size : 24px;
+
+			td:first-child
+			{
+				padding-left : 48px;
+			}
+		}
+	}
+}
+
+.button_trash
+{
+	cursor : pointer;
+	border : solid 1px #000;
+	border-radius : 24px;
+	width : 24px;
+	height : 24px;
+
+	background-color : transparent;
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iYmxhY2siIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMCAwaDI0djI0SDBWMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNiAxOWMwIDEuMS45IDIgMiAyaDhjMS4xIDAgMi0uOSAyLTJWN0g2djEyem0yLjQ2LTcuMTJsMS40MS0xLjQxTDEyIDEyLjU5bDIuMTItMi4xMiAxLjQxIDEuNDFMMTMuNDEgMTRsMi4xMiAyLjEyLTEuNDEgMS40MUwxMiAxNS40MWwtMi4xMiAyLjEyLTEuNDEtMS40MUwxMC41OSAxNGwtMi4xMy0yLjEyek0xNS41IDRsLTEtMWgtNWwtMSAxSDV2MmgxNFY0eiIvPjwvc3ZnPg==');
+	background-repeat : no-repeat;
+	background-position : 50% 50%;
+	background-size : 20px;
+
+	&:hover
+	{
+		opacity : 0.8;
+		background-color : #ffdddd;
+		border-color : #c66;
+	}
+}
+
+.button_download
+{
+	cursor : pointer;
+	border : solid 1px #000;
+	border-radius : 24px;
+	width : 24px;
+	height : 24px;
+
+	background-color : transparent;
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iYmxhY2siIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMTkgOWgtNFYzSDl2Nkg1bDcgNyA3LTd6TTUgMTh2MmgxNHYtMkg1eiIvPjwvc3ZnPg==');
+	background-repeat : no-repeat;
+	background-position : 50% 50%;
+	background-size : 20px;
+
+	&:hover
+	{
+		opacity : 0.8;
+		background-color : #ddf2dd;
+		border-color : #4a4;
+	}
+}
+

@@ -1,0 +1,528 @@
+2025/07/14 08:20:47 method[GET] crow[front/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+
+2025/07/14 08:20:47 method[GET] crow[front/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/
+
+	crow:_js_/top/index
+
+2025/07/14 08:22:07 method[GET] crow[crowmin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+
+2025/07/14 08:22:07 method[GET] crow[crowmin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:_js_/top/index
+
+2025/07/14 08:22:09 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:database
+
+2025/07/14 08:22:09 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:database
+
+2025/07/14 08:23:40 method[GET] crow[front/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+
+2025/07/14 08:23:41 method[GET] crow[front/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/
+
+	crow:_js_/top/index
+
+2025/07/14 08:23:41 method[GET] crow[crowmin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+
+2025/07/14 08:23:42 method[GET] crow[crowmin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:_js_/top/index
+
+2025/07/14 08:23:43 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:database
+
+2025/07/14 08:23:43 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:database
+
+2025/07/14 08:23:44 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 08:23:46 method[GET] crow[crowmin/database/drop_table]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/drop_table
+	table:entity
+
+2025/07/14 08:23:46 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 08:23:46 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 08:23:48 method[GET] crow[crowmin/database/drop_table]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/drop_table
+	table:position
+
+2025/07/14 08:23:48 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 08:23:48 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 08:23:50 method[GET] crow[crowmin/database/drop_table]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/drop_table
+	table:project
+
+2025/07/14 08:23:50 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 08:23:50 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 08:23:52 method[GET] crow[crowmin/database/drop_table]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/drop_table
+	table:skill
+
+2025/07/14 08:23:52 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 08:23:52 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 08:23:53 method[GET] crow[crowmin/database/drop_table]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/drop_table
+	table:workforce
+
+2025/07/14 08:23:53 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 08:23:54 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 08:23:56 method[GET] crow[crowmin/database/create_table]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/create_table
+	table:admin
+
+2025/07/14 08:23:56 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 08:23:56 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 08:23:58 method[GET] crow[crowmin/database/create_table]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/create_table
+	table:xxx_session
+
+2025/07/14 08:23:58 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 08:23:58 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 08:24:21 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 08:24:21 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 08:24:24 method[GET] crow[crowmin/database/drop_table]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/drop_table
+	table:xxx_session
+
+2025/07/14 08:24:24 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 08:24:25 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 08:24:29 method[GET] crow[crowmin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+
+2025/07/14 08:24:30 method[GET] crow[crowmin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:_js_/top/index
+
+2025/07/14 08:24:31 method[GET] crow[front/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+
+2025/07/14 08:24:31 method[GET] crow[front/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/
+
+	crow:_js_/top/index
+
+2025/07/14 10:02:02 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 10:02:02 method[GET] crow[crowmin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:auth
+
+2025/07/14 10:02:03 method[GET] crow[crowmin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 11:28:16 method[GET] crow[crowmin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:auth
+
+2025/07/14 11:28:17 method[GET] crow[crowmin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 17:56:48 method[GET] crow[front/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+
+2025/07/14 17:56:49 method[GET] crow[front/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/
+
+	crow:_js_/top/index
+
+2025/07/14 18:00:12 method[GET] crow[crowmin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:auth
+
+2025/07/14 18:00:13 method[GET] crow[crowmin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 18:04:37 method[POST] crow[crowmin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/auth
+
+	crow:auth
+	crowmin_token:69126ecb595975e701d100e8bdae3f5b
+	login_id:user
+
+2025/07/14 18:04:37 method[GET] crow[crowmin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/auth
+
+
+2025/07/14 18:04:38 method[GET] crow[crowmin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:_js_/top/index
+
+2025/07/14 18:04:39 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:database
+
+2025/07/14 18:04:39 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:database
+
+2025/07/14 18:04:39 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 18:04:42 method[GET] crow[crowmin/database/list]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/list
+	table:admin
+
+2025/07/14 18:04:42 method[GET] crow[crowmin/database/list]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database/list?table=admin
+
+	crow:_js_/database/list
+
+2025/07/14 18:04:49 method[POST] crow[crowmin/database/add]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database/list?table=admin
+
+	crow:database/add
+	crow_db_table_name:admin
+	login_id:root
+	deleted:0
+	crowmin_token:69126ecb595975e701d100e8bdae3f5b
+
+2025/07/14 18:04:49 method[GET] crow[crowmin/database/list]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database/list?table=admin
+
+	crow:database/list
+	table:admin
+	page:1
+
+2025/07/14 18:04:50 method[GET] crow[crowmin/database/list]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database/list?table=admin&page=1
+
+	crow:_js_/database/list
+
+2025/07/14 21:54:25 method[GET] crow[crowmin/database/list]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database/list?table=admin
+
+	crow:database/list
+	table:admin
+	page:1
+
+2025/07/14 21:54:25 method[GET] crow[crowmin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database/list?table=admin
+
+	crow:auth
+
+2025/07/14 21:54:26 method[GET] crow[crowmin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 21:54:31 method[POST] crow[crowmin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/auth
+
+	crow:auth
+	crowmin_token:57ef3e16e2215259c80ea320b338e566
+	login_id:user
+
+2025/07/14 21:54:31 method[GET] crow[crowmin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/auth
+
+
+2025/07/14 21:54:31 method[GET] crow[crowmin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:_js_/top/index
+
+2025/07/14 21:54:32 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:database
+
+2025/07/14 21:54:32 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/
+
+	crow:database
+
+2025/07/14 21:54:33 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 21:54:37 method[GET] crow[crowmin/database/create_field]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/create_field
+	table:user
+	field:email
+
+2025/07/14 21:54:37 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 21:54:37 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 21:54:39 method[GET] crow[crowmin/database/delete_field]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/delete_field
+	table:user
+	field:slug
+
+2025/07/14 21:54:39 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 21:54:40 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 21:54:42 method[GET] crow[crowmin/database/delete_field]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database/delete_field
+	table:user
+	field:gender
+
+2025/07/14 21:54:42 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 21:54:42 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 21:55:19 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 21:55:20 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+
+2025/07/14 22:18:18 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:database
+
+2025/07/14 22:18:18 method[GET] crow[crowmin/database/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/crowmin/database
+
+	crow:_js_/database/index
+

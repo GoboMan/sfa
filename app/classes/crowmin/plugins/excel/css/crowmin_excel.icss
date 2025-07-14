@@ -1,0 +1,367 @@
+//	ペイン
+*
+{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+#pane_frame
+{
+	border-collapse : collapse;
+	width : 100%;
+	height : 100%;
+}
+#pane_left
+{
+	width : 160px;
+	background : #f2f2f2;
+	vertical-align : top;
+	border : solid #ccc;
+	border-width : 0 1px 0 0;
+	font-size : 12px;
+
+	.row
+	{
+		width : 160px;
+		box-sizing : border-box;
+		padding : 8px 10px;
+	}
+	.row.section
+	{
+		background : #ccc;
+		color : #002;
+	}
+	.row.item
+	{
+		background : #f2f2f2;
+		color : #002;
+		border-style : solid;
+		border-width : 1px 0;
+		border-color : #fff #ccc #ccc #fff;
+		cursor : pointer;
+	}
+	.row.item:hover
+	{
+		background : #446;
+		color : #ddf;
+	}
+	.row.item.active
+	{
+		background : #ddf;
+		color : #444;
+		border-color : #ddf #ccc #ccc #ccc;
+	}
+	.row.disable
+	{
+		background : #f2f2f2;
+		color : #aaa;
+		border-style : solid;
+		border-width : 1px 0;
+		border-color : #fff #ccc #ccc #fff;
+	}
+	.row.disable:after
+	{
+		content : '!';
+		color : #f44;
+		font-weight : bold;
+		margin-left : 10px;
+	}
+}
+#pane_right
+{
+	padding : 0 10px;
+	vertical-align : top;
+}
+//	ボタン
+.ui_btn
+{
+	text-decoration: none;
+	&:hover
+	{
+		opacity : 0.8;
+	}
+	&:active
+	{
+	//	opacity : 0.4;
+	}
+	&.active
+	{
+		opacity : 0.4;
+	}
+}
+
+.darkblue
+{
+	background-color : #024;
+}
+
+
+//	Excel画面コンテンツ領域
+#excel_wrap
+{
+	font-size : 16px;
+}
+//	タイトルとボタン領域
+#excel_header
+{
+
+}
+//	ドキュメント設定、改版履歴領域
+#excel_block_box
+{
+	margin-top : 10px;
+	display : flex;
+	flex-direction : row;
+	flex-wrap : nowrap;
+}
+
+.excel_block
+{
+	white-space : nowrap;
+	min-width : 48%;
+//	max-width : 50%;
+
+	&.left
+	{
+	//	background-color : red;
+		margin-right : 20px;
+	}
+	&.right
+	{
+	//	background-color : green;
+	}
+}
+#pane_right
+{
+	.hidden
+	{
+		display : none;
+	}
+
+	table
+	{
+		width : 100%;
+		white-space : nowrap;
+	
+		tr
+		{
+			height : 40px;
+		}
+		td, th
+		{
+			vertical-align: middle;
+			padding-left : 10px;
+		}
+	}
+}
+.pane_title
+{
+	background-color : #024;
+	color : #FFF;
+	font-weight : bold;
+	text-align : left;
+
+	.table_header
+	{
+		padding : 6px;
+		padding-left : 20px;
+	}
+}
+
+.input_box
+{
+	height : 28px;
+	border-radius : 4px;
+	font-size : 16px;
+	padding-left : 8px;
+	border : solid 1px #888;
+	width : 100%;
+
+	&.focused
+	{
+		border : solid 2px #0164AA;
+	//	background-color : #C8F1FA;
+	}
+	&.prop
+	{
+	//	min-width : 300px;
+	}
+	&.editer
+	{
+		width : 140px;
+	}
+	&.message
+	{
+	//	min-width : 200px;
+	}
+
+	&.hist
+	{
+		height: 100px;
+	}
+}
+.table_checked
+{
+	background-color : #ccc;
+//	color : #FFF;
+}
+
+//	ドキュメント設定
+#excel_info_area
+{
+	table
+	{
+		border : solid 1px #888;
+
+		.cols
+		{
+			&.first
+			{
+				padding-left : 20px;
+				width : 100px;
+			}
+			&.second
+			{
+				padding-left : 20px;
+				padding-right : 10px;
+			}
+		}
+	}
+
+	#prop_area
+	{
+		display : flex;
+		flex-direction : row;
+		flex-wrap : nowrap;
+		height : 20px;
+
+		&:active
+		{
+			opacity : 0.7;
+		}
+
+		.prop
+		{
+			font-size : 14px;
+			font-weight : bold;
+			color : #44F;
+		}
+		.open
+		{
+			margin-left : 10px;
+			background-color : #44F;
+			color : white;
+			width : 19px;
+			height : 19px;
+			border-radius : 50%;
+			text-align : center;
+			line-height : 20px;
+			font-weight : bold;
+		}
+	}
+
+}
+//	改版履歴
+#excel_history_area
+{
+	margin-top : 20px;
+
+	table
+	{
+		tr
+		{
+			border : solid 1px #888;
+
+			&.deleted
+			{
+				background-color : #F5A19D;
+			}
+		}
+
+		.cols
+		{
+			&.first
+			{
+				padding-left : 20px;
+				width : 50px;
+				text-align : center;
+			}
+			&.second
+			{
+				padding-left : 20px;
+				width : 150px;
+			}
+			&.third
+			{
+				width : 150px;
+			}
+			&.fourth
+			{
+				text-align : left;
+				padding-left : 10px;
+				padding-right : 10px;
+				max-width : 600px;
+				white-space : normal;
+			}
+			&.header
+			{
+				&.second
+				{
+					text-align : center;
+				}
+			}
+			&.delete
+			{
+				padding-right : 10px;
+			}
+		}
+	}
+	textarea
+	{
+		margin : 10px 4px 10px 0px;
+		padding-top : 6px;
+		width : 100%;
+		resize : vertical;
+	}
+}
+
+
+//	テーブル一覧
+#excel_tables_area
+{
+	table
+	{
+		tr
+		{
+			border : solid 1px #888;
+		}
+
+		.cols
+		{
+			&.first
+			{
+				padding-left : 20px;
+				width : 50px;
+				span
+				{
+					padding-left : 10px;
+				}
+			}
+			&.second
+			{
+				padding-left : 20px;
+				min-width : 150px;
+			}
+			&.third
+			{
+				min-width : 150px;
+				padding-left : 10px;
+				padding-right : 10px;
+				max-width : 600px;
+				white-space : normal;
+			}
+		}
+	}
+}
+
+

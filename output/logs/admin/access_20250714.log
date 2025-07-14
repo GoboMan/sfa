@@ -1,0 +1,311 @@
+2025/07/14 08:27:07 method[GET] crow[admin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+
+2025/07/14 08:27:07 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+	crow:auth
+
+2025/07/14 08:27:07 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 10:02:06 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+	crow:auth
+
+2025/07/14 10:02:07 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 11:31:44 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+	crow:auth
+
+2025/07/14 11:31:45 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 17:56:53 method[GET] crow[admin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+
+2025/07/14 17:56:53 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+	crow:auth
+
+2025/07/14 17:56:54 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 18:03:29 method[GET] crow[admin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+
+2025/07/14 18:03:29 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+	crow:auth
+
+2025/07/14 18:03:29 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 18:03:47 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+	crow:auth
+
+2025/07/14 18:03:48 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 18:04:54 method[POST] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:auth
+	admin_token:8f479c068e4434aa333f68a118b8e01b
+	login_id:root
+
+2025/07/14 18:04:55 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 18:04:58 method[POST] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:auth
+	admin_token:9a3fca7c6cb88e0f419f7df7a73d1a46
+	login_id:root
+
+2025/07/14 18:04:58 method[GET] crow[admin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+
+2025/07/14 18:04:58 method[GET] crow[admin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/
+
+	crow:_js_/top/index
+
+2025/07/14 18:05:00 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/
+
+	crow:user
+
+2025/07/14 18:05:01 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:_js_/user/index
+
+2025/07/14 18:05:09 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:user
+
+2025/07/14 18:05:10 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:_js_/user/index
+
+2025/07/14 18:05:16 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:user
+
+2025/07/14 18:05:16 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:_js_/user/index
+
+2025/07/14 21:53:02 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:user
+
+2025/07/14 21:53:02 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:auth
+
+2025/07/14 21:53:02 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 21:53:06 method[POST] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:auth
+	admin_token:be1e9bf5952dab2b4cb3fa19a398d01b
+	login_id:root
+
+2025/07/14 21:53:06 method[GET] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:_js_/auth/index
+
+2025/07/14 21:53:09 method[POST] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:auth
+	admin_token:c81b944d19c9616d5e717e083212ea18
+	login_id:root
+
+2025/07/14 21:54:20 method[POST] crow[admin/auth/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+	crow:auth
+	admin_token:c81b944d19c9616d5e717e083212ea18
+	login_id:root
+
+2025/07/14 21:54:20 method[GET] crow[admin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/auth
+
+
+2025/07/14 21:54:21 method[GET] crow[admin/top/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/
+
+	crow:_js_/top/index
+
+2025/07/14 21:55:41 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/
+
+	crow:user
+
+2025/07/14 21:55:41 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:_js_/user/index
+
+2025/07/14 21:55:48 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:
+
+	crow:user
+
+2025/07/14 22:00:02 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/
+
+	crow:user
+
+2025/07/14 22:00:02 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:_js_/user/index
+
+2025/07/14 22:00:04 method[GET] crow[admin/admin/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:admin
+
+2025/07/14 22:00:47 method[GET] crow[admin/admin/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:admin
+
+2025/07/14 22:00:48 method[GET] crow[admin/admin/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/admin
+
+	crow:_js_/admin/index
+
+2025/07/14 22:00:50 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/admin
+
+	crow:user
+
+2025/07/14 22:00:50 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:_js_/user/index
+
+2025/07/14 22:00:53 method[GET] crow[admin/admin/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:admin
+
+2025/07/14 22:00:53 method[GET] crow[admin/admin/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/admin
+
+	crow:_js_/admin/index
+
+2025/07/14 22:00:54 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/admin
+
+	crow:user
+
+2025/07/14 22:00:54 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:_js_/user/index
+
+2025/07/14 22:01:22 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/admin
+
+	crow:user
+
+2025/07/14 22:01:22 method[GET] crow[admin/user/index]
+	UA:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+	REFERER:http://localhost/sfa/admin/user
+
+	crow:_js_/user/index
+

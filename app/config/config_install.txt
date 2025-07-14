@@ -1,0 +1,9 @@
+//------------------------------------------------------------------------------
+//	install へのログインID/PW
+//------------------------------------------------------------------------------
+install.login_id = user
+install.login_pw = crow@install
+auth.privilege = logined_install
+
+//	実行時パスワード
+install.pw = execute

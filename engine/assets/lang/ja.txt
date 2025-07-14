@@ -1,0 +1,78 @@
+//	DB操作用メッセージ
+db.err.insert					= DBエラー
+db.err.update					= DBエラー
+db.err.trash					= DBエラー
+db.err.delete					= DBエラー
+db.err.duplicate				= 指定された:field_namesは既に登録されています
+db.err.notfound					= 指定された:table_nameは存在しません
+
+//	バリデーション用メッセージ
+validation.err.number.format	= :nameは数値で指定してください
+validation.err.num.range.from	= :nameは:min以上で指定してください
+validation.err.num.range.to		= :nameは:max以下で指定してください
+validation.err.num.range.just	= :nameは:num固定で指定してください
+validation.err.str.range.from	= :nameは:min文字以上で指定してください
+validation.err.str.range.to		= :nameは:max文字以下で指定してください
+validation.err.str.range.just	= :nameは:len文字で指定してください
+validation.err.varchar.over		= :nameは:size文字以内で指定してください
+validation.err.password.over	= :nameは:size文字以内で指定してください
+validation.err.must				= :nameが指定されていません
+validation.err.deleted			= :nameの指定が不正です
+validation.err.boolean			= :nameの指定が不正です
+validation.err.const			= :nameの指定が不正です
+validation.err.mail				= :nameはメールアドレスを指定してください
+validation.err.url				= :nameはURLを指定してください
+validation.err.telno			= :nameは電話番号を指定してください
+validation.err.geometry.format	= :nameは少数で指定してください
+validation.err.case.format		= :nameは:caseで入力してください
+validation.err.case.a			= 半角小文字
+validation.err.case.A			= 半角大文字
+validation.err.case.0			= 半角数値
+validation.err.case._			= 半角記号
+validation.err.case.aA			= 半角英字
+validation.err.case.a0			= 半角英小文字か数値
+validation.err.case.a_			= 半角英小文字か記号
+validation.err.case.A0			= 半角英大文字か数値
+validation.err.case.A_			= 半角英大文字か記号
+validation.err.case.0_			= 半角数値か記号
+validation.err.case.aA0			= 半角英数字
+validation.err.case.aA_			= 半角英字か記号
+validation.err.case.a0_			= 半角英小文字か記号
+validation.err.case.A0_			= 半角英大文字か記号
+validation.err.case.aA0_		= 半角
+validation.err.regexp			= :nameの書式が間違っています
+
+//	認証用メッセージ
+auth.err.message					= ログインに失敗しました。
+auth.err.none.login_name			= ログイン名が指定されていません。
+auth.err.none.login_pass			= ログインパスワードが指定されていません。
+auth.err.send_confirmation_code		= 認証コードのメール送信に失敗しました。[ユーザ::mail]
+auth.err.diff.confirmation_code		= メールアドレス認証コードが正しくないもしくは期限切れです。
+auth.err.none.user					= ユーザが存在しません。[ユーザ::user]
+auth.err.none.user_auth_provider	= ユーザが存在しません。[ユーザ::user]
+auth.err.verify_confirmation_code	= メールアドレス認証に失敗しました。[ユーザ::user] :last_error
+auth.err.resend_confirmation_code	= メールアドレス認証コードの再送信に失敗しました。[ユーザ::user]
+auth.err.verified_mail				= 既に認証済みのメールアドレスです。[ユーザ::user]
+auth.err.forgot_password_start		= パスワード再設定用メールの送信に失敗しました。[ユーザ::user]
+auth.err.change_password			= パスワードの変更に失敗しました。[ユーザ::user] :last_error
+auth.err.is_provider_origin			= このユーザはメールログインは許可されていません。[ユーザ::user]
+auth.err.already_connected_user		= 既に利用されている外部アカウントです。:mail
+auth.err.update_user				= ユーザの更新に失敗しました。[ユーザ::user] :last_error
+auth.err.cognito.auth				= ユーザ認証に失敗しました。[ユーザ::user] :last_error
+auth.err.cognito.create_user		= ユーザの作成に失敗しました。[ユーザ::user]
+auth.err.cognito.set_password		= ユーザのパスワード設定に失敗しました。[ユーザ::user]
+auth.err.cognito.update_user_attr	= ユーザの属性更新に失敗しました。[ユーザ::user] :more
+
+//	認証パスワード拡張用メッセージ
+auth.err.pw_length_and_must			= パスワードの長さは:min～:max字で:mustを必ず一つ含むようにしてください。
+auth.err.pw_num						= 数字
+auth.err.pw_lower					= 英小文字
+auth.err.pw_upper					= 英大文字
+auth.err.pw_symbol					= 記号
+
+//	ストレージ用メッセージ
+storage.err.no_input			= ファイルが指定されていません
+storage.err.upload				= ファイルのアップロードに失敗しました, :error
+storage.err.not_found			= ファイルが見つかりません, :filename
+storage.err.too_large			= ファイルサイズが大きすぎます, :length / :limit
+storage.err.not_allowed_ext		= ファイルの拡張子は:extsのいずれかで指定してください

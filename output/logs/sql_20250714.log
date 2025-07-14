@@ -1,0 +1,171 @@
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:43 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 08:23:43 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:43 show columns from `user`
+2025/07/14 08:23:43 show columns from `user`
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:43 show tables from `sfa`
+2025/07/14 08:23:46 drop table entity
+2025/07/14 08:23:46 show tables from `sfa`
+2025/07/14 08:23:46 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 08:23:46 show tables from `sfa`
+2025/07/14 08:23:46 show tables from `sfa`
+2025/07/14 08:23:46 show columns from `user`
+2025/07/14 08:23:46 show tables from `sfa`
+2025/07/14 08:23:46 show tables from `sfa`
+2025/07/14 08:23:46 show tables from `sfa`
+2025/07/14 08:23:48 drop table position
+2025/07/14 08:23:48 show tables from `sfa`
+2025/07/14 08:23:48 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 08:23:48 show tables from `sfa`
+2025/07/14 08:23:48 show tables from `sfa`
+2025/07/14 08:23:48 show columns from `user`
+2025/07/14 08:23:48 show tables from `sfa`
+2025/07/14 08:23:48 show tables from `sfa`
+2025/07/14 08:23:48 show tables from `sfa`
+2025/07/14 08:23:50 drop table project
+2025/07/14 08:23:50 show tables from `sfa`
+2025/07/14 08:23:50 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 08:23:50 show tables from `sfa`
+2025/07/14 08:23:50 show tables from `sfa`
+2025/07/14 08:23:50 show columns from `user`
+2025/07/14 08:23:50 show tables from `sfa`
+2025/07/14 08:23:50 show tables from `sfa`
+2025/07/14 08:23:50 show tables from `sfa`
+2025/07/14 08:23:52 drop table skill
+2025/07/14 08:23:52 show tables from `sfa`
+2025/07/14 08:23:52 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 08:23:52 show tables from `sfa`
+2025/07/14 08:23:52 show tables from `sfa`
+2025/07/14 08:23:52 show columns from `user`
+2025/07/14 08:23:52 show tables from `sfa`
+2025/07/14 08:23:52 show tables from `sfa`
+2025/07/14 08:23:52 show tables from `sfa`
+2025/07/14 08:23:53 drop table workforce
+2025/07/14 08:23:54 show tables from `sfa`
+2025/07/14 08:23:54 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 08:23:54 show tables from `sfa`
+2025/07/14 08:23:54 show tables from `sfa`
+2025/07/14 08:23:54 show columns from `user`
+2025/07/14 08:23:54 show tables from `sfa`
+2025/07/14 08:23:54 show tables from `sfa`
+2025/07/14 08:23:54 show tables from `sfa`
+2025/07/14 08:23:56 create table `admin` (`admin_id` bigint not null comment '管理者' primary key auto_increment,`login_id` varchar(32) character set utf8mb4 collate utf8mb4_bin not null comment 'ログインID',`login_pw` varchar(255) not null comment 'ログインPW',`deleted` tinyint(1) not null comment '削除') engine=InnoDB comment='管理者'
+2025/07/14 08:23:56 alter table `admin` default character set utf8mb4 collate utf8mb4_bin
+2025/07/14 08:23:56 show tables from `sfa`
+2025/07/14 08:23:56 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 08:23:56 show tables from `sfa`
+2025/07/14 08:23:56 show columns from `admin`
+2025/07/14 08:23:56 show tables from `sfa`
+2025/07/14 08:23:56 show columns from `user`
+2025/07/14 08:23:56 show tables from `sfa`
+2025/07/14 08:23:56 show tables from `sfa`
+2025/07/14 08:23:56 show tables from `sfa`
+2025/07/14 08:23:58 create table `xxx_session` (`xxx_session_id` bigint not null comment '' primary key auto_increment,`xxx_sid` varchar(128) character set utf8mb4 collate utf8mb4_bin not null comment '',`data` text character set utf8mb4 collate utf8mb4_bin not null comment '',`created` datetime not null default current_timestamp comment '') engine=InnoDB comment=''
+2025/07/14 08:23:58 alter table `xxx_session` default character set utf8mb4 collate utf8mb4_bin
+2025/07/14 08:23:58 show tables from `sfa`
+2025/07/14 08:23:58 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 08:23:58 show tables from `sfa`
+2025/07/14 08:23:58 show columns from `admin`
+2025/07/14 08:23:58 show tables from `sfa`
+2025/07/14 08:23:58 show columns from `user`
+2025/07/14 08:23:58 show tables from `sfa`
+2025/07/14 08:23:58 show columns from `xxx_session`
+2025/07/14 08:23:58 show tables from `sfa`
+2025/07/14 08:23:58 show tables from `sfa`
+2025/07/14 08:24:21 show tables from `sfa`
+2025/07/14 08:24:21 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 08:24:21 show tables from `sfa`
+2025/07/14 08:24:21 show columns from `admin`
+2025/07/14 08:24:21 show tables from `sfa`
+2025/07/14 08:24:21 show columns from `user`
+2025/07/14 08:24:24 drop table xxx_session
+2025/07/14 08:24:24 show tables from `sfa`
+2025/07/14 08:24:24 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 08:24:24 show tables from `sfa`
+2025/07/14 08:24:24 show columns from `admin`
+2025/07/14 08:24:24 show tables from `sfa`
+2025/07/14 08:24:24 show columns from `user`
+2025/07/14 18:04:39 show tables from `sfa`
+2025/07/14 18:04:39 show tables from `sfa`
+2025/07/14 18:04:39 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 18:04:39 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 18:04:39 show tables from `sfa`
+2025/07/14 18:04:39 show tables from `sfa`
+2025/07/14 18:04:39 show columns from `admin`
+2025/07/14 18:04:39 show columns from `admin`
+2025/07/14 18:04:39 show tables from `sfa`
+2025/07/14 18:04:39 show tables from `sfa`
+2025/07/14 18:04:39 show columns from `user`
+2025/07/14 18:04:39 show columns from `user`
+2025/07/14 18:04:42 show tables from `sfa`
+2025/07/14 18:04:42 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 18:04:42 show tables from `sfa`
+2025/07/14 18:04:42 show columns from `admin`
+2025/07/14 18:04:42 show tables from `sfa`
+2025/07/14 18:04:42 show columns from `user`
+2025/07/14 18:04:42 select count(*) as cnt from `admin` where `deleted` = '0'
+2025/07/14 18:04:42 select * from `admin` where `deleted` = '0' limit 0, 50
+2025/07/14 18:04:49 insert into `admin` (`login_id`,`login_pw`,`deleted`) values ('root','$2y$10$KGK/mLsWn5KL2O2vilMJpuVy6FnTlzgHLXUcuKJxBoFT0OVoiR51C','0')
+2025/07/14 18:04:49 show tables from `sfa`
+2025/07/14 18:04:49 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 18:04:49 show tables from `sfa`
+2025/07/14 18:04:49 show columns from `admin`
+2025/07/14 18:04:49 show tables from `sfa`
+2025/07/14 18:04:49 show columns from `user`
+2025/07/14 18:04:49 select count(*) as cnt from `admin` where `deleted` = '0'
+2025/07/14 18:04:49 select * from `admin` where `deleted` = '0' limit 0, 50
+2025/07/14 21:54:32 show tables from `sfa`
+2025/07/14 21:54:32 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 21:54:32 show tables from `sfa`
+2025/07/14 21:54:32 show columns from `admin`
+2025/07/14 21:54:32 show tables from `sfa`
+2025/07/14 21:54:32 show tables from `sfa`
+2025/07/14 21:54:32 show columns from `user`
+2025/07/14 21:54:32 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 21:54:32 show tables from `sfa`
+2025/07/14 21:54:32 show columns from `admin`
+2025/07/14 21:54:32 show tables from `sfa`
+2025/07/14 21:54:32 show columns from `user`
+2025/07/14 21:54:37 alter table `user` add `email` varchar(255) character set utf8mb4 collate utf8mb4_bin not null comment 'メールアドレス'
+2025/07/14 21:54:37 show tables from `sfa`
+2025/07/14 21:54:37 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 21:54:37 show tables from `sfa`
+2025/07/14 21:54:37 show columns from `admin`
+2025/07/14 21:54:37 show tables from `sfa`
+2025/07/14 21:54:37 show columns from `user`
+2025/07/14 21:54:39 alter table `user` drop column `slug`
+2025/07/14 21:54:39 show tables from `sfa`
+2025/07/14 21:54:39 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 21:54:39 show tables from `sfa`
+2025/07/14 21:54:39 show columns from `admin`
+2025/07/14 21:54:39 show tables from `sfa`
+2025/07/14 21:54:39 show columns from `user`
+2025/07/14 21:54:42 alter table `user` drop column `gender`
+2025/07/14 21:54:42 show tables from `sfa`
+2025/07/14 21:54:42 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 21:54:42 show tables from `sfa`
+2025/07/14 21:54:42 show columns from `admin`
+2025/07/14 21:54:42 show tables from `sfa`
+2025/07/14 21:54:42 show columns from `user`
+2025/07/14 21:55:19 show tables from `sfa`
+2025/07/14 21:55:19 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 21:55:19 show tables from `sfa`
+2025/07/14 21:55:19 show columns from `admin`
+2025/07/14 21:55:19 show tables from `sfa`
+2025/07/14 21:55:19 show columns from `user`
+2025/07/14 22:18:18 show tables from `sfa`
+2025/07/14 22:18:18 select table_name,non_unique,index_name,column_name from information_schema.statistics where table_schema='sfa' order by seq_in_index 
+2025/07/14 22:18:18 show tables from `sfa`
+2025/07/14 22:18:18 show columns from `admin`
+2025/07/14 22:18:18 show tables from `sfa`
+2025/07/14 22:18:18 show columns from `user`
