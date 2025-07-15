@@ -1,0 +1,15 @@
+.ui_button
+{
+	&.done
+	{
+		background-color : #129936;
+		color : #fafafa;
+	}
+	&.warn
+	{
+		background-color : #f7cd24;
+		color : #050504;
+	}
+	
+}
+

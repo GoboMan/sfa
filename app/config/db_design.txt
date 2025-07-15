@@ -4,8 +4,9 @@
 admin
 {
 	admin_id,					bigint, pk, ai,					# 管理者
+	name,						varchar, 32, 1:30,				# 氏名
 	login_id,					varchar, 32, must,				# ログインID
-	login_pw,					password, 32,					# ログインPW
+	login_pw,					varchar, 32,					# ログインPW
 	deleted,					boolean, del,					# 削除
 }
 
