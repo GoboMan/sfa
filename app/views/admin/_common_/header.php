@@ -7,7 +7,7 @@
  <div id="page" class="ui_panel layout_vertical_left full transparent">
 
   <?php /**** サイトヘッダ ****/ ?>
-  <div id="header" class="ui_panel dark full_horizon padding">サンプル</div>
+  <div id="header" class="ui_panel dark full_horizon padding">RA SFA管理画面</div>
 
   <?php /**** メニュー ****/ ?>
   <div id="menus" class="ui_panel layout_horizon padding_small full_horizon">
