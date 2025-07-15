@@ -223,6 +223,8 @@ project
 	}
 	nearest_station,			varchar, 32,					# 最寄駅
 
+	orig_mail,					text,							# メール本文
+
 }
 .refer.industry_id : industry, zero
 
