@@ -7,3 +7,4 @@ auth.privilege = logined_install
 
 //	実行時パスワード
 install.pw = execute
+install.prefecture_pw = prefecture

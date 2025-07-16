@@ -17,8 +17,26 @@
 
  <form method="post" action="<?= crow::make_url_self() ?>">
   <?= crow::get_csrf_hidden() ?>
-  <input type="password" name="exec_pw" class="ui_text" placeholder="パスワード">
-  <button type="submit" class="ui_button warn">実行する</button>
+  <div class="ui_panel transparent layout_vertical_left margin_bottom">
+   <div>テーブル作成および管理ユーザ作成：</div>
+   <div>
+    <input type="password" name="exec_pw" class="ui_text" placeholder="パスワード">
+    <button type="submit" class="ui_button warn">実行する</button>
+   </div>
+   <div class="spacer"></div>
+  </div>
+ </form>
+
+ <form method="post" action="<?= crow::make_url_action('create_prefecture') ?>">
+  <?= crow::get_csrf_hidden() ?>
+  <div class="ui_panel transparent layout_vertical_left">
+   <div>都道府県作成：</div>
+   <div>
+    <input type="password" name="exec_pw" class="ui_text" placeholder="パスワード">
+    <button type="submit" class="ui_button warn">実行する</button>
+   </div>
+   <div class="spacer"></div>
+  </div>
  </form>
 
 </div>

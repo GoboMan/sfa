@@ -1,17 +1,19 @@
 ;------------------------------------------------------------------------------
-# 管理者, 管理画面にログインするための情報
+# 管理者
+# 管理画面にログインするための情報
 ;------------------------------------------------------------------------------
 admin
 {
 	admin_id,					bigint, pk, ai,					# 管理者
 	name,						varchar, 32, 1:30,				# 氏名
-	login_id,					varchar, 32, must,				# ログインID
-	login_pw,					varchar, 32,					# ログインPW
+	login_id,					varchar, 32, must,
+	login_pw,					varchar, 32,					# ログインPW				# ログインID
 	deleted,					boolean, del,					# 削除
 }
 
 ;------------------------------------------------------------------------------
-# ユーザ, RA営業メンバー
+# ユーザ
+# RA営業メンバー
 ;------------------------------------------------------------------------------
 user
 {
@@ -26,7 +28,28 @@ user
 }
 
 ;------------------------------------------------------------------------------
-# 業界マスタ, 最小限のデータのみ定義( 2025/07/14 abe )
+# 都道府県マスタ
+;------------------------------------------------------------------------------
+prefecture
+{
+	prefecture_id,				bigint, pk, ai,					# 都道府県
+	name,						varchar, 10,					# 県名
+	area,						tinyint,						# エリア
+	{
+		area_hokkaido,			1,								# 北海道地方
+		area_tohoku,			2,								# 東北地方
+		area_kanto,				3,								# 関東地方
+		area_tyubu,				4,								# 中部地方
+		area_kinki,				5,								# 近畿地方
+		area_tyugoku,			6,								# 中国地方
+		area_shikoku,			7,								# 四国地方
+		area_kyusyu,			8,								# 九州
+		area_okinawa,			9,								# 沖縄
+	}
+}
+
+;------------------------------------------------------------------------------
+# 業界マスタ
 ;------------------------------------------------------------------------------
 industry
 {
@@ -36,7 +59,7 @@ industry
 }
 
 ;------------------------------------------------------------------------------
-# 取引先, 営業とのヒアリングでデータ追加の可能性あり。（ 2025/07/14 abe ）
+# 取引先
 ;------------------------------------------------------------------------------
 entity
 {
@@ -85,7 +108,8 @@ entity
 .refer.lower_user_id : user, zero
 
 ;------------------------------------------------------------------------------
-# 取引先担当者, 取引先の営業担当がくる（RAの営業ではない）
+# 取引先担当者
+# 取引先の営業担当がくる（RAの営業ではない）
 ;------------------------------------------------------------------------------
 entity_member
 {
@@ -108,9 +132,9 @@ project
 	entity_id,					bigint,							# 案件元会社
 	entity_member_id,			bigint,							# 案件元会社営業担当
 	industry_id,				bigint,							# 業界
+	prefecture_id,				bigint,							# 都道府県
 	name,						varchar, 100,					# 案件名
 	start_date,					datetime,						# 稼働開始日
-
 	contract_type,				tinyint,						# 契約形態
 	{
 		cntr_zyun,				1,								# 準委任契約
@@ -121,7 +145,7 @@ project
 	hiring_status,				tinyint,						# 募集状況
 	{
 		hir_open,				1,								# 募集中
-		hir_close,				2,								# 募集停止
+		hir_closed,				2,								# 募集停止
 	}
 	source,						tinyint,						# 流入経路
 	{
@@ -131,6 +155,23 @@ project
 		src_slack,				4,								# slack
 		src_other,				10,								# その他
 	}
+	nearest_station,			varchar, 32,					# 最寄駅
+
+	;--------------------------------------------------------------------------
+	; 金額条件
+	;--------------------------------------------------------------------------
+	min_budget,					bigint,							# 予算下限
+	max_budget,					bigint,							# 予算上限
+
+	;--------------------------------------------------------------------------
+	; 年齢条件
+	;--------------------------------------------------------------------------
+	min_age,					int,							# 下限年齢, 0の場合、下限なし
+	max_age,					int,							# 上限年齢, 0の場合、上限なし
+
+	;--------------------------------------------------------------------------
+	; その他条件
+	;--------------------------------------------------------------------------
 	depth_limit,				tinyint,						# 商流制限
 	{
 		limit_direct,			0,								# 自社直
@@ -139,15 +180,6 @@ project
 		limit_3,				3,								# 3社先
 		limit_other,			10,								# その他
 	}
-
-
-	;--------------------------------------------------------------------------
-	; 共通
-	;--------------------------------------------------------------------------
-	min_budget,					bigint,							# 予算下限
-	max_budget,					bigint,							# 予算上限
-	min_age,					int,							# 下限年齢, 0の場合、下限なし
-	max_age,					int,							# 上限年齢, 0の場合、上限なし
 	gender,						tinyint,						# 希望性別
 	{
 		gen_male,				1,								# 男性
@@ -167,66 +199,20 @@ project
 		work_both,				9,								# 出社リモート併用
 		work_full_remote,		10,								# フルリモート
 	}
-	prefecture,					tinyint,						# 都道府県
-	{
-		pref_hokkaido,			1,								# 北海道
-		pref_aomori,			2,								# 青森県
-		pref_iwate,				3,								# 岩手県
-		pref_miyagi,			4,								# 宮城県
-		pref_akita,				5,								# 秋田県
-		pref_yamagata,			6,								# 山形県
-		pref_fukushima,			7,								# 福島県
-		pref_ibaraki,			8,								# 茨城県
-		pref_tochigi,			9,								# 栃木県
-		pref_gunma,				10,								# 群馬県
-		pref_saitama,			11,								# 埼玉県
-		pref_chiba,				12,								# 千葉県
-		pref_tokyo,				13,								# 東京都
-		pref_kanagawa,			14,								# 神奈川県
-		pref_niigata,			15,								# 新潟県
-		pref_toyama,			16,								# 富山県
-		pref_ishikawa,			17,								# 石川県
-		pref_fukui,				18,								# 福井県
-		pref_yamanashi,			19,								# 山梨県
-		pref_nagano,			20,								# 長野県
-		pref_gifu,				21,								# 岐阜県
-		pref_shizuoka,			22,								# 静岡県
-		pref_aichi,				23,								# 愛知県
-		pref_mie,				24,								# 三重県
-		pref_shiga,				25,								# 滋賀県
-		pref_kyoto,				26,								# 京都府
-		pref_osaka,				27,								# 大阪府
-		pref_hyogo,				28,								# 兵庫県
-		pref_nara,				29,								# 奈良県
-		pref_wakayama,			30,								# 和歌山県
-		pref_tottori,			31,								# 鳥取県
-		pref_shimane,			32,								# 島根県
-		pref_okayama,			33,								# 岡山県
-		pref_hiroshima,			34,								# 広島県
-		pref_yamaguchi,			35,								# 山口県
-		pref_tokushima,			36,								# 徳島県
-		pref_kagawa,			37,								# 香川県
-		pref_ehime,				38,								# 愛媛県
-		pref_kochi,				39,								# 高知県
-		pref_fukuoka,			40,								# 福岡県
-		pref_saga,				41,								# 佐賀県
-		pref_nagasaki,			42,								# 長崎県
-		pref_kumamoto,			43,								# 熊本県
-		pref_oita,				44,								# 大分県
-		pref_miyazaki,			45,								# 宮崎県
-		pref_kagoshima,			46,								# 鹿児島県
-		pref_okinawa,			47,								# 沖縄県
-	}
 	allow_foreign,				tinyint,						# 外国籍可否
 	{
 		foreign_ok,				1,								# 外国籍OK
 		foreign_ng,				2,								# 外国籍NG
 	}
-	nearest_station,			varchar, 32,					# 最寄駅
 
-	orig_mail,					text,							# メール本文
-
+	;--------------------------------------------------------------------------
+	; その他
+	;--------------------------------------------------------------------------
+	raw_content,				text,							# 本文
+	created_at,					datetime,						# 作成日
 }
+.refer.entity_id : entity, zero
+.refer.entity_member_id : entity_member, zero
 .refer.industry_id : industry, zero
 
 
@@ -236,11 +222,66 @@ project
 workforce
 {
 	workforce_id,				bigint, pk, ai,					# 人材情報
+
+	;--------------------------------------------------------------------------
+	# 基本情報
+	;--------------------------------------------------------------------------
+	user_id,					bigint,							# RA営業担当
+	prefecture_id,				bigint,							# 都道府県
+	sales_status,				tinyint,						# 営業状況
+	{
+		sales_open,				1,								# 営業中
+		sales_closed,			2,								# 営業終了
+	}
+	depth,						tinyint,						# 商流
+	{
+		depth_direct,			0,								# 自社直
+		depth_1,				1,								# 1社先
+		depth_2,				2,								# 2社先
+		depth_other,			10,								# その他
+	}
+	worker_type,				tinyint,						# 要員種別
+	{
+		worker_fulltime,		1,								# 正社員
+		worker_freelance,		2,								# フリーランス
+		worker_contract,		3,								# 契約社員
+		worker_other,			4,								# その他
+	}
+	start_date,					datetime,						# 稼働開始日
+	weekly_work_days,			tinyint,						# 週稼働日数
+
+	;--------------------------------------------------------------------------
+	# 個人情報
+	;--------------------------------------------------------------------------
+	name,						varchar, 30,					# 名前
+	initials,					varchar, 6,						# イニシャル
+	age,						tinyint,						# 年齢
+	birthday,					datetime,						# 生年月日
+	nationality,				tinyint,						# 国籍
+	{
+		japanese,				1,								# 日本
+		other,					100,							# その他
+	}
+
+	;--------------------------------------------------------------------------
+	# 金額条件
+	;--------------------------------------------------------------------------
+	min_hourly_rate,			int,							# 最低希望時給
+	max_hourly_rate,			int,							# 最高希望時給
+	min_monthly_rate,			bigint,							# 最低希望単価
+	max_monthly_rate,			bigint,							# 最高希望単価
+
+	;--------------------------------------------------------------------------
+	# その他
+	;--------------------------------------------------------------------------
+	raw_content,				text,							# 本文
+	created_at,					datetime,						# 作成日
 }
 
 
 ;------------------------------------------------------------------------------
-# スキルマスタ, AIのプロンプトに渡され、このデータを元に該当するskill_idが返される
+# スキルマスタ
+# AIのプロンプトに渡され、このデータを元に該当するskill_idが返される
 ;------------------------------------------------------------------------------
 skill
 {
@@ -251,7 +292,8 @@ skill
 }
 
 ;------------------------------------------------------------------------------
-# 案件スキル, 案件とそれに必要なスキルを紐づける
+# 案件スキル
+# 案件とそれに必要なスキルを紐づける
 ;------------------------------------------------------------------------------
 project_skill
 {
@@ -262,10 +304,11 @@ project_skill
 	must_have,					boolean,						# 必須スキル有無
 }
 .refer.project_id : project, trash
-.refer.skill_id : skill, zero
+.refer.skill_id : skill, trash
 
 ;------------------------------------------------------------------------------
-# 人材スキル, 案件とそれに必要なスキルを紐づける
+# 人材スキル
+# 案件とそれに必要なスキルを紐づける
 ;------------------------------------------------------------------------------
 workforce_skill
 {
@@ -275,7 +318,35 @@ workforce_skill
 	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
 }
 .refer.workforce_id : workforce, trash
-.refer.skill_id : skill, zero
+.refer.skill_id : skill, trash
+
+;------------------------------------------------------------------------------
+# プログラム言語マスタ
+;------------------------------------------------------------------------------
+program_lang
+{
+	program_lang_id,			bigint, pk, ai,					# プログラム言語
+	name,						varchar, 30, must,				# 言語名
+}
+
+;------------------------------------------------------------------------------
+# 案件プログラム言語
+;------------------------------------------------------------------------------
+project_program_lang
+{
+	project_program_lang_id,	bigint, pk, ai,					# 案件言語
+	project_id,					bigint,							# 案件
+}
+
+;------------------------------------------------------------------------------
+# 人材プログラム言語
+;------------------------------------------------------------------------------
+workforce_program_lang
+{
+	workforce_program_lang_id,	bigint, pk, ai,					# 案件言語
+	workforce_id,				bigint,							# 案件
+}
+
 
 ;------------------------------------------------------------------------------
 # ポジションマスタ
@@ -293,11 +364,24 @@ position
 ;------------------------------------------------------------------------------
 project_position
 {
-	project_position_id,		bigint, pk, ai,					# 案件スキル
+	project_position_id,		bigint, pk, ai,					# 案件ポジション
 	project_id,					bigint,							# 案件情報
-	position_id,				bigint,							# スキル
+	position_id,				bigint,							# ポジション
 	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
-	must_have,					boolean,						# 必須スキル有無
+	must_have,					boolean,						# 必須ポジション有無
 }
 .refer.project_id : project, trash
-.refer.position_id : position, zero
+.refer.position_id : position, trash
+
+;------------------------------------------------------------------------------
+# 人材ポジション
+;------------------------------------------------------------------------------
+workforce_position
+{
+	workforce_position_id,		bigint, pk, ai,					# 人材ポジション
+	workforce_id,				bigint,							# 人材
+	position_id,				bigint,							# ポジション
+	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
+}
+.refer.workforce_id : workforce, trash
+.refer.position_id : position, trash
