@@ -11,7 +11,7 @@
  <div class="spacer"></div>
 </div>
 
-<?php /**** Todo Table ****/ ?>
+<?php /**** 管理者一覧 Table ****/ ?>
 <table id="admin_table" class="ui_list">
  <thead>
   <tr>
