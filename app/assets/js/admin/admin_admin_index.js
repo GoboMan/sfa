@@ -91,10 +91,50 @@ function init(opt_)
 			); 
 		});
 
-	$('.edit_btn').on('click', function()
+	$('.delete_btn').on('click', function() 
 	{
-		
+		let admin_id = $(this).attr('admin_id'); 
+		console.log('msg');
+		popup_custom
+		(
+		"管理者情報削除",
+		"この管理者を削除します。よろしいですか？",
+		function() 
+		{
+			ajax.post
+			(
+				g.actions.delete,
+				{
+					admin_id : admin_id
+				},
+				(data_) =>
+				{
+					ui.dialog.popup_message('完了','管理者が削除されました。',() => location.reload());
+				},
+				(msg_,code_) =>
+				{
+					ui.toast.add_error(msg_);
+				}
+			);
+		},
+		function() // on close
+		{
+			return null;
+		});
 	});
-	
+}
 
+function popup_custom(title_, msg_, on_done_ = null, on_close_ = null, yes_text_ = null, no_text_ = null, parent_ = null)
+{
+	let dialog = new ui_dialog();
+	dialog.popup_confirm
+	(
+		title_, msg_,
+		on_done_,
+		on_close_,
+		yes_text_ === null ? "はい" : yes_text_,
+		no_text_ === null ? "いいえ" : no_text_,
+		parent_
+	);
+	return dialog;
 }

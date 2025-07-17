@@ -47,3 +47,37 @@ html, body
 		font-size : 12px;
 	}
 }
+
+.sidebar
+{
+	width : 200px;
+	border : none;
+
+	a
+	{
+		color: #4a4a4a;
+  		font-size: 16px;
+	}
+
+	.active
+	{
+		background-color: #d0ebff;
+		border-left: 4px solid #1890ff;
+	}
+
+}
+
+.sidebar_panel_top
+{
+	border : solid #aaa7a7 0;
+	border-top-width : 1.5px;
+	border-bottom-width : 1.5px;
+}
+
+.sidebar_panel
+{
+	border : solid #aaa7a7 0;
+	border-bottom-width : 1.5px;
+}
+
+

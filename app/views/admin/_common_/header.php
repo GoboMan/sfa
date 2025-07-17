@@ -14,6 +14,7 @@
    <div class="item"><a href="<?= crow::make_url() ?>">トップ</a></div>
    <div class="item"><a href="<?= crow::make_url('user') ?>">ユーザ管理</a></div>
    <div class="item"><a href="<?= crow::make_url('admin') ?>">管理者管理</a></div>
+   <div class="item"><a href="<?= crow::make_url('industry') ?>">登録</a></div>
    <div class="spacer"></div>
    <div class="item"><a href="<?= crow::make_url('auth', 'logout') ?>">ログアウト</a></div>
   </div>
