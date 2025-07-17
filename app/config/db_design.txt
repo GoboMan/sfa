@@ -336,6 +336,7 @@ project_program_lang
 {
 	project_program_lang_id,	bigint, pk, ai,					# 案件言語
 	project_id,					bigint,							# 案件
+	program_lang_id,			bigint,							# 言語
 }
 
 ;------------------------------------------------------------------------------
@@ -345,6 +346,7 @@ workforce_program_lang
 {
 	workforce_program_lang_id,	bigint, pk, ai,					# 案件言語
 	workforce_id,				bigint,							# 案件
+	program_lang_id,			bigint,							# 言語
 }
 
 
