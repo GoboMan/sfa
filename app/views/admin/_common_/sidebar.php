@@ -15,5 +15,4 @@
   <?= $url === crow::make_url('skill') ? 'active' : '' ?> ">
    <a class="margin_left" href="<?= crow::make_url('language') ?>">言語</a>
  </div>
- </div>
- <div>
+</div>
