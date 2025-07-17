@@ -5,7 +5,7 @@
  <?php $include("sidebar.php") ?>
 
  <div class="ui_panel layout_vertical_left full padding_large">
-  <h1 class="ui_heading">企業一覧</h1>
+  <h1 class="ui_heading">業界一覧</h1>
  
 
   <?php /* heading */ ?>

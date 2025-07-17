@@ -2,10 +2,9 @@
 
 <div class="ui_panel transparent layout_horizon_top padding_vertical"> 
  <?php $include("sidebar.php") ?>
-  <h1 class="ui_heading">管理者リスト</h1>
-  <div class="ui_panel transparent layout_horizontal full_horizon">
-   <div class="spacer"></div>
-  </div>
+ <h1 class="ui_heading">言語</h1>
+ <div class="ui_panel transparent layout_horizontal full_horizon">
+  <div class="spacer"></div>
  </div>
 </div>
 
