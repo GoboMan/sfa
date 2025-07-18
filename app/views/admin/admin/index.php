@@ -1,5 +1,7 @@
 <?php $include('header.php'); ?>
 
+<div class="ui_panel transparent padding">
+
 <h1 class="ui_heading">管理者リスト</h1>
 <div class="ui_panel transparent layout_horizon full_horizon">
  <div class="spacer"></div>
@@ -76,6 +78,8 @@
    <button class="ui_button small done">完了</button>
   </div>
  </div>
+</div>
+
 </div>
 
 

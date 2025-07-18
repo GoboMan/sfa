@@ -285,7 +285,7 @@ workforce
 ;------------------------------------------------------------------------------
 skill
 {
-	skill_id,					bigint,							# スキル
+	skill_id,					bigint,	pk, ai,							# スキル
 	name,						varchar, 32,					# スキル名
 	synonyms,					text,							# スキル類義語
 	deleted,					boolean, del,					# 削除

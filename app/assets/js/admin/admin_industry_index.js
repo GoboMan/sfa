@@ -13,7 +13,7 @@ function init(opt_)
 				'.ui_button.done': ()=>
 				{
 					let dlg = $('#create_dlg');
-					let name= dlg.find('[name="name"]').val();
+					let name = dlg.find('[name="name"]').val();
 					
 					ajax.post
 					(
@@ -79,7 +79,7 @@ function init(opt_)
 
 	$('.delete_btn').on('click', function() 
 	{
-		let admin_id = $(this).attr('industry_id'); 
+		let industry_id = $(this).attr('industry_id'); 
 		console.log('msg');
 		popup_custom
 		(
@@ -91,7 +91,7 @@ function init(opt_)
 			(
 				g.actions.delete,
 				{
-					admin_id : admin_id
+					industry_id : industry_id,
 				},
 				(data_) =>
 				{

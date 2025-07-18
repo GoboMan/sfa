@@ -23,7 +23,7 @@ class	module_admin_industry extends module_admin
 	//--------------------------------------------------------------------------
 	public function action_create()
 	{
-		$row = model_admin::create_from_request();
+		$row = model_industry::create_from_request();
 		if($row->check_and_save() === false)
 		{
 			app::exit_ng($row->get_last_error());
@@ -36,7 +36,7 @@ class	module_admin_industry extends module_admin
 	//--------------------------------------------------------------------------
 	public function action_update()
 	{
-		$row = model_admin::create_from_request_with_id();
+		$row = model_industry::create_from_request_with_id();
 		if($row->check_and_save() === false)
 		{
 			app::exit_ng($row->get_last_error());
@@ -49,7 +49,7 @@ class	module_admin_industry extends module_admin
 	//--------------------------------------------------------------------------
 	public function action_delete()
 	{
-		$row = model_admin::create_from_request_with_id();
+		$row = model_industry::create_from_request_with_id();
 		if($row->trash() === false)
 		{
 			app::exit_ng($row->get_last_error());

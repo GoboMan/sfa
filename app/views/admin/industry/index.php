@@ -4,17 +4,19 @@
 
  <?php $include("sidebar.php") ?>
 
- <div class="ui_panel layout_vertical_left full padding_large">
-  <h1 class="ui_heading">業界一覧</h1>
+ <div class="ui_panel transparent layout_vertical_left full padding_horizon">
+  <div class="ui_panel transparent full_horizon">
+   <h1 class="ui_heading">業界一覧</h1>
+  </div>
  
   <?php /* heading */ ?>
   <div class="ui_panel transparent layout_horizon padding_vertical"> 
-    <div class="spacer"></div>
+   <div class="spacer"></div>
    <button id="create_btn" class="ui_button warn">新規登録</button>
   </div>
 
   <?php /* 企業一覧 Table */ ?>
-  <table id="buisness_table" class="ui_list">
+  <table id="companies_table" class="ui_list">
    <thead>
     <tr>
      <th class="min">ID</th>
@@ -30,10 +32,7 @@
     }); ?>
     <?php if(count($rows) > 0): ?>
      <?php foreach($rows as $row): ?>
-      <tr class="border clickable hover"
-       industry_id = "<?= $row->industry_id ?>"
-       name = "<?= $row->name ?>"
-      >
+      <tr class="border clickable hover">
        <td class="min"><?= $row->industry_id ?></td>
        <td><?= $row->name ?></td>
        <td class="min">
@@ -60,7 +59,7 @@
 <?php /**** Create・Edit dialog ****/ ?>
 <div id="create_dlg" class="ui_dialog">
  <div>
-  <div class="header">新規管理者作成</div>
+  <div class="header">新規企業追加</div>
   <div class="body">
    <div class="ui_panel layout_horizon padding_xlarge">
     <div class="margin_right" style="white-space:nowrap;">業界名</div>
@@ -90,3 +89,4 @@ $(function()
 
 
 <?php $include('footer.php'); ?>
+
