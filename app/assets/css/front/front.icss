@@ -1,7 +1,9 @@
-div
+html
 {
-	&:not(.nodata):not(:last-child)
-	{
-		border-bottom: 1px solid #DEE2E6;
-	}
+	height : 100%;
+}
+
+body
+{
+	height : 100%;
 }

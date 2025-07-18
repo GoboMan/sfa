@@ -81,6 +81,7 @@
 {
 	height : 100%;
 
+	//	表画面
 	> .client
 	{
 		position : relative;
