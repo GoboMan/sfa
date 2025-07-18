@@ -49,7 +49,12 @@ function init(opt_)
 			(
 				'#create_dlg',
 				{
-					'.ui_button.close' : null,
+					'.ui_button.close' : ()=>
+					{
+						let dlg = $('#create_dlg');
+						dlg.find('[name="name"]').val('');
+						
+					},
 					'.ui_button.done': ()=>
 					{
 						let dlg = $('#create_dlg');

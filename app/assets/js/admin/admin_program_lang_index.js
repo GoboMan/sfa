@@ -13,21 +13,17 @@ function init(opt_)
 				'.ui_button.done': ()=>
 				{
 					let dlg = $('#create_dlg');
-					let name= dlg.find('[name="name"]').val();
-					let login_id = dlg.find('[name="login_id"]').val();
-					let login_pw = dlg.find('[name="login_pw"]').val();
+					let name = dlg.find('[name="name"]').val();
 					
 					ajax.post
 					(
 						g.actions.create,
 						{
 							name : name,
-							login_id : login_id,
-							login_pw : login_pw,
 						},
 						(data_) =>
 						{
-							ui.dialog.popup_message('完了', '新しい管理者が登録されました。',
+							ui.dialog.popup_message('完了', 'プログラム言語が登録されました。',
 								() => location.reload());
 						},
 						(msg_, code_) =>
@@ -42,17 +38,11 @@ function init(opt_)
 
 	$('.edit_btn').on('click', function()
 		{
-			let admin_id = $(this).attr('admin_id');
+			let program_lang_id = $(this).attr('program_lang_id');
 			let name = $(this).attr('name');
-			let login_id = $(this).attr('login_id');
-			let login_pw = $(this).attr('login_pw');
-
-			console.log(admin_id);
 
 			let dlg = $('#create_dlg');
 			dlg.find('[name="name"]').val(name);
-			dlg.find('[name="login_id"]').val(login_id);
-			dlg.find('[name="login_pw"]').val(login_pw);
 
 
 			ui.dialog.popup
@@ -63,28 +53,23 @@ function init(opt_)
 					{
 						let dlg = $('#create_dlg');
 						dlg.find('[name="name"]').val('');
-						dlg.find('[name="synonyms"]').val('');
 						
 					},
 					'.ui_button.done': ()=>
 					{
 						let dlg = $('#create_dlg');
 						let name = dlg.find('[name="name"]').val();
-						let login_id = dlg.find('[name="login_id"]').val();
-						let login_pw = dlg.find('[name="login_pw"]').val();
 						
 						ajax.post
 						(
 							g.actions.update,
 							{
-								admin_id : admin_id,
+								program_lang_id : program_lang_id,
 								name : name,
-								login_id : login_id,
-								login_pw : login_pw,
 							},
 							(data_) =>
 							{
-								ui.dialog.popup_message('完了', '管理者情報が変更されました。',
+								ui.dialog.popup_message('完了', 'プログラム言語名が変更されました。',
 									() => location.reload());
 							},
 							(msg_, code_) =>
@@ -99,23 +84,22 @@ function init(opt_)
 
 	$('.delete_btn').on('click', function() 
 	{
-		let admin_id = $(this).attr('admin_id'); 
-		console.log('msg');
+		let program_lang_id = $(this).attr('program_lang_id'); 
 		popup_custom
 		(
-		"管理者情報削除",
-		"この管理者を削除します。よろしいですか？",
+		"プログラム言語削除",
+		"このプログラム言語の登録を削除します。よろしいですか？",
 		function() 
 		{
 			ajax.post
 			(
 				g.actions.delete,
 				{
-					admin_id : admin_id
+					program_lang_id : program_lang_id,
 				},
 				(data_) =>
 				{
-					ui.dialog.popup_message('完了','管理者が削除されました。',() => location.reload());
+					ui.dialog.popup_message('完了','プログラム言語が削除されました。',() => location.reload());
 				},
 				(msg_,code_) =>
 				{

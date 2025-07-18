@@ -6,67 +6,65 @@
 
  <div class="ui_panel transparent layout_vertical_left full padding_horizon">
   <div class="ui_panel transparent full_horizon">
-   <h1 class="ui_heading">スキル一覧</h1>
+   <h1 class="ui_heading">プログラム言語一覧</h1>
   </div>
-
-  <div class="ui_panel transparent layout_horizon padding_vertical">
-   <div id="create_btn" class="ui_button warn">新規登録</div>
+ 
+  <?php /* heading */ ?>
+  <div class="ui_panel transparent layout_horizon padding_vertical"> 
    <div class="spacer"></div>
+   <button id="create_btn" class="ui_button warn">新規登録</button>
   </div>
 
-  <table id="positions_table" class="ui_list">
+  <?php /* 企業一覧 Table */ ?>
+  <table id="companies_table" class="ui_list">
    <thead>
     <tr>
      <th class="min">ID</th>
-     <th>スキル名</th>
-     <th>スキル類義語</th>
+     <th>プログラム言語名</th>
      <th class="min">編集</th>
     </tr>
    </thead>
 
    <tbody>
+    <?php usort($rows, function($a, $b)
+    {
+     return $a->due_date - $b->due_date;
+    }); ?>
     <?php if(count($rows) > 0): ?>
      <?php foreach($rows as $row): ?>
-      <tr class="clickable hover border">
-       <td class="min"><?= $row->skill_id ?></td>
+      <tr class="border clickable hover">
+       <td class="min"><?= $row->program_lang_id ?></td>
        <td><?= $row->name ?></td>
-       <td><?= $row->synonyms ?></td>
        <td class="min">
-        <button class="ui_button small done edit_btn"
-         skill_id="<?= $row->skill_id ?>"
+        <button class="ui_button small done edit_btn" 
+         program_lang_id="<?= $row->program_lang_id ?>"
          name="<?= $row->name ?>"
-         synonyms="<?= $row->synonyms ?>"
-        >変更</button>
+         >変更</button>
         <button class="ui_button small danger delete_btn"
-         skill_id="<?= $row->skill_id ?>"
-        >削除</button>
+         program_lang_id="<?= $row->program_lang_id ?>"
+         >削除</button>
        </td>
       </tr>
      <?php endforeach; ?>
     <?php else: ?>
      <tr class="border nodata">
-      <td colspan="4">データがありません。</td>
+      <td colspan="3">データがありません。</td>
      </tr>
     <?php endif; ?>
    </tbody>
   </table>
  </div>
 </div>
- 
-<?php /**** Create/Edit dialog ****/ ?>
-<div id=create_dlg class="ui_dialog">
+
+<?php /**** Create・Edit dialog ****/ ?>
+<div id="create_dlg" class="ui_dialog">
  <div>
-  <div class="header">新規スキル追加</div>
+  <div class="header">プログラム言語追加</div>
   <div class="body">
-   <table class="ui_list full_horizon">
-    <tr class="border_bottom">
-     <td>スキル名</td>
-     <td><input type="text" class="ui_text" name="name"></td>
-    </tr>
-    <tr>
-     <td>類義語</td>
-     <td><input type="text" class="ui_text" name="synonyms"></td>
-    </tr>
+   <div class="ui_panel layout_horizon padding_xlarge">
+    <div class="margin_right" style="white-space:nowrap;">プログラム言語名</div>
+    <div class="margin full_horizon"><input type="text" class="ui_text full_horizon" name="name"></div>
+    </div>
    </table>
   </div>
   <div class="footer">
@@ -75,6 +73,7 @@
   </div>
  </div>
 </div>
+
 
 <?php /**** Add script tag to connect to the javascript　****/ ?>
 <script nonce="<?= crow_response::nonce() ?>">
@@ -86,6 +85,7 @@ $(function()
 	});
 });
 </script> 
+
 
 
 <?php $include('footer.php'); ?>
