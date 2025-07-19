@@ -11,16 +11,19 @@
 <script nonce="<?= crow_response::nonce() ?>">
 var g =
 {
-	<?php /**** 自身のアクションはJS側のルータで使用するので、ajaxは専用モジュールに集約する ****/ ?>
-	actions			: <?= crow::get_module_urls_as_json() ?>,
+	<?php /**** 各モジュール内のアクションを取得 ****/ ?>
+	project_actions		: <?= crow::get_module_urls_as_json('project') ?>,
+	workforce_actions	: <?= crow::get_module_urls_as_json('workforce') ?>,
+	entity_actions		: <?= crow::get_module_urls_as_json('entity') ?>,
 
-	access_path		: "<?= crow_request::get_route_path() ?>",
-	scenes			: null,
-	root			: null,
-	url_base		: "<?= crow::make_url() ?>",
+	access_path			: "<?= crow_request::get_route_path() ?>",
+	scenes				: null,
+	root				: null,
+	url_base			: "<?= crow::make_url() ?>",
 };
 
 g.root = viewpart_activate("root");
+
 
 </script>
 

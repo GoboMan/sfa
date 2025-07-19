@@ -1,6 +1,6 @@
 /*
 
-	SPA ルート
+	TOP ルート
 
 */
 //------------------------------------------------------------------------------
@@ -8,6 +8,7 @@
 //------------------------------------------------------------------------------
 <props>
 {
+	show_sidebar : true,
 }
 </props>
 
@@ -18,18 +19,19 @@
  <div class="root ui_panel transparent layout_horizon_top full" ref="root">
 
   <?php /**** メニュー ****/ ?>
-  <div class="ui_panel layout_vertical_left full_vertical padding_large" style="width: 300px;">
-   <div class="ui_panel transparent full_horizon padding_vertical border_bottom">Right SFA</div>
-   <div ref="btn_project" class="ui_panel transparent full_horizon padding_vertical margin_top_large">案件一覧</div>
-   <div ref="btn_workforce" class="ui_panel transparent full_horizon padding_vertical ">人材一覧</div>
-   <div ref="btn_entity" class="ui_panel transparent full_horizon padding_vertical ">取引先一覧</div>
+  <div ref="btn_wrapper" class="ui_panel layout_vertical_left full_vertical padding_large" style="width: 300px;">
+   <div class="ui_panel transparent full_horizon border_bottom">Right SFA</div>
+   <div ref="btn_project" class="btn ui_panel transparent full_horizon margin_top_large">案件一覧</div>
+   <div ref="btn_workforce" class="btn ui_panel transparent full_horizon ">人材一覧</div>
+   <div ref="btn_entity" class="btn ui_panel transparent full_horizon ">取引先一覧</div>
    <div class="spacer"></div>
    <div ref="btn_logout" class="ui_panel">ログアウト</div>
+   <div ref="btn_toggle_sidebar"></div>
   </div>
 
   <?php /**** コンテンツ ****/ ?>
-  <div class="body_wrap ui_panel transparent full padding" ref="body_wrap">
-    [[scenes]]
+  <div class="body_wrap ui_panel transparent full" ref="body_wrap">
+   [[scenes]]
   </div>
 
  </div>
@@ -41,8 +43,36 @@
 <style>
 .root
 {
+	position : relative;
+
+	.btn_wrapper
+	{
+		position : fixed;
+		top : 0;
+		left : 0;
+		z-index : 100;
+	}
+	.btn
+	{
+		border-radius: 20px;
+		padding : 10px 20px;
+		margin-bottom: 10px;
+		&.selected
+		{
+			background-color: #024;
+			color: #fff;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.4);
+		}
+	}
+	.btn:hover
+	{
+		cursor: pointer;
+		background-color: #f2f2f2;
+		color: #444;
+	}
 
 }
+
 </style>
 
 //------------------------------------------------------------------------------
@@ -63,8 +93,19 @@
 	self.build_scene();
 
 	//	画面切り替え制御
-	$(self.ref('btn_todo')).on('click', () => { g.scenes.replace("scene_todo"); });
-	$(self.ref('btn_user')).on('click', () => { g.scenes.replace("scene_user"); });
+	let cols = ['project', 'workforce', 'entity'];
+	array_each(cols, (col) =>
+	{
+		self.jq('btn_' + col).on('click', () => g.scenes.replace("scene_" + col));
+	});
+
+	//	サイドバーのボタン背景色切り替え
+	let btn_wrapper = self.jq('btn_wrapper');
+	btn_wrapper.find('.btn').on('click', function()
+	{
+		btn_wrapper.find('.btn').removeClass('selected');
+		$(this).addClass('selected');
+	});
 
 }
 </ready>
@@ -98,6 +139,10 @@
 				"/workforce" : function(args_)
 				{
 					g.scenes.push("scene_workforce", args_);
+				},
+				"/entity" : function(args_)
+				{
+					g.scenes.push("scene_entity", args_);
 				},
 			},
 

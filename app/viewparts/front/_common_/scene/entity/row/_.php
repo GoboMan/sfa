@@ -1,6 +1,6 @@
 /*
 
-	projectシーン
+	取引先レコード
 
 */
 //------------------------------------------------------------------------------
@@ -8,7 +8,16 @@
 //------------------------------------------------------------------------------
 <props>
 {
+	row : null,
 
+
+	//	このviewpartが作成された瞬間は、
+	//	entity_id : 1,
+	//	name : 'test',
+	//	user_id : 1, ...
+	//	のように値が設定される。
+	//	なのでinitの時のみ、そのentity_idを使用してdbcとバインドする
+	//	その後は、rowの値を使用する
 }
 </props>
 
@@ -16,27 +25,11 @@
 //	html part
 //------------------------------------------------------------------------------
 <template>
- <div class="project ui_panel transparent layout_vertical_left full" ref="project">
-  <div class="ui_panel transparent layout_horizon full_horizon margin_vertical">
-   <div class="spacer"></div>
-   <button class="ui_button info" ref="btn_add_project">+ 案件登録</button>
-  </div>
-
-  <?php /**** テーブル ****/ ?>
-  <table class="ui_list full_horizon">
-   <thead>
-    <tr>
-     <th class="min"></th>
-     <th></th>
-     <th></th>
-     <th class="min"></th>
-     <th class="min"></th>
-    </tr>
-   </thead>
-   <tbody ref="rows"></tbody>
-  </table>
-
- </div>
+ <tr class="row clickable border" ref="row">
+  <td>{{ row.name ? row.name : '-' }}</td>
+  <td class="min">{{ row.user_name ? row.user_name : '-' }}</td>
+  <td class="min">{{ row.updated_at ? change_unixts_to_ymd(row.updated_at) : '-' }}</td>
+ </tr>
 </template>
 
 //------------------------------------------------------------------------------
@@ -51,7 +44,10 @@
 //------------------------------------------------------------------------------
 <init>
 {
-
+	//	dbcに登録されているentitiesデータ内、entity_idが一致するrowを
+	//	自身のrowにバインドする
+	let entity_id = self.prop('entity_id');
+	dbc.bind("entities", entity_id, self, "row");
 }
 </init>
 
@@ -80,13 +76,13 @@
 	//	復元パス取得
 	scene_path()
 	{
-		return g.url_base;
+
 	},
 
 	//	タイトル取得
 	scene_title()
 	{
-		return '案件一覧';
+		return 'Todo';
 	},
 
 	//	休止時
@@ -102,9 +98,7 @@
 	//	破棄時
 	scene_destroy()
 	{
-	},
-
-
+	}
 }
 </method>
 

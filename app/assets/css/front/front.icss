@@ -1,9 +1,9 @@
-html
+html, body
 {
 	height : 100%;
 }
 
-body
+body::-webkit-scrollbar
 {
-	height : 100%;
+	display : none;
 }

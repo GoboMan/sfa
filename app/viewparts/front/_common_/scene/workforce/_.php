@@ -78,13 +78,13 @@
 	//	復元パス取得
 	scene_path()
 	{
-		return g.url_base + 'user';
+		return g.url_base + 'workforce';
 	},
 
 	//	タイトル取得
 	scene_title()
 	{
-		return 'User';
+		return '人材一覧';
 	},
 
 	//	休止時

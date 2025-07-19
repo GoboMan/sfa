@@ -23,7 +23,7 @@ user
 	name,						varchar, 32, 1:30,				# 氏名
 	email,						mail, must,						# メールアドレス
 	;last_history_id,			bigint,							# 差分履歴用ID, Gmailの差分履歴を取るためのIDだが、現時点ではないものとして考える。
-	create_date,				datetime,						# 作成日
+	create_at,					datetime,						# 作成日
 	deleted,					boolean, del,					# 削除
 }
 
@@ -67,11 +67,10 @@ entity
 	name,						varchar, 64, must,				# 取引先名
 	name_kana,					varchar, 64,					# 取引先名カナ
 
-	upper_user_id,				bigint,							# 案件側RA営業担当
-	lower_user_id,				bigint,							# 人材側RA営業担当
+	user_id,					bigint,							# RA営業担当
 
 	;--------------------------------------------------------------------------
-	; ランク
+	; ランク, 必要だとわかれば画面に表示する
 	;--------------------------------------------------------------------------
 	upper_rank,					tinyint,						# 案件ランク
 	{
@@ -80,7 +79,6 @@ entity
 		upper_rank_b,			3,								# Bランク
 		upper_rank_c,			4,								# Cランク
 		upper_rank_d,			5,								# Dランク
-		
 	}
 	lower_rank,					tinyint,						# 人材ランク
 	{
@@ -102,10 +100,10 @@ entity
 	}
 	deal_stop_reason,			text,							# 取引停止理由
 
+	updated_at,					datetime,						# 更新日時
 	deleted,					boolean, del,					# 削除
 }
-.refer.upper_user_id : user, zero
-.refer.lower_user_id : user, zero
+.refer.user_id : user, zero
 
 ;------------------------------------------------------------------------------
 # 取引先担当者
@@ -113,7 +111,7 @@ entity
 ;------------------------------------------------------------------------------
 entity_member
 {
-	entity_member_id,			bigint, ai, pk,					# 取引先担当者
+	entity_member_id,			bigint, pk,	ai,				# 取引先担当者
 	entity_id,					bigint, must,					# 取引先
 	name,						varchar, 32,					# 担当者名
 	tel,						telno,							# 電話番号, 080-1111-111のような半角数値と半角ハイフンが入る
@@ -127,7 +125,7 @@ entity_member
 ;------------------------------------------------------------------------------
 project
 {
-	project_id,					bigint, ai, pk,					# 案件情報
+	project_id,					bigint, pk, ai,					# 案件情報
 	user_id,					bigint,							# RA営業担当者, この案件を担当しているRA営業
 	entity_id,					bigint,							# 案件元会社
 	entity_member_id,			bigint,							# 案件元会社営業担当
