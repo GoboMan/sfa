@@ -1,6 +1,6 @@
 /*
 
-	userシーン
+	workforceテーブル
 
 */
 //------------------------------------------------------------------------------
@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 <props>
 {
-
+	shown : false,
 }
 </props>
 
@@ -16,26 +16,22 @@
 //	html part
 //------------------------------------------------------------------------------
 <template>
- <div class="user ui_panel transparent" ref="user">
-  <h1 class="ui_heading">User</h1>
-  <div class="ui_panel transparent layout_horizon full_horizon margin_vertical">
-   <div class="spacer"></div>
-   <button class="ui_button info small" ref="btn_add">+ Add</button>
-  </div>
-
-  <?php /**** テーブル ****/ ?>
-  <table class="ui_list full_horizon">
-   <thead>
-    <tr>
-     <th class="min">ID</th>
-     <th class="min">Name</th>
-     <th class="min">Email</th>
-     <th class="min">Actions</th>
-    </tr>
-   </thead>
-   <tbody ref="rows"></tbody>
-  </table>
- </div>
+ <table ref="workforce_table" class="ui_list full_horizon margin_horizon hide">
+  <thead>
+   <tr class="border">
+    <th class="min">日時</th>
+    <th class="min">国</th>
+    <th class="min">雇</th>
+    <th class="min">商</th>
+    <th class="min">単金</th>
+    <th class="min">年齢</th>
+    <th class="min">最寄駅</th>
+    <th class="min">出社</th>
+    <th class="">件名</th>
+   </tr>
+  </thead>
+  <tbody ref="rows"></tbody>
+ </table>
 </template>
 
 //------------------------------------------------------------------------------
@@ -50,6 +46,7 @@
 //------------------------------------------------------------------------------
 <init>
 {
+
 }
 </init>
 
@@ -67,6 +64,17 @@
 //------------------------------------------------------------------------------
 <watch>
 {
+	shown(old_, new_)
+	{
+		if( new_ == true )
+		{
+			self.jq('workforce_table').removeClass('hide');
+		}
+		else
+		{
+			self.jq('workforce_table').addClass('hide');
+		}
+	}
 }
 </watch>
 
@@ -78,13 +86,13 @@
 	//	復元パス取得
 	scene_path()
 	{
-		return g.url_base + 'workforce';
+		return g.url_base;
 	},
 
 	//	タイトル取得
 	scene_title()
 	{
-		return '人材一覧';
+		return '案件一覧';
 	},
 
 	//	休止時
@@ -100,7 +108,9 @@
 	//	破棄時
 	scene_destroy()
 	{
-	}
+	},
+
+
 }
 </method>
 

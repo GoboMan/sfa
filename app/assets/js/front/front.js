@@ -10,10 +10,7 @@ function change_unixts_to_ymd(unixts_)
 function adjust_entity_create_panel_size()
 {
 	//	パネルの幅を調整
-	g.scalefull_width = g.jq_body_wrap.width();
-
-	//	パネルの高さを調整
-	// g.jq_create_entity_panel.height(g.jq_body_wrap.height() - 10 * 2);
+	g.scalefull_width = g.jq_body_wrapper.width();
 }
 
 function collect_input_data(viewpart_, selector_)
@@ -38,4 +35,17 @@ function collect_input_data(viewpart_, selector_)
 		else datas[name] = value;
 	});
 	return datas;
+}
+
+function apply_vals_to_form(viewpart_, selector_, vals_)
+{
+	let topelm = viewpart_.jq(selector_);
+	array_each(topelm.find('input, textarea, select').get(), elm_ =>
+	{
+		let jq_elm = $(elm_);
+		let name = jq_elm.attr('name');
+		let value = vals_[name];
+		if( value !== undefined )
+			jq_elm.val(value);
+	});
 }

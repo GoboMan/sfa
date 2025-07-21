@@ -1,6 +1,6 @@
 /*
 
-	userシーン
+	project row
 
 */
 //------------------------------------------------------------------------------
@@ -8,6 +8,15 @@
 //------------------------------------------------------------------------------
 <props>
 {
+	row					: null,
+
+	//	国籍enum
+	nat_only_japan		: <?= model_project::nat_only_japan ?>,
+	nat_only_foreign	: <?= model_project::nat_only_foreign ?>,
+	nat_both			: <?= model_project::nat_both ?>,
+
+	//	商流enum
+	limit_direct		: <?= model_project::limit_direct ?>,
 
 }
 </props>
@@ -16,26 +25,16 @@
 //	html part
 //------------------------------------------------------------------------------
 <template>
- <div class="user ui_panel transparent" ref="user">
-  <h1 class="ui_heading">User</h1>
-  <div class="ui_panel transparent layout_horizon full_horizon margin_vertical">
-   <div class="spacer"></div>
-   <button class="ui_button info small" ref="btn_add">+ Add</button>
-  </div>
-
-  <?php /**** テーブル ****/ ?>
-  <table class="ui_list full_horizon">
-   <thead>
-    <tr>
-     <th class="min">ID</th>
-     <th class="min">Name</th>
-     <th class="min">Email</th>
-     <th class="min">Actions</th>
-    </tr>
-   </thead>
-   <tbody ref="rows"></tbody>
-  </table>
- </div>
+ <tr class="row border" ref="row">
+  <td class="min">{{ row.created_at ? row.created_at : '-' }}</td>
+  <td class="min">{{ row.nationality ? row.nationality : '-' }}</td>
+  <td class="min">{{ row.depth_limit ? row.depth_limit : '-' }}</td>
+  <td class="min">{{ row.min_budget ? row.min_budget : '-' }}</td>
+  <td class="min">{{ row.max_age ? row.max_age : '-' }}</td>
+  <td class="min">{{ row.nearest_station ? row.nearest_station : '-' }}</td>
+  <td class="min">{{ row.status ? row.status : '-' }}</td>
+  <td>{{ row.name ? row.name : '-' }}</td>
+ </tr>
 </template>
 
 //------------------------------------------------------------------------------
@@ -50,6 +49,10 @@
 //------------------------------------------------------------------------------
 <init>
 {
+	//	バインド
+	let props = self.props();
+	console.log(props);
+	dbc.bind("project_list", props.project_id, self, "row");
 }
 </init>
 
@@ -78,13 +81,13 @@
 	//	復元パス取得
 	scene_path()
 	{
-		return g.url_base + 'workforce';
+
 	},
 
 	//	タイトル取得
 	scene_title()
 	{
-		return '人材一覧';
+		return 'Todo';
 	},
 
 	//	休止時
@@ -100,7 +103,7 @@
 	//	破棄時
 	scene_destroy()
 	{
-	}
+	},
 }
 </method>
 

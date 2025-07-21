@@ -1,6 +1,6 @@
 /*
 
-	userシーン
+	project row(nodata)
 
 */
 //------------------------------------------------------------------------------
@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 <props>
 {
-
 }
 </props>
 
@@ -16,26 +15,9 @@
 //	html part
 //------------------------------------------------------------------------------
 <template>
- <div class="user ui_panel transparent" ref="user">
-  <h1 class="ui_heading">User</h1>
-  <div class="ui_panel transparent layout_horizon full_horizon margin_vertical">
-   <div class="spacer"></div>
-   <button class="ui_button info small" ref="btn_add">+ Add</button>
-  </div>
-
-  <?php /**** テーブル ****/ ?>
-  <table class="ui_list full_horizon">
-   <thead>
-    <tr>
-     <th class="min">ID</th>
-     <th class="min">Name</th>
-     <th class="min">Email</th>
-     <th class="min">Actions</th>
-    </tr>
-   </thead>
-   <tbody ref="rows"></tbody>
-  </table>
- </div>
+ <tr class="row border" ref="row">
+  <td colspan="8" class="nodata">データがありません</td>
+ </tr>
 </template>
 
 //------------------------------------------------------------------------------
@@ -78,13 +60,13 @@
 	//	復元パス取得
 	scene_path()
 	{
-		return g.url_base + 'workforce';
+
 	},
 
 	//	タイトル取得
 	scene_title()
 	{
-		return '人材一覧';
+		return 'Todo';
 	},
 
 	//	休止時

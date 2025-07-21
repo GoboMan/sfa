@@ -1,6 +1,6 @@
 /*
 
-	取引先作成シーン
+	Project作成
 
 */
 //------------------------------------------------------------------------------
@@ -16,16 +16,16 @@
 //	html part
 //------------------------------------------------------------------------------
 <template>
- <div ref="create_entity_panel" class="create_entity_panel ui_panel padding border shadow" style="display:none; width:0px;">
+ <div ref="create_project_panel" class="create_project_panel ui_panel padding_xlarge border shadow" style="display:none; width:0px;">
   <div class="ui_panel transparent layout_horizon full_horizon margin_bottom">
-   <div class="ui_heading" style="font-size:1.4em; margin:0;">取引先登録</div>
+   <div class="ui_heading" style="font-size:1.4em; margin:0;">案件登録</div>
    <div class="spacer"></div>
    <button class="ui_button cancel" ref="btn_back">キャンセル</button>
   </div>
-  <?php /**** 取引先情報コンテナ ****/?>
+  <?php /**** 案件情報コンテナ ****/?>
   <div class="ui_panel transparent layout_vertical_left full padding_xlarge margin_bottom_large border radius shadow">
    <div class="ui_panel layout_horizon full_horizon padding_bottom_large" style="border-bottom:1px dashed #ccc;">
-    <h2 style="font-size:1.2em;">取引先情報</h2>
+    <h2 style="font-size:1.2em;">案件情報</h2>
     <div class="spacer"></div>
    </div>
 
@@ -108,7 +108,7 @@
 
    <?php /**** 登録ボタン ****/?>
    <div class="ui_panel layout_vertical full padding_xlarge">
-    <button ref="btn_create_entity" class="ui_button done">登録</button>
+    <button ref="btn_create_project" class="ui_button done">登録</button>
    </div>
   </div>
 
@@ -122,7 +122,7 @@
 //	style
 //------------------------------------------------------------------------------
 <style>
-.create_entity_panel
+.create_project_panel
 {
 	position : absolute;
 	right : 0;
@@ -174,32 +174,32 @@
 	});
 
 	//	登録
-	self.jq('btn_create_entity').on('click', () =>
+	self.jq('btn_create_project').on('click', () =>
 	{
-		let params = collect_input_data(self, 'create_entity_panel');
+		let params = collect_input_data(self, 'create_project_panel');
 
 		ajax.post
 		(
-			g.entity_actions.ajax_create,
+			g.project_actions.ajax_create,
 			params,
 			(data_) =>
 			{
 				let new_row = JSON.parse(data_);
-				let vp_entity = viewpart_find_by_name('scene_entity');
+				let vp_project = self.parent();
 
 				//	todo : row nodataがあれば削除
 
 
 				//	一覧とdbcに追加
-				vp_entity.create_child_and_append("row", new_row, "rows");
-				dbc.set("entity_list", new_row.entity_id, new_row);
+				vp_project.create_child_and_append("row", new_row, "rows");
+				dbc.set("project_list", new_row.project_id, new_row);
 
 				//	メッセージ表示
-				ui.toast.add('取引先を登録しました');
+				ui.toast.add('案件を登録しました');
 
 				//	フォーム初期化
-				self.jq('create_entity_panel').find('input, textarea').val('');
-				self.jq('create_entity_panel').find('select').val(1);
+				self.jq('create_project_panel').find('input, textarea').val('');
+				self.jq('create_project_panel').find('select').val(1);
 
 				//	パネル非表示
 				self.hide_create_panel();
@@ -257,13 +257,13 @@
 	//	createパネル非表示
 	hide_create_panel()
 	{
-		let vp_entity = viewpart_find_by_name('scene_entity');
-		if( vp_entity.prop('show_create_panel') === false ) return;
+		let vp_project = self.parent();
+		if( vp_project.prop('show_create_panel') === false ) return;
 
 		//	アニメーションで非表示にする
-		self.jq('create_entity_panel').stop().animate({ width : 0 }, 100, () => { self.jq('create_entity_panel').css('display', 'none');} );
+		self.jq('create_project_panel').stop().animate({ width : 0 }, 100, () => { self.jq('create_project_panel').css('display', 'none');} );
 
-		vp_entity.prop('show_create_panel', false);
+		vp_project.prop('show_create_panel', false);
 	}
 }
 </method>

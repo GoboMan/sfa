@@ -197,10 +197,11 @@ project
 		work_both,				9,								# 出社リモート併用
 		work_full_remote,		10,								# フルリモート
 	}
-	allow_foreign,				tinyint,						# 外国籍可否
+	nationality,				tinyint,						# 国籍
 	{
-		foreign_ok,				1,								# 外国籍OK
-		foreign_ng,				2,								# 外国籍NG
+		nat_only_japan,			1,								# 日
+		nat_only_foreign,		2,								# 外
+		nat_both,				3,								# 両
 	}
 
 	;--------------------------------------------------------------------------

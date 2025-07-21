@@ -16,22 +16,33 @@
 //	html part
 //------------------------------------------------------------------------------
 <template>
- <div class="root ui_panel transparent layout_horizon_top full" ref="root">
+ <div ref="root" class="root ui_panel transparent layout_vertical full">
 
-  <?php /**** メニュー ****/ ?>
-  <div ref="btn_wrapper" class="ui_panel layout_vertical_left full_vertical padding_large" style="width: 300px;">
-   <div class="ui_panel transparent full_horizon border_bottom">Right SFA</div>
-   <div ref="btn_project" class="btn ui_panel transparent full_horizon margin_top_large">案件一覧</div>
-   <div ref="btn_workforce" class="btn ui_panel transparent full_horizon ">人材一覧</div>
-   <div ref="btn_entity" class="btn ui_panel transparent full_horizon ">取引先一覧</div>
+  <div class="ui_panel layout_horizon full_horizon padding shadow">
+   <button ref="btn_open_sidebar" class="ui_button info small margin_right">→</button>
+   <div style="font-size: 1.2em;">Right SFA</div>
    <div class="spacer"></div>
-   <div ref="btn_logout" class="ui_panel">ログアウト</div>
-   <div ref="btn_toggle_sidebar"></div>
   </div>
 
-  <?php /**** コンテンツ ****/ ?>
-  <div class="body_wrap ui_panel transparent full" ref="body_wrap">
-   [[scenes]]
+  <div ref="sidebar_wrapper" class="close_sidebar ui_panel transparent layout_horizon_top full">
+   <?php /**** メニュー ****/ ?>
+   <div ref="btn_wrapper" class="btn_wrapper ui_panel layout_vertical_left full_vertical padding_large" style="width: 300px;">
+    <div class="ui_panel transparent layout_horizon full_horizon padding_bottom border_bottom">
+     <div style="font-size: 1.2em;">メニュー</div>
+     <div class="spacer"></div>
+     <button ref="btn_close_sidebar" class="ui_button cancel small">X</button>
+    </div>
+    <div ref="btn_project" class="btn ui_panel transparent full_horizon margin_top_large">案件一覧</div>
+    <div ref="btn_workforce" class="btn ui_panel transparent full_horizon ">人材一覧</div>
+    <div ref="btn_entity" class="btn ui_panel transparent full_horizon ">取引先一覧</div>
+    <div class="spacer"></div>
+    <div ref="btn_logout" class="ui_panel">ログアウト</div>
+   </div>
+
+   <?php /**** コンテンツ ****/ ?>
+   <div class="body_wrapper ui_panel transparent full" ref="body_wrapper">
+    [[scenes]]
+   </div>
   </div>
 
  </div>
@@ -42,16 +53,32 @@
 //------------------------------------------------------------------------------
 <style>
 .root
-{
-	position : relative;
+{	
+	.open_sidebar
+	{	
+		.btn_wrapper
+		{
+			//	ヘッダーの高さに合わせて下げる
+			position : fixed;
+			top : 0;
+			left : 0;
+			z-index : 100;
 
-	.btn_wrapper
-	{
-		position : fixed;
-		top : 0;
-		left : 0;
-		z-index : 100;
+			box-shadow : 3px 0 6px rgba(0, 0, 0, 0.1);
+		}
+		.body_wrapper
+		{
+			margin-left : 300px;
+		}
 	}
+	.close_sidebar
+	{
+		.btn_wrapper
+		{
+			display : none;
+		}
+	}
+
 	.btn
 	{
 		border-radius: 20px;
@@ -107,6 +134,18 @@
 		$(this).addClass('selected');
 	});
 
+	//	サイドバーを閉じる制御
+	self.jq('btn_close_sidebar').on('click', function()
+	{
+		self.jq('sidebar_wrapper').addClass('close_sidebar');
+		self.jq('sidebar_wrapper').removeClass('open_sidebar');
+	});
+
+	self.jq('btn_open_sidebar').on('click', function()
+	{
+		self.jq('sidebar_wrapper').addClass('open_sidebar');
+		self.jq('sidebar_wrapper').removeClass('close_sidebar');
+	});
 }
 </ready>
 
