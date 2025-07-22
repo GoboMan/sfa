@@ -6,8 +6,8 @@ admin
 {
 	admin_id,					bigint, pk, ai,					# 管理者
 	name,						varchar, 32, 1:30,				# 氏名
-	login_id,					varchar, 32, must,
-	login_pw,					varchar, 32,					# ログインPW				# ログインID
+	login_id,					varchar, 32, must,				# ログインID
+	login_pw,					varchar, 32,					# ログインPW
 	deleted,					boolean, del,					# 削除
 }
 
@@ -19,7 +19,7 @@ user
 {
 	user_id,					bigint, pk, ai,					# ユーザ
 	login_id,					varchar, 32, aA0_, must,		# ログインID
-	login_pw,					password, 32, aA0_				# ログインPW
+	login_pw,					varchar, 32,					# ログインPW
 	name,						varchar, 32, 1:30,				# 氏名
 	email,						mail, must,						# メールアドレス
 	;last_history_id,			bigint,							# 差分履歴用ID, Gmailの差分履歴を取るためのIDだが、現時点ではないものとして考える。
@@ -282,9 +282,9 @@ workforce
 # スキルマスタ
 # AIのプロンプトに渡され、このデータを元に該当するskill_idが返される
 ;------------------------------------------------------------------------------
-skill
+work_skill
 {
-	skill_id,					bigint,	pk, ai,							# スキル
+	work_skill_id,				bigint,	pk, ai,							# スキル
 	name,						varchar, 32,					# スキル名
 	synonyms,					text,							# スキル類義語
 	deleted,					boolean, del,					# 削除
@@ -298,12 +298,12 @@ project_skill
 {
 	project_skill_id,			bigint, pk, ai,					# 案件スキル
 	project_id,					bigint,							# 案件情報
-	skill_id,					bigint,							# スキル
+	work_skill_id,				bigint,							# スキル
 	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
 	must_have,					boolean,						# 必須スキル有無
 }
 .refer.project_id : project, trash
-.refer.skill_id : skill, trash
+.refer.work_skill_id : work_skill, trash
 
 ;------------------------------------------------------------------------------
 # 人材スキル
@@ -313,11 +313,11 @@ workforce_skill
 {
 	workforce_skill_id,			bigint, pk, ai,					# 人材スキル
 	workforce_id,				bigint,							# 人材情報
-	skill_id,					bigint,							# スキル
+	work_skill_id,				bigint,							# スキル
 	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
 }
 .refer.workforce_id : workforce, trash
-.refer.skill_id : skill, trash
+.refer.work_skill_id : work_skill, trash
 
 ;------------------------------------------------------------------------------
 # プログラム言語マスタ
@@ -336,6 +336,7 @@ project_program_lang
 	project_program_lang_id,	bigint, pk, ai,					# 案件言語
 	project_id,					bigint,							# 案件
 	program_lang_id,			bigint,							# 言語
+	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
 }
 
 ;------------------------------------------------------------------------------
@@ -346,6 +347,7 @@ workforce_program_lang
 	workforce_program_lang_id,	bigint, pk, ai,					# 案件言語
 	workforce_id,				bigint,							# 案件
 	program_lang_id,			bigint,							# 言語
+	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
 }
 
 
@@ -368,7 +370,6 @@ project_position
 	project_position_id,		bigint, pk, ai,					# 案件ポジション
 	project_id,					bigint,							# 案件情報
 	position_id,				bigint,							# ポジション
-	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
 	must_have,					boolean,						# 必須ポジション有無
 }
 .refer.project_id : project, trash
@@ -382,7 +383,6 @@ workforce_position
 	workforce_position_id,		bigint, pk, ai,					# 人材ポジション
 	workforce_id,				bigint,							# 人材
 	position_id,				bigint,							# ポジション
-	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
 }
 .refer.workforce_id : workforce, trash
 .refer.position_id : position, trash

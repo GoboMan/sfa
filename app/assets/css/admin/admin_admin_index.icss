@@ -7,9 +7,21 @@
 	}
 	&.warn
 	{
-		background-color : #f7cd24;
+		background-color : #;
 		color : #050504;
 	}
 	
+}
+
+.ui_heading
+{
+	background-color : $col_base_back;
+	color : $col_base_fore;
+	font-weight : normal;
+
+	border : solid #631113;
+	border-width : 0 0 0 6px;
+	padding : 10px 12px;
+	margin-bottom : 20px;
 }
 

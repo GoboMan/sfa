@@ -4,36 +4,58 @@ function init(opt_)
 {
 	g=opt_;
 
-	$('#create_btn').on('click', ()=>
+	$('#create_btn').on('click', function()
 	{
-		ui.dialog.popup(
+		ui.dialog.popup
+		(
 			'#create_dlg',
 			{
 				'.ui_button.close' : null,
 				'.ui_button.done': ()=>
 				{
-					let dlg = $('#create_dlg');
-					let name = dlg.find('[name="name"]').val();
-					
+					const rows = $('#input_table_body').find('.input_row');
+					let entries = [];
+			
+					rows.each(function () 
+					{
+						const row = $(this);
+						const name = row.find('[name="name"]').val();
+						entries.push(
+						{ 
+							name: name 
+						});
+					});
+					console.log(entries);
+
 					ajax.post
 					(
 						g.actions.create,
-						{
-							name : name,
+						{ 
+							admins: entries,
 						},
-						(data_) =>
-						{
-							ui.dialog.popup_message('完了', '新しい業界が登録されました。',
-								() => location.reload());
-						},
-						(msg_, code_) =>
-						{
-							ui.toast.add_error(msg_);
-						}
+					() => {
+						ui.dialog.popup_message('完了', '管理者が登録されました。', () => location.reload());
+					},
+					(msg_, code_) => {
+						ui.toast.add_error(msg_);
+						console.log(msg_);
+					}
 					);
-				}
+				},
 			}
 		); 
+	});
+
+	$('#create_dlg').find('.ui_button.info').on('click', function()
+	{
+		console.log('msg');
+		const newRow = `
+		<div class="ui_panel layout_horizon padding_top">
+			<div class="margin_horizon" style="white-space:nowrap;">業界名</div>
+			<div class="margin full_horizon input_row"><input type="text" class="ui_text full_horizon" name="name"></div>
+		</div>`;
+
+		$('#input_table_body').append(newRow);
 	});
 
 	$('.edit_btn').on('click', function()
@@ -41,23 +63,23 @@ function init(opt_)
 			let industry_id = $(this).attr('industry_id');
 			let name = $(this).attr('name');
 
-			let dlg = $('#create_dlg');
+			let dlg = $('#edit_dlg');
 			dlg.find('[name="name"]').val(name);
 
 
 			ui.dialog.popup
 			(
-				'#create_dlg',
+				'#edit_dlg',
 				{
 					'.ui_button.close' : ()=>
 					{
-						let dlg = $('#create_dlg');
+						let dlg = $('#edit_dlg');
 						dlg.find('[name="name"]').val('');
 						
 					},
 					'.ui_button.done': ()=>
 					{
-						let dlg = $('#create_dlg');
+						let dlg = $('#edit_dlg');
 						let name = dlg.find('[name="name"]').val();
 						
 						ajax.post

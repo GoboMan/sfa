@@ -93,10 +93,16 @@ html, body
 		background-color : #f7cd24;
 		color : #050504;
 	}
+	&.info
+	{
+		background-color : #002b53;
+		color : #fafafa;
+	}
 	
 }
 
-.block_link {
+.block_link 
+{
   display: block;
   width: 100%;
   height: 100%;

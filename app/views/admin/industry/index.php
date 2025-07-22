@@ -56,16 +56,66 @@
  </div>
 </div>
 
-<?php /**** Create・Edit dialog ****/ ?>
+<?php /**** Create dialog ****/ ?>
 <div id="create_dlg" class="ui_dialog">
+ <div>
+  <div class="header">新規企業追加</div>
+  <div id="input_table_body" class="body">
+   <div class="ui_panel layout_horizon padding_top">
+    <div class="margin_horizon" style="white-space:nowrap;">業界名</div>
+    <div class="margin full_horizon input_row"><input type="text" class="ui_text full_horizon" name="name"></div>
+   </div>
+  </div>
+  <div class="footer">
+   <button class="ui_button small close">キャンセル</button>
+   <button class="ui_button small info">+追加</button>
+   <button class="ui_button small done">完了</button>
+
+  </div>
+ </div>
+</div>
+
+<!-- 
+<div id="create_dlg" class="ui_dialog">
+ <div>
+  <div class="header">新規企業追加</div>
+  <div class="body">
+   <table class="ui_list full_horizon" id="admin_table">
+    <thead>
+     <tr class="border_bottom">
+      <th>業界名</th>
+     </tr>
+    </thead>
+    <tbody id="admin_table_body">
+     <tr class="admin_row">
+      <td><input type="text" class="ui_text" name="name"></td>
+     </tr>
+    </tbody>
+   </table>
+
+   <div class="padding_vertical">
+    <button type="button" class="ui_button small info add_button">＋ 追加</button>
+   </div>
+  </div>
+    
+  <div class="footer">
+   <button class="ui_button small close">キャンセル</button>
+   <button class="ui_button small done">完了</button>
+  </div>
+ </div>
+</div> 
+-->
+
+
+<?php /**** Edit dialog ****/ ?>
+<div id="edit_dlg" class="ui_dialog">
  <div>
   <div class="header">新規企業追加</div>
   <div class="body">
    <div class="ui_panel layout_horizon padding_xlarge">
     <div class="margin_right" style="white-space:nowrap;">業界名</div>
     <div class="margin full_horizon"><input type="text" class="ui_text full_horizon" name="name"></div>
-    </div>
-   </table>
+   </div>
   </div>
   <div class="footer">
    <button class="ui_button small close">キャンセル</button>

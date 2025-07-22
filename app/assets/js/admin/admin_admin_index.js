@@ -35,7 +35,8 @@ function init(opt_)
 							ui.toast.add_error(msg_);
 						}
 					);
-				}
+				},
+				
 			}
 		); 
 	});
@@ -63,7 +64,8 @@ function init(opt_)
 					{
 						let dlg = $('#create_dlg');
 						dlg.find('[name="name"]').val('');
-						dlg.find('[name="synonyms"]').val('');
+						dlg.find('[name="login_id"]').val('');
+						dlg.find('[name="login_pw"]').val('');
 						
 					},
 					'.ui_button.done': ()=>

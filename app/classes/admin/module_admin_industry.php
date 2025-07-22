@@ -23,10 +23,16 @@ class	module_admin_industry extends module_admin
 	//--------------------------------------------------------------------------
 	public function action_create()
 	{
-		$row = model_industry::create_from_request();
-		if($row->check_and_save() === false)
+		$items = json_decode(crow_request::get('admins'));
+		foreach($items as $item)
 		{
-			app::exit_ng($row->get_last_error());
+			$row = model_industry::create();
+			$row->name = $item['name'];
+
+			if($row->check_and_save() === false)
+			{
+				app::exit_ng($row->get_last_error());
+			}
 		}
 		app::exit_ok();
 	}
