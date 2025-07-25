@@ -1,50 +1,275 @@
 //------------------------------------------------------------------------------
-//	管理者
+//	管理画面にログインするための情報
 //------------------------------------------------------------------------------
-db.admin				= 管理者
-db.admin.admin_id		= 管理者
-db.admin.login_id		= ログインID
-db.admin.login_pw		= ログインPW
-db.admin.deleted		= 削除
+db.admin										= 管理画面にログインするための情報
+db.admin.admin_id								= 管理者
+db.admin.name									= 氏名
+db.admin.login_id								= ログインID
+db.admin.login_pw								= ログインPW
+db.admin.deleted								= 削除
 
 //------------------------------------------------------------------------------
-//	valid
+//	RA営業メンバー
 //------------------------------------------------------------------------------
-db.valid				= valid
-db.valid.valid_id		= bbb
-db.valid.val			= ccc
+db.user											= RA営業メンバー
+db.user.user_id									= ユーザ
+db.user.login_id								= ログインID
+db.user.login_pw								= ログインPW
+db.user.name									= 氏名
+db.user.email									= メールアドレス
+db.user.create_at								= 作成日
+db.user.deleted									= 削除
 
 //------------------------------------------------------------------------------
-//	ユーザ
+//	都道府県マスタ
 //------------------------------------------------------------------------------
-db.user				= ユーザ
-db.user.user_id		= ユーザ
-db.user.login_id		= ログインID
-db.user.login_pw		= ログインPW
-db.user.name			= 氏名
-db.user.slug			= シンボル
-db.user.gender		= 性別
-db.user.create_date	= 作成日
-db.user.mail_addr		= メアド
-db.user.deleted		= 削除
+db.prefecture									= 都道府県マスタ
+db.prefecture.prefecture_id						= 都道府県
+db.prefecture.name								= 県名
+db.prefecture.area								= エリア
 
-db.user.const.male	= 男性
-db.user.const.female	= 女性
-db.user.const.other	= その他
+db.prefecture.const.area_hokkaido				= 北海道地方
+db.prefecture.const.area_tohoku					= 東北地方
+db.prefecture.const.area_kanto					= 関東地方
+db.prefecture.const.area_tyubu					= 中部地方
+db.prefecture.const.area_kinki					= 近畿地方
+db.prefecture.const.area_tyugoku				= 中国地方
+db.prefecture.const.area_shikoku				= 四国地方
+db.prefecture.const.area_kyusyu					= 九州
+db.prefecture.const.area_okinawa				= 沖縄
 
 //------------------------------------------------------------------------------
-//	bit確認用
+//	業界マスタ
 //------------------------------------------------------------------------------
-db.bits				= bit確認用
-db.bits.bits_id		= bits_id
-db.bits.data1			= 1byteのデータ
-db.bits.data2			= 2byteのデータ
-db.bits.data4			= 4byteのデータ
-db.bits.data8			= 8byteのデータ
+db.industry										= 業界マスタ
+db.industry.industry_id							= 業界
+db.industry.name								= 業界名
+db.industry.deleted								= 削除
 
-db.bits.const.monster	= モンスター
-db.bits.const.boss	= ボス
-db.bits.const.rare	= レア
-db.bits.const.sp		= スペシャル
-db.bits.const.rare_sp	= ビットの複合を定数にしたサンプル
+//------------------------------------------------------------------------------
+//	取引先
+//------------------------------------------------------------------------------
+db.entity										= 取引先
+db.entity.entity_id								= 取引先
+db.entity.name									= 取引先名
+db.entity.name_kana								= 取引先名カナ
+db.entity.user_id								= RA営業担当
+db.entity.upper_rank							= 案件ランク
+db.entity.lower_rank							= 人材ランク
+db.entity.deal_status							= 取引ステータス
+db.entity.deal_stop_reason						= 取引停止理由
+db.entity.updated_at							= 更新日時
+db.entity.deleted								= 削除
+
+db.entity.const.upper_rank_s					= Sランク
+db.entity.const.upper_rank_a					= Aランク
+db.entity.const.upper_rank_b					= Bランク
+db.entity.const.upper_rank_c					= Cランク
+db.entity.const.upper_rank_d					= Dランク
+db.entity.const.lower_rank_s					= Sランク
+db.entity.const.lower_rank_a					= Aランク
+db.entity.const.lower_rank_b					= Bランク
+db.entity.const.lower_rank_c					= Cランク
+db.entity.const.lower_rank_d					= Dランク
+db.entity.const.deal_progress					= 取引中
+db.entity.const.deal_stop						= 取引停止
+db.entity.const.deal_other						= その他
+
+//------------------------------------------------------------------------------
+//	取引先の営業担当がくる（RAの営業ではない）
+//------------------------------------------------------------------------------
+db.entity_member								= 取引先の営業担当がくる（RAの営業ではない）
+db.entity_member.entity_member_id				= 取引先担当者
+db.entity_member.entity_id						= 取引先
+db.entity_member.name							= 担当者名
+db.entity_member.tel							= 電話番号
+db.entity_member.email							= メールアドレス
+db.entity_member.deleted						= 削除
+
+//------------------------------------------------------------------------------
+//	案件情報
+//------------------------------------------------------------------------------
+db.project										= 案件情報
+db.project.project_id							= 案件情報
+db.project.user_id								= RA営業担当者
+db.project.entity_id							= 案件元会社
+db.project.entity_member_id						= 案件元会社営業担当
+db.project.industry_id							= 業界
+db.project.prefecture_id						= 都道府県
+db.project.name									= 案件名
+db.project.start_date							= 稼働開始日
+db.project.contract_type						= 契約形態
+db.project.hiring_status						= 募集状況
+db.project.source								= 流入経路
+db.project.nearest_station						= 最寄駅
+db.project.min_budget							= 予算下限
+db.project.max_budget							= 予算上限
+db.project.min_age								= 下限年齢
+db.project.max_age								= 上限年齢
+db.project.depth_limit							= 商流制限
+db.project.gender								= 希望性別
+db.project.work_style							= 出社スタイル
+db.project.nationality							= 国籍
+db.project.raw_content							= 本文
+db.project.created_at							= 作成日
+
+db.project.const.cntr_zyun						= 準委任契約
+db.project.const.cntr_ukeoi						= 請負契約
+db.project.const.cntr_haken						= 派遣契約
+db.project.const.cntr_other						= その他
+db.project.const.hir_open						= 募集中
+db.project.const.hir_closed						= 募集停止
+db.project.const.src_mail						= メール
+db.project.const.src_spreadsheet				= スプレッドシート
+db.project.const.src_line						= 電話
+db.project.const.src_slack						= slack
+db.project.const.src_other						= その他
+db.project.const.limit_direct					= 自社直
+db.project.const.limit_1						= 1社先
+db.project.const.limit_2						= 2社先
+db.project.const.limit_3						= 3社先
+db.project.const.limit_other					= その他
+db.project.const.gen_male						= 男性
+db.project.const.gen_female						= 女性
+db.project.const.gen_both						= どちらでも可
+db.project.const.work_1_day						= 週1出社
+db.project.const.work_2_day						= 週2出社
+db.project.const.work_3_day						= 週3出社
+db.project.const.work_4_day						= 週4出社
+db.project.const.work_onsite					= 常駐
+db.project.const.work_only_firstday				= 初日のみ
+db.project.const.work_only_mtg					= ミーティングのみ
+db.project.const.work_only_catchup				= キャッチアップのみ
+db.project.const.work_both						= 出社リモート併用
+db.project.const.work_full_remote				= フルリモート
+db.project.const.nat_only_japan					= 日
+db.project.const.nat_only_foreign				= 外
+db.project.const.nat_both						= 両
+
+//------------------------------------------------------------------------------
+//	人材情報
+//------------------------------------------------------------------------------
+db.workforce									= 人材情報
+db.workforce.workforce_id						= 人材情報
+db.workforce.user_id							= RA営業担当
+db.workforce.prefecture_id						= 都道府県
+db.workforce.sales_status						= 営業状況
+db.workforce.depth								= 商流
+db.workforce.worker_type						= 要員種別
+db.workforce.start_date							= 稼働開始日
+db.workforce.weekly_work_days					= 週稼働日数
+db.workforce.name								= 名前
+db.workforce.initials							= イニシャル
+db.workforce.age								= 年齢
+db.workforce.birthday							= 生年月日
+db.workforce.nationality						= 国籍
+db.workforce.min_hourly_rate					= 最低希望時給
+db.workforce.max_hourly_rate					= 最高希望時給
+db.workforce.min_monthly_rate					= 最低希望単価
+db.workforce.max_monthly_rate					= 最高希望単価
+db.workforce.raw_content						= 本文
+db.workforce.created_at							= 作成日
+
+db.workforce.const.sales_open					= 営業中
+db.workforce.const.sales_closed					= 営業終了
+db.workforce.const.depth_direct					= 自社直
+db.workforce.const.depth_1						= 1社先
+db.workforce.const.depth_2						= 2社先
+db.workforce.const.depth_other					= その他
+db.workforce.const.worker_fulltime				= 正社員
+db.workforce.const.worker_freelance				= フリーランス
+db.workforce.const.worker_contract				= 契約社員
+db.workforce.const.worker_other					= その他
+db.workforce.const.japanese						= 日本
+db.workforce.const.other						= その他
+
+//------------------------------------------------------------------------------
+//	AIのプロンプトに渡され、このデータを元に該当するskill_idが返される
+//------------------------------------------------------------------------------
+db.soft_skill									= AIのプロンプトに渡され、このデータを元に該当するskill_idが返される
+db.soft_skill.soft_skill_id						= スキル
+db.soft_skill.name								= スキル名
+db.soft_skill.synonyms							= スキル類義語
+db.soft_skill.deleted							= 削除
+
+//------------------------------------------------------------------------------
+//	案件とそれに必要なソフトスキルを紐づける
+//------------------------------------------------------------------------------
+db.project_soft_skill							= 案件とそれに必要なソフトスキルを紐づける
+db.project_soft_skill.project_soft_skill_id		= 案件紐付きソフトスキル
+db.project_soft_skill.project_id				= 案件情報
+db.project_soft_skill.soft_skill_id				= ソフトスキル
+db.project_soft_skill.years_of_exp				= 経験年数
+db.project_soft_skill.necessity					= スキルの必須度合い
+
+//------------------------------------------------------------------------------
+//	人材とその人が持つソフトスキルを紐づける
+//------------------------------------------------------------------------------
+db.workforce_soft_skill							= 人材とその人が持つソフトスキルを紐づける
+db.workforce_soft_skill.workforce_soft_skill_id	= 人材紐付きスキル
+db.workforce_soft_skill.workforce_id			= 人材情報
+db.workforce_soft_skill.soft_skill_id			= ソフトスキル
+db.workforce_soft_skill.years_of_exp			= 経験年数
+
+//------------------------------------------------------------------------------
+//	スキルマスタ　(ハード、技術的な関わり)
+//------------------------------------------------------------------------------
+db.hard_skill									= スキルマスタ　(ハード、技術的な関わり)
+db.hard_skill.hard_skill_id						= スキル
+db.hard_skill.name								= スキル名
+db.hard_skill.synonyms							= スキル類義語
+db.hard_skill.deleted							= 削除
+db.hard_skill.skill_type						= ハードスキル種別
+
+db.hard_skill.const.server_os					= サーバーOS
+db.hard_skill.const.database					= データベース
+db.hard_skill.const.program_lang				= プログラム言語
+db.hard_skill.const.tool						= ツール
+db.hard_skill.const.Framework					= フレームワーク
+db.hard_skill.const.other						= その他
+
+//------------------------------------------------------------------------------
+//	案件とそれに必要なハードスキルを紐づける
+//------------------------------------------------------------------------------
+db.project_hard_skill							= 案件とそれに必要なハードスキルを紐づける
+db.project_hard_skill.project_hard_skill_id		= 案件紐付きハードスキル
+db.project_hard_skill.project_id				= 案件
+db.project_hard_skill.hard_skill_id				= ハードスキル
+db.project_hard_skill.years_of_exp				= 経験年数
+db.project_hard_skill.necessity					= スキルの必須度合い
+
+//------------------------------------------------------------------------------
+//	人材とその人が持つハードスキルを紐づける
+//------------------------------------------------------------------------------
+db.workforce_hard_skill							= 人材とその人が持つハードスキルを紐づける
+db.workforce_hard_skill.workforce_hard_skill_id	= 人材紐付きハードスキル
+db.workforce_hard_skill.workforce_id			= 人材情報
+db.workforce_hard_skill.hard_skill_id			= ハードスキル
+db.workforce_hard_skill.years_of_exp			= 経験年数
+
+//------------------------------------------------------------------------------
+//	ポジションマスタ
+//------------------------------------------------------------------------------
+db.position										= ポジションマスタ
+db.position.position_id							= ポジション
+db.position.name								= ポジション名
+db.position.synonyms							= ポジション類義語
+db.position.deleted								= 削除
+
+//------------------------------------------------------------------------------
+//	案件ポジション
+//------------------------------------------------------------------------------
+db.project_position								= 案件ポジション
+db.project_position.project_position_id			= 案件ポジション
+db.project_position.project_id					= 案件情報
+db.project_position.position_id					= ポジション
+db.project_position.necessity					= スキルの必須度合い
+
+//------------------------------------------------------------------------------
+//	人材ポジション
+//------------------------------------------------------------------------------
+db.workforce_position							= 人材ポジション
+db.workforce_position.workforce_position_id		= 人材ポジション
+db.workforce_position.workforce_id				= 人材
+db.workforce_position.position_id				= ポジション
 

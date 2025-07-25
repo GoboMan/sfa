@@ -23,7 +23,8 @@ class	module_admin_industry extends module_admin
 	//--------------------------------------------------------------------------
 	public function action_create()
 	{
-		$items = json_decode(crow_request::get('admins'));
+		$items = crow_request::get('admins'); // entries are JS object(array)
+		crow_log::notice($items);
 		foreach($items as $item)
 		{
 			$row = model_industry::create();

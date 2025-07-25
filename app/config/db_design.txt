@@ -279,76 +279,97 @@ workforce
 
 
 ;------------------------------------------------------------------------------
-# スキルマスタ
+# スキルマスタ（ソフト、人との関わり）
 # AIのプロンプトに渡され、このデータを元に該当するskill_idが返される
 ;------------------------------------------------------------------------------
-work_skill
+soft_skill
 {
-	work_skill_id,				bigint,	pk, ai,							# スキル
+	soft_skill_id,				bigint,	pk, ai,					# スキル
 	name,						varchar, 32,					# スキル名
 	synonyms,					text,							# スキル類義語
 	deleted,					boolean, del,					# 削除
 }
 
 ;------------------------------------------------------------------------------
-# 案件スキル
-# 案件とそれに必要なスキルを紐づける
+# 案件ソフトスキル
+# 案件とそれに必要なソフトスキルを紐づける
 ;------------------------------------------------------------------------------
-project_skill
+project_soft_skill
 {
-	project_skill_id,			bigint, pk, ai,					# 案件スキル
+	project_soft_skill_id,		bigint, pk, ai,					# 案件紐付きソフトスキル
 	project_id,					bigint,							# 案件情報
-	work_skill_id,				bigint,							# スキル
+	soft_skill_id,				bigint,							# ソフトスキル
 	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
-	must_have,					boolean,						# 必須スキル有無
+	necessity,					tinyint,						# スキルの必須度合い
 }
 .refer.project_id : project, trash
-.refer.work_skill_id : work_skill, trash
+.refer.soft_skill_id : soft_skill, trash
 
 ;------------------------------------------------------------------------------
-# 人材スキル
-# 案件とそれに必要なスキルを紐づける
+# 人材ソフトスキル
+# 人材とその人が持つソフトスキルを紐づける
 ;------------------------------------------------------------------------------
-workforce_skill
+workforce_soft_skill
 {
-	workforce_skill_id,			bigint, pk, ai,					# 人材スキル
+	workforce_soft_skill_id,	bigint, pk, ai,					# 人材紐付きスキル
 	workforce_id,				bigint,							# 人材情報
-	work_skill_id,				bigint,							# スキル
+	soft_skill_id,				bigint,							# ソフトスキル
 	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
 }
 .refer.workforce_id : workforce, trash
-.refer.work_skill_id : work_skill, trash
+.refer.soft_skill_id : soft_skill, trash
 
 ;------------------------------------------------------------------------------
-# プログラム言語マスタ
+# スキルマスタ　(ハード、技術的な関わり)
 ;------------------------------------------------------------------------------
-program_lang
+hard_skill
 {
-	program_lang_id,			bigint, pk, ai,					# プログラム言語
-	name,						varchar, 30, must,				# 言語名
+	hard_skill_id,				bigint,	pk, ai,					# スキル
+	name,						varchar, 32,					# スキル名
+	synonyms,					text,							# スキル類義語
+	deleted,					boolean, del,					# 削除
+	;--------------------------------------------------------------------------
+	# ハードスキルの種類
+	;--------------------------------------------------------------------------
+	skill_type,				tinyint,							# ハードスキル種別
+	{
+		server_os,			1,									# サーバーOS
+		database,			2,									# データベース
+		program_lang,		3,									# プログラム言語
+		tool,				4,									# ツール
+		Framework,			5,									# フレームワーク
+		other,				6,									# その他
+	}
 }
 
 ;------------------------------------------------------------------------------
-# 案件プログラム言語
+# 案件ハードスキル
+# 案件とそれに必要なハードスキルを紐づける
 ;------------------------------------------------------------------------------
-project_program_lang
+project_hard_skill
 {
-	project_program_lang_id,	bigint, pk, ai,					# 案件言語
+	project_hard_skill_id,		bigint, pk, ai,					# 案件紐付きハードスキル
 	project_id,					bigint,							# 案件
-	program_lang_id,			bigint,							# 言語
+	hard_skill_id,				bigint,							# ハードスキル
 	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
+	necessity,					tinyint,						# スキルの必須度合い
 }
+.refer.project_id : project, trash
+.refer.hard_skill_id : hard_skill, trash
 
 ;------------------------------------------------------------------------------
-# 人材プログラム言語
+# 人材ハードスキル
+# 人材とその人が持つハードスキルを紐づける
 ;------------------------------------------------------------------------------
-workforce_program_lang
+workforce_hard_skill
 {
-	workforce_program_lang_id,	bigint, pk, ai,					# 案件言語
-	workforce_id,				bigint,							# 案件
-	program_lang_id,			bigint,							# 言語
+	workforce_hard_skill_id,	bigint, pk, ai,					# 人材紐付きハードスキル
+	workforce_id,				bigint,							# 人材情報
+	hard_skill_id,				bigint,							# ハードスキル
 	years_of_exp,				float,							# 経験年数, 半年は0.5、1年3ヶ月は1.25になる
 }
+.refer.workforce_id : workforce, trash
+.refer.hard_skill_id : hard_skill, trash
 
 
 ;------------------------------------------------------------------------------
@@ -370,7 +391,7 @@ project_position
 	project_position_id,		bigint, pk, ai,					# 案件ポジション
 	project_id,					bigint,							# 案件情報
 	position_id,				bigint,							# ポジション
-	must_have,					boolean,						# 必須ポジション有無
+	necessity,					tinyint,						# スキルの必須度合い
 }
 .refer.project_id : project, trash
 .refer.position_id : position, trash

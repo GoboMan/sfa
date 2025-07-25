@@ -14,17 +14,17 @@
   </div>
  </a>
 
- <a class="block_link" href="<?= crow::make_url('work_skill') ?>">
+ <a class="block_link" href="<?= crow::make_url('soft_skill') ?>">
   <div class="ui_panel layout_vertical_left padding_vertical full_horizon sidebar_panel 
-   <?= $url === crow::make_url('work_skill') ? 'active' : '' ?>">
-   <div class="margin_left">スキル</div>
+   <?= $url === crow::make_url('soft_skill') ? 'active' : '' ?>">
+   <div class="margin_left">ソフトスキル</div>
   </div>
  </a>
 
- <a class="block_link" href="<?= crow::make_url('program_lang') ?>">
+ <a class="block_link" href="<?= crow::make_url('hard_skill') ?>">
   <div class="ui_panel layout_vertical_left padding_vertical full_horizon sidebar_panel 
-   <?= $url === crow::make_url('program_lang') ? 'active' : '' ?>">
-   <div class="margin_left">プログラム言語</div>
+   <?= $url === crow::make_url('hard_skill') ? 'active' : '' ?>">
+   <div class="margin_left">ハードスキル</div>
   </div>
  </a>
  

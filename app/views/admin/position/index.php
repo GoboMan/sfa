@@ -52,11 +52,37 @@
   </table>
  </div>
 </div>
- 
-<?php /**** Create/Edit dialog ****/ ?>
-<div id=create_dlg class="ui_dialog">
+
+
+<?php /**** Create dialog ****/ ?>
+<div id="create_dlg" class="ui_dialog full_horizon">
  <div>
   <div class="header">新規ポジション追加</div>
+  <div id="input_table_body" class="body">
+   <div class="ui_panel layout_vertical padding_top padding_horizon first_row">
+    <div class="margin_horizon" style="white-space:nowrap;">ポジション名</div>
+    <div class="margin full_horizon">
+      <input type="text" class="ui_text full_horizon" name="name">
+    </div>
+    <div class="margin_horizon" style="white-space:nowrap;">類義語</div>
+    <div class="margin full_horizon">
+      <textarea class="ui_text full_horizon" name="synonyms"></textarea>
+    </div>
+   </div>
+  </div>
+  <div class="footer">
+   <button class="ui_button small close">キャンセル</button>
+   <button class="ui_button small info">+追加</button>
+   <button class="ui_button small done">完了</button>
+  </div>
+ </div>
+</div>
+
+
+<?php /**** Edit dialog ****/ ?>
+<div id="edit_dlg" class="ui_dialog">
+ <div>
+  <div class="header">ポジションの変更</div>
   <div class="body">
    <table class="ui_list full_horizon">
     <tr class="border_bottom">

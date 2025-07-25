@@ -1,5 +1,5 @@
 <?php
-class	module_admin_work_skill extends module_admin
+class	module_admin_hard_skill extends module_admin
 {
 	//	下のコメントを参考にメソッドを作成、このコメントは削除OK（ 2025/07/14 abe ）
 
@@ -8,7 +8,7 @@ class	module_admin_work_skill extends module_admin
 	//--------------------------------------------------------------------------
 	public function action_index()
 	{
-		$rows = model_work_skill::create_array();
+		$rows = model_hard_skill::create_array();
 		$url = crow::make_url_self();
 
 		crow_response::sets(
@@ -23,10 +23,19 @@ class	module_admin_work_skill extends module_admin
 	//--------------------------------------------------------------------------
 	public function action_create()
 	{
-		$row = model_work_skill::create_from_request();
-		if($row->check_and_save() === false)
+		$items = crow_request::get('admins'); // entries are JS object(array)
+		crow_log::notice($items);
+		foreach($items as $item)
 		{
-			app::exit_ng($row->get_last_error());
+			$row = model_hard_skill::create();
+			$row->name = $item['name'];
+			$row->synonyms= $item['synonyms'];
+			$row->skill_type = $item['skill_type'];
+
+			if($row->check_and_save() === false)
+			{
+				app::exit_ng($row->get_last_error());
+			}
 		}
 		app::exit_ok();
 	}
@@ -35,7 +44,7 @@ class	module_admin_work_skill extends module_admin
 	//--------------------------------------------------------------------------
 	public function action_update()
 	{
-		$row = model_work_skill::create_from_request_with_id();
+		$row = model_hard_skill::create_from_request_with_id();
 		if($row->check_and_save() === false)
 		{
 			app::exit_ng($row->get_last_error());
@@ -48,7 +57,7 @@ class	module_admin_work_skill extends module_admin
 	//--------------------------------------------------------------------------
 	public function action_delete()
 	{
-		$row = model_work_skill::create_from_request_with_id();
+		$row = model_hard_skill::create_from_request_with_id();
 		if($row->trash() === false)
 		{
 			app::exit_ng($row->get_last_error());

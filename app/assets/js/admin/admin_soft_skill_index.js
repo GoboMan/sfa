@@ -29,7 +29,7 @@ function init(opt_)
 						const synonyms = row.find('[name="synonyms"]').val();
 						entries.push(
 						{ 
-							name : name,
+							name: name,
 							synonyms : synonyms,
 						});
 					});
@@ -43,7 +43,7 @@ function init(opt_)
 						},
 						() => 
 						{
-							ui.dialog.popup_message('完了', '新しいポジションが登録されました。', 
+							ui.dialog.popup_message('完了', '新しいソフトスキルが登録されました。', 
 								() => location.reload());
 						},
 						(msg_, code_) => 
@@ -60,14 +60,14 @@ function init(opt_)
 	$('#create_dlg').find('.ui_button.info').on('click', function()
 	{
 		const newRow = `
-		<div class="ui_panel layout_vertical padding_horizon border_top input_row">
-			<div class="margin_horizon" style="white-space:nowrap;">ポジション名</div>
+		<div class="ui_panel layout_horizon padding_horizon input_row">
+			<div class="margin_horizon" style="white-space:nowrap;">スキル名</div>
 			<div class="margin full_horizon">
 				<input type="text" class="ui_text full_horizon" name="name">
 			</div>
 			<div class="margin_horizon" style="white-space:nowrap;">類義語</div>
 			<div class="margin full_horizon">
-				<textarea class="ui_text full_horizon" name="synonyms"></textarea>
+				<input type="text" class="ui_text full_horizon" name="synonyms">
 			</div>
 		</div>`;
 
@@ -76,16 +76,17 @@ function init(opt_)
 
 	$('.edit_btn').on('click', function()
 	{
-		let position_id = $(this).attr('position_id');
+		let soft_skill_id = $(this).attr('soft_skill_id');
 		let name = $(this).attr('name');
 		let synonyms = $(this).attr('synonyms');
 
 		let dlg = $('#edit_dlg');
-		dlg.find('[name="position_id"]').val(position_id);
+		dlg.find('[name="soft_skill_id"]').val(soft_skill_id);
 		dlg.find('[name="name"]').val(name);
 		dlg.find('[name="synonyms"]').val(synonyms);
 
-		ui.dialog.popup(
+		ui.dialog.popup
+		(
 		'#edit_dlg',
 		{
 			'.ui_button.close' : null,
@@ -99,13 +100,13 @@ function init(opt_)
 				(
 					g.actions.update,
 					{
-						position_id : position_id,
+						soft_skill_id : soft_skill_id,
 						name : name,
 						synonyms : synonyms,
 					},
 					(data_) =>
 					{
-						ui.dialog.popup_message('完了', 'ポジションが変更されました。',
+						ui.dialog.popup_message('完了', 'スキルが変更されました。',
 							() => location.reload());
 					},
 					(msg_, code_) =>
@@ -119,23 +120,23 @@ function init(opt_)
 	
 	$('.delete_btn').on('click', function() 
 	{
-		let position_id = $(this).attr('position_id'); 
+		let soft_skill_id = $(this).attr('soft_skill_id'); 
 
 		popup_custom
 		(
-		"ポジション削除",
-		"このポジションを削除します。よろしいですか？",
+		"スキル削除",
+		"このスキルを削除します。よろしいですか？",
 		function() 
 		{
 			ajax.post
 			(
 				g.actions.delete,
 				{
-					position_id : position_id,
+					soft_skill_id : soft_skill_id,
 				},
 				(data_) =>
 				{
-					ui.dialog.popup_message('完了','ポジションが削除されました。',
+					ui.dialog.popup_message('完了','スキルが削除されました。',
 						() => location.reload());
 				},
 				(msg_,code_) =>

@@ -23,10 +23,18 @@ class	module_admin_position extends module_admin
 	//--------------------------------------------------------------------------
 	public function action_create()
 	{
-		$row = model_position::create_from_request();
-		if($row->check_and_save() === false)
+		$items = crow_request::get('admins'); // entries are JS object(array)
+		crow_log::notice($items);
+		foreach($items as $item)
 		{
-			app::exit_ng($row->get_last_error());
+			$row = model_position::create();
+			$row->name = $item['name'];
+			$row->synonyms = $item['synonyms'];
+
+			if($row->check_and_save() === false)
+			{
+				app::exit_ng($row->get_last_error());
+			}
 		}
 		app::exit_ok();
 	}

@@ -10,10 +10,15 @@ function init(opt_)
 		(
 			'#create_dlg',
 			{
-				'.ui_button.close' : null,
+				'.ui_button.close' : ()=>
+				{
+					let dlg = $('#create_dlg');
+					dlg.find('[name="name"]').val('');
+					$('.input_row').remove(); 
+				},
 				'.ui_button.done': ()=>
 				{
-					const rows = $('#input_table_body').find('.input_row');
+					let rows = $('#input_table_body').find('.first_row, .input_row');
 					let entries = [];
 			
 					rows.each(function () 
@@ -33,13 +38,15 @@ function init(opt_)
 						{ 
 							admins: entries,
 						},
-					() => {
-						ui.dialog.popup_message('完了', '管理者が登録されました。', () => location.reload());
-					},
-					(msg_, code_) => {
-						ui.toast.add_error(msg_);
-						console.log(msg_);
-					}
+						() => 
+						{
+							ui.dialog.popup_message('完了', '管理者が登録されました。', () => location.reload());
+						},
+						(msg_, code_) => 
+						{
+							ui.toast.add_error(msg_);
+							console.log(msg_);
+						}
 					);
 				},
 			}
@@ -50,9 +57,11 @@ function init(opt_)
 	{
 		console.log('msg');
 		const newRow = `
-		<div class="ui_panel layout_horizon padding_top">
+		<div class="ui_panel layout_horizon input_row">
 			<div class="margin_horizon" style="white-space:nowrap;">業界名</div>
-			<div class="margin full_horizon input_row"><input type="text" class="ui_text full_horizon" name="name"></div>
+			<div class="margin full_horizon">
+				<input type="text" class="ui_text full_horizon" name="name">
+			</div>
 		</div>`;
 
 		$('#input_table_body').append(newRow);
@@ -71,12 +80,7 @@ function init(opt_)
 			(
 				'#edit_dlg',
 				{
-					'.ui_button.close' : ()=>
-					{
-						let dlg = $('#edit_dlg');
-						dlg.find('[name="name"]').val('');
-						
-					},
+					'.ui_button.close' : null,
 					'.ui_button.done': ()=>
 					{
 						let dlg = $('#edit_dlg');
