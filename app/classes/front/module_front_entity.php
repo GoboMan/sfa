@@ -13,7 +13,7 @@ class	module_front_entity extends module_front
 		//	取引先テーブルに営業の名前を結合して一覧取得
 		$sql = $hdb->raw('get_entity_rows_with_user_name');
 		$pager = crow_db_pager::create_with_query($sql)
-			->set_row_per_page(2)
+			->set_row_per_page(25)
 			->set_page_no(1)
 			->build()
 			;
@@ -108,7 +108,7 @@ class	module_front_entity extends module_front
 		//	取引先テーブルに営業の名前を結合して一覧取得
 		$sql = $hdb->raw('get_entity_rows_with_user_name');
 		$pager = crow_db_pager::create_with_query($sql)
-			->set_row_per_page(2)
+			->set_row_per_page(25)
 			->set_page_no($page_no)
 			->build()
 			;

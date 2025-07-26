@@ -33,7 +33,7 @@
   <td class="min">{{ row.max_age ? row.max_age : '-' }}</td>
   <td class="min">{{ row.nearest_station ? row.nearest_station : '-' }}</td>
   <td class="min">{{ row.status ? row.status : '-' }}</td>
-  <td>{{ row.name ? row.name : '-' }}</td>
+  <td><div class="name">{{ row.name ? row.name : '-' }}</div></td>
  </tr>
 </template>
 
@@ -41,7 +41,13 @@
 //	style
 //------------------------------------------------------------------------------
 <style>
-
+.name
+{
+	width : 300px;
+	overflow : hidden;
+	text-overflow : ellipsis;
+	white-space : nowrap;
+}
 </style>
 
 //------------------------------------------------------------------------------
@@ -51,7 +57,6 @@
 {
 	//	バインド
 	let props = self.props();
-	console.log(props);
 	dbc.bind("project_list", props.project_id, self, "row");
 }
 </init>

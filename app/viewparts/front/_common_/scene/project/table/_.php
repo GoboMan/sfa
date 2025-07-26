@@ -8,6 +8,9 @@
 //------------------------------------------------------------------------------
 <props>
 {
+	shown : false,
+
+	is_main : false,
 }
 </props>
 
@@ -26,7 +29,7 @@
      <th class="min">年齢</th>
      <th class="min">最寄駅</th>
      <th class="min">出社</th>
-     <th class="">件名</th>
+     <th>件名</th>
     </tr>
    </thead>
    <tbody ref="rows"></tbody>
@@ -41,6 +44,15 @@
 //	style
 //------------------------------------------------------------------------------
 <style>
+table
+{
+	td
+	{
+		white-space : nowrap;
+		overflow : hidden;
+		text-overflow : ellipsis;
+	}
+}
 
 </style>
 
@@ -59,8 +71,11 @@
 <ready>
 {
 
-	//	案件一覧取得
-	self.get_project_rows_with_ajax();
+	//	メインであれば、案件一覧取得（左側に表示しているとき）
+	if( self.prop('is_main') === true )
+	{
+		self.get_project_rows_with_ajax();
+	}
 }
 </ready>
 
@@ -69,6 +84,17 @@
 //------------------------------------------------------------------------------
 <watch>
 {
+	shown(old_, new_)
+	{
+		if( new_ == true )
+		{
+			self.jq('project_table').removeClass('hide');
+		}
+		else
+		{
+			self.jq('project_table').addClass('hide');
+		}
+	}
 }
 </watch>
 

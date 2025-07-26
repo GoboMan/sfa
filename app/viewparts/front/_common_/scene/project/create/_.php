@@ -30,80 +30,120 @@
    </div>
 
    <table class="ui_list full_horizon" style="margin-top:10px;">
-   <?php /**** 営業担当 ****/?>
    <tr>
     <td>
-     <div class="input_wrapper margin_right">
-      <div>営業担当</div>
-      <div>
-       <select class="ui_select" name="user_id">
-        <?= crow_html::make_option_tag_with_obj(model_user::create_array(), 'name') ?>
-       </select>
-      </div>
+     <div>RA営業担当</div>
+     <div>
+      <select class="ui_select" name="user_id"><?= crow_html::make_option_tag_with_obj(model_user::create_array(), 'name') ?></select>
      </div>
+    </td>
+    <td>
+     <div>案件名</div>
+     <div><input type="text" class="ui_text" name="name"></div>
     </td>
    </tr>
 
-    <?php /**** 取引先情報 ****/?>
+   <tr>
+    <td>
+     <?php /**** todo : 一覧テーブルをダイアログで表示し、検索及び選択できるようにする ****/ ?>
+     <div>取引先</div>
+     <div><select class="ui_select" name="entity_id"><?= crow_html::make_option_tag_with_obj(model_entity::create_array(), 'name') ?></select></div>
+    </td>
+    <td>
+     <div>業界</div>
+     <div><select class="ui_select" name="industry_id"><?= crow_html::make_option_tag_with_obj(model_industry::create_array(), 'name') ?></select></div>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <div>都道府県</div>
+     <div>
+      <select class="ui_select" name="prefecture_id"><?= crow_html::make_option_tag_with_obj(model_prefecture::create_array(), 'name') ?></select>
+     </div>
+    </td>
+    <td>
+     <div>稼働開始日</div>
+     <div><input type="date" class="ui_text" name="start_date"></div>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <div>契約形態</div>
+     <div><select class="ui_select" name="contract_type"><?= crow_html::make_option_tag(model_project::get_contract_type_map()) ?></select></div>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <div>募集ステータス</div>
+     <div><select class="ui_select" name="hiring_status"><?= crow_html::make_option_tag(model_project::get_hiring_status_map()) ?></select></div>
+    </td>
+    <td>
+     <div>流入経路</div>
+     <div><select class="ui_select" name="source"><?= crow_html::make_option_tag(model_project::get_source_map()) ?></select></div>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <div>最寄駅</div>
+     <div><input type="text" class="ui_text" name="nearest_station"></div>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <div>予算下限</div>
+     <div><input type="number" class="ui_text" name="min_budget"></div>
+    </td>
+    <td>
+     <div>予算上限</div>
+     <div><input type="number" class="ui_text" name="max_budget"></div>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <div>年齢下限</div>
+     <div><input type="number" class="ui_text" name="min_age"></div>
+    </td>
+    <td>
+     <div>年齢上限</div>
+     <div><input type="number" class="ui_text" name="max_age"></div>
+    </td>
+   </tr>
+
     <tr>
      <td>
-      <div class="input_wrapper margin_right">
-       <div>取引先名</div>
-       <div><input type="text" class="ui_text" name="name"></div>
-      </div>
+      <div>商流制限</div>
+      <div><select class="ui_select" name="depth_limit"><?= crow_html::make_option_tag(model_project::get_depth_limit_map()) ?></select></div>
      </td>
      <td>
-      <div class="input_wrapper margin_right">
-       <div>取引先名（カナ）</div>
-       <div><input type="text" class="ui_text" name="name_kana"></div>
-      </div>
+      <div>性別</div>
+      <div><select class="ui_select" name="gender"><?= crow_html::make_option_tag(model_project::get_gender_map()) ?></select></div>
      </td>
     </tr>
-    <?php /**** ランク ****/?>
+
     <tr>
      <td>
-      <div class="input_wrapper margin_right">
-       <div>案件ランク</div>
-       <div>
-        <select class="ui_select" name="upper_rank">
-         <?= crow_html::make_option_tag(model_entity::get_upper_rank_map()) ?>
-        </select>
-       </div>
-      </div>
+      <div>出社スタイル</div>
+      <div><select class="ui_select" name="project_work_style"><?= crow_html::make_option_tag(model_project::get_work_style_map()) ?></select></div>
      </td>
      <td>
-      <div class="input_wrapper margin_right">
-       <div>人材ランク</div>
-       <div>
-        <select class="ui_select" name="lower_rank">
-         <?= crow_html::make_option_tag(model_entity::get_lower_rank_map()) ?>
-        </select>
-       </div>
-      </div>
+      <div>国籍</div>
+      <div><select class="ui_select" name="nationality"><?= crow_html::make_option_tag(model_project::get_nationality_map()) ?></select></div>
      </td>
     </tr>
-    <?php /**** 取引情報 ****/?>
-    <tr>
-     <td>
-      <div class="input_wrapper margin_right">
-       <div>取引ステータス</div>
-       <div>
-        <select class="ui_select" name="deal_status">
-         <?= crow_html::make_option_tag(model_entity::get_deal_status_map()) ?>
-        </select>
-       </div>
-      </div>
-     </td>
-     <td></td>
-    </tr>
+
     <tr>
      <td colspan="2">
-      <div class="input_wrapper margin_right">
-       <div>取引停止理由</div>
-       <div><textarea class="ui_text" name="deal_stop_reason"></textarea></div>
-      </div>
+      <div>メール本文</div>
+      <div><textarea class="ui_text" name="raw_content"></textarea></div>
      </td>
     </tr>
+
    </table>
 
    <?php /**** 登録ボタン ****/?>
@@ -111,9 +151,6 @@
     <button ref="btn_create_project" class="ui_button done">登録</button>
    </div>
   </div>
-
-  <?php /**** 取引先営業コンテナ ****/?>
-
 
  </div>
 </template>
@@ -128,26 +165,24 @@
 	right : 0;
 	top : 0;
 	z-index : 2;
-}
 
-.input_wrapper
-{
-	display : flex;
-	flex-direction : column;
-	align-items : flex-start;
-
-	&.margin_right
+	td
 	{
-		margin-right : 10px;
-	}
+		width : 50%;
 
-	> div
-	{
-		width : 100%;
-
-		input, select
+		> div
 		{
 			width : 100%;
+
+			input, select, textarea
+			{
+				width : 100%;
+			}
+		}
+
+		textarea
+		{
+			height : 400px;
 		}
 	}
 }
@@ -177,7 +212,6 @@
 	self.jq('btn_create_project').on('click', () =>
 	{
 		let params = collect_input_data(self, 'create_project_panel');
-
 		ajax.post
 		(
 			g.project_actions.ajax_create,
@@ -185,14 +219,14 @@
 			(data_) =>
 			{
 				let new_row = JSON.parse(data_);
-				let vp_project = self.parent();
+				let vp_project_table = viewpart_find_by_name('scene_project_table');
 
 				//	todo : row nodataがあれば削除
-
+				console.log(vp_project_table);
 
 				//	一覧とdbcに追加
-				vp_project.create_child_and_append("row", new_row, "rows");
 				dbc.set("project_list", new_row.project_id, new_row);
+				vp_project_table.create_child_and_append("row", new_row, "rows");
 
 				//	メッセージ表示
 				ui.toast.add('案件を登録しました');

@@ -164,8 +164,8 @@ project
 	;--------------------------------------------------------------------------
 	; 年齢条件
 	;--------------------------------------------------------------------------
-	min_age,					int,							# 下限年齢, 0の場合、下限なし
-	max_age,					int,							# 上限年齢, 0の場合、上限なし
+	min_age,					int,							# 年齢下限, 0の場合、下限なし
+	max_age,					int,							# 年齢上限, 0の場合、上限なし
 
 	;--------------------------------------------------------------------------
 	; その他条件
@@ -180,22 +180,22 @@ project
 	}
 	gender,						tinyint,						# 希望性別
 	{
-		gen_male,				1,								# 男性
-		gen_female,				2,								# 女性
-		gen_both,				3,								# どちらでも可
+		p_gen_male,				1,								# 男性
+		p_gen_female,			2,								# 女性
+		p_gen_both,				3,								# どちらでも可
 	}
 	work_style,					tinyint,						# 出社スタイル
 	{
-		work_1_day,				1,								# 週1出社
-		work_2_day,				2,								# 週2出社
-		work_3_day,				3,								# 週3出社
-		work_4_day,				4,								# 週4出社
-		work_onsite,			5,								# 常駐
-		work_only_firstday,		6,								# 初日のみ
-		work_only_mtg,			7,								# ミーティングのみ
-		work_only_catchup,		8,								# キャッチアップのみ
-		work_both,				9,								# 出社リモート併用
-		work_full_remote,		10,								# フルリモート
+		p_work_1_day,			1,								# 週1出社
+		p_work_2_day,			2,								# 週2出社
+		p_work_3_day,			3,								# 週3出社
+		p_work_4_day,			4,								# 週4出社
+		p_work_onsite,			5,								# 常駐
+		p_work_only_firstday,	6,								# 初日のみ
+		p_work_only_mtg,		7,								# ミーティングのみ
+		p_work_only_catchup,	8,								# キャッチアップのみ
+		p_work_both,			9,								# 出社リモート併用
+		p_work_full_remote,		10,								# フルリモート
 	}
 	nationality,				tinyint,						# 国籍
 	{
@@ -246,15 +246,34 @@ workforce
 		worker_contract,		3,								# 契約社員
 		worker_other,			4,								# その他
 	}
+	work_style,		tinyint,						# 出社スタイル
+	{
+		w_work_1_day,			1,								# 週1出社
+		w_work_2_day,			2,								# 週2出社
+		w_work_3_day,			3,								# 週3出社
+		w_work_4_day,			4,								# 週4出社
+		w_work_onsite,			5,								# 常駐
+		w_work_only_firstday,	6,								# 初日のみ
+		w_work_only_mtg,		7,								# ミーティングのみ
+		w_work_only_catchup,	8,								# キャッチアップのみ
+		w_work_both,			9,								# 出社リモート併用
+		w_work_full_remote,		10,								# フルリモート
+	}
 	start_date,					datetime,						# 稼働開始日
 	weekly_work_days,			tinyint,						# 週稼働日数
 
 	;--------------------------------------------------------------------------
 	# 個人情報
 	;--------------------------------------------------------------------------
-	name,						varchar, 30,					# 名前
+	name,						varchar, 30,					# 要員名
 	initials,					varchar, 6,						# イニシャル
 	age,						tinyint,						# 年齢
+	gender,						tinyint,						# 性別
+	{
+		w_male,					1,								# 男性
+		w_female,				2,								# 女性
+		w_other,				3,								# その他
+	}
 	birthday,					datetime,						# 生年月日
 	nationality,				tinyint,						# 国籍
 	{

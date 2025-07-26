@@ -191,7 +191,7 @@
 				let new_row = JSON.parse(data_);
 
 				//	dbc更新
-				dbc.set("entities", new_row.entity_id, new_row);
+				dbc.set("entity_list", new_row.entity_id, new_row);
 
 				//	メッセージ表示
 				ui.toast.add('取引先を更新しました');
@@ -228,7 +228,7 @@
 						let vp_entity_row = dbc.get('selected_vp_entity_row', 'selected');
 
 						//	dbcから削除
-						dbc.remove("entities", entity_id);
+						dbc.remove("entity_list", entity_id);
 						dbc.unbind(self, 'row');
 
 						//	一覧から削除

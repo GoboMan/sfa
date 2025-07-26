@@ -6,6 +6,9 @@ class	module_front_project extends module_front
 	{
 	}
 
+	//------------------------------------------------------------------------------
+	//	ajax : 一覧取得
+	//------------------------------------------------------------------------------
 	public function action_ajax_get_rows()
 	{
 		$hdb = crow::get_hdb();
@@ -13,7 +16,7 @@ class	module_front_project extends module_front
 		//	プロジェクトテーブルにを結合して一覧取得
 		$sql = $hdb->raw('get_project_rows');
 		$pager = crow_db_pager::create_with_query($sql)
-			->set_row_per_page(2)
+			->set_row_per_page(25)
 			->set_page_no(1)
 			->build()
 			;
@@ -29,6 +32,25 @@ class	module_front_project extends module_front
 			'prev_page_no' => $pager->get_prev_page(),
 			'next_page_no' => $pager->get_next_page(),
 		]));
+	}
+
+	//------------------------------------------------------------------------------
+	//	ajax : 登録
+	//------------------------------------------------------------------------------
+	public function action_ajax_create()
+	{
+		$row = model_project::create_from_request();
+		$row->start_date = strtotime(crow_request::get('start_date'));
+		$row->created_at = time();
+
+		if( $row->check_and_save() === false )
+		{
+			app::exit_ng( $row->get_last_error() );
+		}
+
+		$row->created_at = date('Y-m-d H:i:s', $row->created_at);
+
+		app::exit_ok(json_encode($row));
 	}
 }
 

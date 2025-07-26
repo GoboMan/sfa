@@ -32,10 +32,10 @@
 
   <div class="ui_panel transparent layout_horizon_top full_horizon">
    <?php /**** 案件テーブル ****/ ?>
-   [[table pref="project_table"]]
+   [[table pref="project_table" shown="true" is_main="true"]]
 
    <?php /**** 人材テーブル ****/ ?>
-   [[scene_workforce_table pref="workforce_table"]]
+   [[scene_workforce_table pref="workforce_table" shown="false" is_main="false"]]
 
   </div>
 
